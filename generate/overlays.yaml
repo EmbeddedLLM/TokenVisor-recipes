@@ -1,0 +1,21 @@
+# TokenVisor-specific overlays for deployment profiles.
+# Key format: <huggingface_id> or <huggingface_id>@<accelerator_or_brand>
+# Values merge on top of generated profile fields.
+# Use null to clear a generated value.
+overrides:
+  deepseek-ai/DeepSeek-R1@mi300x:
+    custom_image: ghcr.io/embeddedllm/vllm-rocm:ubuntu22.04_rocm6.4.1
+    extra_envs:
+      VLLM_RPC_TIMEOUT: "1800000"
+      SAFETENSORS_FAST_GPU: "1"
+  deepseek-ai/DeepSeek-R1@amd:
+    extra_envs:
+      VLLM_RPC_TIMEOUT: "1800000"
+  deepseek-ai/DeepSeek-V3@mi300x:
+    custom_image: ghcr.io/embeddedllm/vllm-rocm:ubuntu22.04_rocm6.4.1
+    extra_envs:
+      VLLM_RPC_TIMEOUT: "1800000"
+      SAFETENSORS_FAST_GPU: "1"
+  deepseek-ai/DeepSeek-V3@amd:
+    extra_envs:
+      VLLM_RPC_TIMEOUT: "1800000"
