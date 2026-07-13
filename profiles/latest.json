@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-07-12T07:01:44.168018+00:00",
+  "generated_at": "2026-07-13T07:20:20.885071+00:00",
   "vllm_version": "0.25.0",
-  "vllm_recipes_sha": "5b52d08",
+  "vllm_recipes_sha": "426be25",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -4742,9 +4742,7 @@
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4"
               },
-              "extra_envs": {
-                "VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS": "0"
-              }
+              "extra_envs": {}
             },
             "balance": {
               "extra_args": {
@@ -4762,9 +4760,7 @@
                 "--reasoning-parser": "deepseek_v4",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {
-                "VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS": "0"
-              }
+              "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
@@ -4794,9 +4790,7 @@
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4"
               },
-              "extra_envs": {
-                "VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS": "0"
-              }
+              "extra_envs": {}
             },
             "balance": {
               "extra_args": {
@@ -4814,9 +4808,7 @@
                 "--reasoning-parser": "deepseek_v4",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {
-                "VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS": "0"
-              }
+              "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
@@ -4846,9 +4838,7 @@
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4"
               },
-              "extra_envs": {
-                "VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS": "0"
-              }
+              "extra_envs": {}
             },
             "balance": {
               "extra_args": {
@@ -4866,9 +4856,7 @@
                 "--reasoning-parser": "deepseek_v4",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {
-                "VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS": "0"
-              }
+              "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
@@ -13636,6 +13624,98 @@
           "variant_name": "424b_fp8"
         }
       ],
+      "deepseek-ai/DeepSeek-V3": [
+        {
+          "name": "DeepSeek-V3",
+          "huggingface_id": "deepseek-ai/DeepSeek-V3",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "ghcr.io/embeddedllm/vllm-rocm:ubuntu22.04_rocm6.4.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekv3.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekv3.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default",
+          "extra_envs": {
+            "VLLM_RPC_TIMEOUT": "1800000",
+            "SAFETENSORS_FAST_GPU": "1"
+          }
+        }
+      ],
+      "nvidia/DeepSeek-V3-FP4": [
+        {
+          "name": "DeepSeek-V3 (fp4)",
+          "huggingface_id": "nvidia/DeepSeek-V3-FP4",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekv3.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_USE_FLASHINFER_MOE_FP4": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekv3.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_USE_FLASHINFER_MOE_FP4": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp4"
+        }
+      ],
       "deepseek-ai/DeepSeek-V4-Flash": [
         {
           "name": "DeepSeek-V4-Flash",
@@ -19779,6 +19859,97 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "424b_fp8"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V3": [
+        {
+          "name": "DeepSeek-V3",
+          "huggingface_id": "deepseek-ai/DeepSeek-V3",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekv3.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekv3.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default",
+          "extra_envs": {
+            "VLLM_RPC_TIMEOUT": "1800000"
+          }
+        }
+      ],
+      "nvidia/DeepSeek-V3-FP4": [
+        {
+          "name": "DeepSeek-V3 (fp4)",
+          "huggingface_id": "nvidia/DeepSeek-V3-FP4",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekv3.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_USE_FLASHINFER_MOE_FP4": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekv3.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_USE_FLASHINFER_MOE_FP4": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp4"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Flash": [
