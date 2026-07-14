@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-07-13T07:20:20.885071+00:00",
+  "generated_at": "2026-07-14T06:53:52.454128+00:00",
   "vllm_version": "0.25.0",
-  "vllm_recipes_sha": "426be25",
+  "vllm_recipes_sha": "9f9313e",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -11892,6 +11892,138 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16": [
+        {
+          "name": "NVIDIA Nemotron-3-Super-120B-A12B",
+          "huggingface_id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16",
+          "accelerators": "dgx_spark_gb10",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.25.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "nemotron_v3"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "nemotron_v3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8": [
+        {
+          "name": "NVIDIA Nemotron-3-Super-120B-A12B (fp8)",
+          "huggingface_id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8",
+          "accelerators": "dgx_spark_gb10",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.25.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "nemotron_v3"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "nemotron_v3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4": [
+        {
+          "name": "NVIDIA Nemotron-3-Super-120B-A12B (nvfp4)",
+          "huggingface_id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4",
+          "accelerators": "dgx_spark_gb10",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.25.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "nemotron_v3"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "nemotron_v3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16": [
+        {
+          "name": "NVIDIA Nemotron-3-Super-120B-A12B (base_bf16)",
+          "huggingface_id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16",
+          "accelerators": "dgx_spark_gb10",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.25.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "nemotron_v3"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "nemotron_v3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "base_bf16"
         }
       ]
     },
