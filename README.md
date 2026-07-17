@@ -10,7 +10,7 @@ Auto-generated vLLM deployment profiles from [vllm-project/recipes](https://gith
 
 1. Daily CI clones `vllm-project/recipes` and runs `generate/generate.py`
 2. The script parses every YAML recipe, resolves Docker image tags, applies overlays
-3. Output is published to GitHub Pages: `https://tokenvisor.github.io/TokenVisor-recipes/profiles/latest.json`
+3. Output is published to GitHub Pages: `https://embeddedllm.github.io/TokenVisor-recipes/profiles/latest.json`
 
 ## Local development
 
