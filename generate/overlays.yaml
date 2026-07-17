@@ -19,3 +19,156 @@ overrides:
   deepseek-ai/DeepSeek-V3@amd:
     extra_envs:
       VLLM_RPC_TIMEOUT: "1800000"
+
+  # ── Gemma 4 — fix relative chat-template path ──
+  # Upstream recipes ship examples/tool_chat_template_gemma4.jinja (relative).
+  # This only works when CWD= /vllm-workspace/. Override to absolute.
+  # Dense models (latency-focus only):
+  google/gemma-4-E2B-it:
+    strategies:
+      latency-focus:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+  RedHatAI/gemma-4-E2B-it-FP8-dynamic:
+    strategies:
+      latency-focus:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+  google/gemma-4-E2B-it-qat-w4a16-ct:
+    strategies:
+      latency-focus:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+  google/gemma-4-E2B-it-qat-mobile-ct:
+    strategies:
+      latency-focus:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+  google/gemma-4-E4B-it:
+    strategies:
+      latency-focus:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+  RedHatAI/gemma-4-E4B-it-FP8-dynamic:
+    strategies:
+      latency-focus:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+  google/gemma-4-E4B-it-qat-w4a16-ct:
+    strategies:
+      latency-focus:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+  google/gemma-4-E4B-it-qat-mobile-ct:
+    strategies:
+      latency-focus:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+  google/gemma-4-12B-it:
+    strategies:
+      latency-focus:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+  google/gemma-4-12B-it-qat-w4a16-ct:
+    strategies:
+      latency-focus:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+  google/gemma-4-31B-it:
+    strategies:
+      latency-focus:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+  RedHatAI/gemma-4-31B-it-FP8-dynamic:
+    strategies:
+      latency-focus:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+  nvidia/gemma-4-31B-it-NVFP4:
+    strategies:
+      latency-focus:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+  google/gemma-4-31B-it-qat-w4a16-ct:
+    strategies:
+      latency-focus:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+
+  # MoE models (latency-focus + balance):
+  google/gemma-4-26B-A4B-it:
+    strategies:
+      latency-focus:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+      balance:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+  RedHatAI/gemma-4-26B-A4B-it-FP8-dynamic:
+    strategies:
+      latency-focus:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+      balance:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+  RedHatAI/gemma-4-26B-A4B-it-NVFP4:
+    strategies:
+      latency-focus:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+      balance:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+  google/diffusiongemma-26B-A4B-it:
+    strategies:
+      latency-focus:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+      balance:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+  RedHatAI/diffusiongemma-26B-A4B-it-FP8-dynamic:
+    strategies:
+      latency-focus:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+      balance:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+  RedHatAI/diffusiongemma-26B-A4B-it-NVFP4:
+    strategies:
+      latency-focus:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+      balance:
+        extra_args:
+          --chat-template: "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+
+  # ── RTX PRO 6000 — lower GPU memory utilization for NVFP4 models ──
+  nvidia/Gemma-4-31B-IT-NVFP4@rtxpro-6000-blackwell-server-edition:
+    strategies:
+      latency-focus:
+        extra_args:
+          --gpu-memory-utilization: "0.8"
+  nvidia/Gemma-4-26B-A4B-NVFP4@rtxpro-6000-blackwell-server-edition:
+    strategies:
+      latency-focus:
+        extra_args:
+          --gpu-memory-utilization: "0.8"
+      balance:
+        extra_args:
+          --gpu-memory-utilization: "0.8"
+  nvidia/gemma-4-31B-it-NVFP4@rtxpro-6000-blackwell-server-edition:
+    strategies:
+      latency-focus:
+        extra_args:
+          --gpu-memory-utilization: "0.8"
+  RedHatAI/gemma-4-26B-A4B-it-NVFP4@rtxpro-6000-blackwell-server-edition:
+    strategies:
+      latency-focus:
+        extra_args:
+          --gpu-memory-utilization: "0.8"
+      balance:
+        extra_args:
+          --gpu-memory-utilization: "0.8"

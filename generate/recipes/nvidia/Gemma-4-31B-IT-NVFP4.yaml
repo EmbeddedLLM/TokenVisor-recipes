@@ -1,0 +1,64 @@
+meta:
+  title: "Gemma 4 31B IT (NVFP4)"
+  slug: "gemma-4-31b-it-nvfp4"
+  provider: "NVIDIA"
+  description: "NVIDIA NVFP4 quantized Gemma 4 31B dense model — optimized for Blackwell GPUs with fp8 KV cache, V2 model runner, and Gemma 4 tool-calling support."
+  date_updated: 2026-07-17
+  difficulty: intermediate
+  tasks:
+    - multimodal
+    - text
+  hardware:
+    h100: verified
+    h200: verified
+    b200: verified
+    gb200: verified
+    b300: verified
+    gb300: verified
+    rtxpro-6000-blackwell-server-edition: verified
+
+model:
+  model_id: "nvidia/Gemma-4-31B-IT-NVFP4"
+  min_vllm_version: "0.25.1"
+  architecture: dense
+  parameter_count: "31B"
+  active_parameters: "31B"
+  context_length: 262144
+  base_args:
+    - --kv-cache-dtype
+    - fp8
+  base_env:
+    VLLM_USE_V2_MODEL_RUNNER: "1"
+
+features:
+  tool_calling:
+    description: "Enable automatic tool choice with Gemma 4 parser and chat template"
+    args:
+      - "--enable-auto-tool-choice"
+      - "--tool-call-parser"
+      - "gemma4"
+      - "--chat-template"
+      - "/vllm-workspace/examples/tool_chat_template_gemma4.jinja"
+  reasoning:
+    description: "Enable structured thinking/reasoning output"
+    args:
+      - "--reasoning-parser"
+      - "gemma4"
+  spec_decoding:
+    description: "MTP speculative decoding for accelerated inference"
+    args:
+      - "--speculative-config"
+      - '{"model":"google/gemma-4-31B-it-assistant","num_speculative_tokens":4}'
+
+variants:
+  default:
+    precision: nvfp4
+    vram_minimum_gb: 19
+    description: "NVIDIA NVFP4 quantized — optimized for Blackwell GPUs"
+
+compatible_strategies:
+  - single_node_tp
+
+strategy_overrides:
+  single_node_tp:
+    tp: 1
