@@ -385,6 +385,82 @@ def parse_recipe(recipe_path: Path) -> dict | None:
         print(f"  Warning: failed to parse {recipe_path.name}: {e}")
         return None
 
+def _process_recipe_dir(
+    recipes_dir: Path,
+    index: dict[str, dict[str, list[dict]]],
+    hw_profiles: dict,
+    accelerator_brands: dict[str, str],
+    brands_seen: list[str],
+    taxonomy: dict,
+    vllm_version: str,
+) -> tuple[int, int, int]:
+    """Walk a directory of recipe YAMLs and add profiles to the index.
+    
+    Returns (parsed, skipped_min_version, skipped_other) counts.
+    """
+    recipe_files = sorted(recipes_dir.rglob("*.yaml"))
+    parsed = 0
+    skipped_min_version = 0
+    skipped_other = 0
+
+    for rp in recipe_files:
+        recipe = parse_recipe(rp)
+        if recipe is None:
+            continue
+
+        meta = recipe.get("meta", {})
+        model = recipe.get("model", {})
+
+        # Skip recipes without model_id
+        if not model.get("model_id"):
+            skipped_other += 1
+            continue
+
+        # Skip recipes below min vLLM version
+        min_vllm = model.get("min_vllm_version")
+        if min_vllm and parse_version(min_vllm) < parse_version(MIN_VLLM_VERSION):
+            skipped_min_version += 1
+            continue
+
+        vars: dict = recipe.get("variants", {})
+        if not vars:
+            vars = {"default": {}}
+
+        meta_hardware: dict[str, str] = meta.get("hardware", {})
+        hardware_list: list[str] = list(meta_hardware.keys())
+
+        parsed += 1
+
+        for acc_name in hardware_list:
+            if acc_name not in hw_profiles:
+                continue
+
+            brand = hw_profiles[acc_name]["brand"].lower()
+
+            for vkey, variant in vars.items():
+                entry = make_profile(
+                    recipe, acc_name, vkey, variant, brand,
+                    taxonomy, vllm_version,
+                )
+                hf_id = entry["huggingface_id"]
+                if hf_id not in index[acc_name]:
+                    index[acc_name][hf_id] = []
+                index[acc_name][hf_id].append(entry)
+
+        # Brand-level generic profiles — for ALL brands unconditionally
+        for brand_key in brands_seen:
+            for vkey, variant in vars.items():
+                entry = make_profile(
+                    recipe, brand_key, vkey, variant, brand_key,
+                    taxonomy, vllm_version,
+                )
+                hf_id = entry["huggingface_id"]
+                if hf_id not in index[brand_key]:
+                    index[brand_key][hf_id] = []
+                index[brand_key][hf_id].append(entry)
+
+    return parsed, skipped_min_version, skipped_other
+
 
 def main() -> int:
     print(f"TokenVisor Profile Generator")
@@ -399,6 +475,15 @@ def main() -> int:
     taxonomy = parse_taxonomy(taxonomy_path)
     hw_profiles: dict = taxonomy.get("hardware_profiles", {})
     print(f"  Taxonomy loaded: {len(hw_profiles)} hardware profiles")
+
+    # Merge local hardware profiles (workstation/consumer GPUs not in upstream)
+    local_tax_path = GENERATE_DIR / "taxonomy.yaml"
+    if local_tax_path.exists():
+        local_tax = parse_taxonomy(local_tax_path)
+        local_hw: dict = local_tax.get("hardware_profiles", {})
+        if local_hw:
+            hw_profiles.update(local_hw)
+            print(f"  Local taxonomy merged: {len(local_hw)} additional hardware profiles")
 
     # Build accelerator_brands map
     accelerator_brands: dict[str, str] = {}
@@ -430,8 +515,6 @@ def main() -> int:
         print(f"ERROR: models dir not found at {models_dir}")
         return 1
 
-    recipe_files = sorted(models_dir.rglob("*.yaml"))
-
     # Index: accelerator → huggingface_id → list[profile_entry]
     index: dict[str, dict[str, list[dict]]] = {}
 
@@ -444,72 +527,28 @@ def main() -> int:
     for acc in all_accelerators + brand_accelerators:
         index[acc] = {}
 
-    parsed = 0
-    skipped_min_version = 0
-    skipped_other = 0
+    total_parsed = 0
+    total_skipped_min_version = 0
+    total_skipped_other = 0
 
-    for rp in recipe_files:
-        recipe = parse_recipe(rp)
-        if recipe is None:
-            continue
+    recipe_dirs: list[tuple[Path, str]] = [
+        (models_dir, "upstream"),
+    ]
+    local_dir = GENERATE_DIR / "recipes"
+    if local_dir.exists():
+        recipe_dirs.append((local_dir, "local"))
 
-        meta = recipe.get("meta", {})
-        model = recipe.get("model", {})
+    for recipes_dir, label in recipe_dirs:
+        parsed, skipped_min, skipped_other = _process_recipe_dir(
+            recipes_dir, index, hw_profiles, accelerator_brands,
+            brands_seen, taxonomy, vllm_version,
+        )
+        total_parsed += parsed
+        total_skipped_min_version += skipped_min
+        total_skipped_other += skipped_other
+        print(f"  [{label}] Parsed: {parsed}, skipped (min vLLM): {skipped_min}, skipped (other): {skipped_other}")
 
-        # Skip recipes without model_id
-        if not model.get("model_id"):
-            skipped_other += 1
-            continue
 
-        # Skip recipes below min vLLM version
-        min_vllm = model.get("min_vllm_version")
-        if min_vllm and parse_version(min_vllm) < parse_version(MIN_VLLM_VERSION):
-            skipped_min_version += 1
-            continue
-
-        vars: dict = recipe.get("variants", {})
-        if not vars:
-            vars = {"default": {}}
-
-        meta_hardware: dict[str, str] = meta.get("hardware", {})
-        hardware_overrides: dict = recipe.get("hardware_overrides", {})
-        hardware_list: list[str] = list(meta_hardware.keys())
-
-        parsed += 1
-
-        for acc_name in hardware_list:
-            if acc_name not in hw_profiles:
-                continue
-
-            brand = hw_profiles[acc_name]["brand"].lower()
-            brand_key = brand  # e.g. "nvidia", "amd"
-
-            for vkey, variant in vars.items():
-                entry = make_profile(
-                    recipe, acc_name, vkey, variant, brand,
-                    taxonomy, vllm_version,
-                )
-
-                hf_id = entry["huggingface_id"]
-                if hf_id not in index[acc_name]:
-                    index[acc_name][hf_id] = []
-                index[acc_name][hf_id].append(entry)
-
-        # 2d. Brand-level generic profiles — for ALL brands unconditionally
-        for brand_key in brands_seen:
-            for vkey, variant in vars.items():
-                entry = make_profile(
-                    recipe, brand_key, vkey, variant, brand_key,
-                    taxonomy, vllm_version,
-                )
-                hf_id = entry["huggingface_id"]
-                if hf_id not in index[brand_key]:
-                    index[brand_key][hf_id] = []
-                index[brand_key][hf_id].append(entry)
-
-    print(f"  Parsed: {parsed} recipes")
-    print(f"  Skipped (min_vllm_version < {MIN_VLLM_VERSION}): {skipped_min_version}")
-    print(f"  Skipped (other): {skipped_other}")
 
     # 4. Apply overlays
     if OVERLAYS_PATH.exists():

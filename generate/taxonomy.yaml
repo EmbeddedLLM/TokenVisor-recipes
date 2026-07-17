@@ -1,0 +1,12 @@
+# Local hardware profiles — workstation / consumer GPUs not in upstream taxonomy.
+hardware_profiles:
+  rtxpro-6000-blackwell-server-edition:
+    brand: NVIDIA
+    generation: blackwell
+    display_name: "RTX PRO 6000 Blackwell Server Edition"
+    description: "NVIDIA RTX PRO 6000 Blackwell · 96 GB GDDR7 · single-GPU workstation/server card"
+    gpu_count: 1
+    vram_gb: 96
+    multi_node: false
+    scalable: false
+    restricted: true
