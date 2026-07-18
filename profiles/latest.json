@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-07-17T09:10:39.557213+00:00",
+  "generated_at": "2026-07-18T06:47:33.631507+00:00",
   "vllm_version": "0.25.1",
-  "vllm_recipes_sha": "5d1bf23",
+  "vllm_recipes_sha": "a7f27e6",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -5479,6 +5479,44 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "amd/Kimi-K2.5-MXFP4": [
+        {
+          "name": "Kimi-K2.5 (mxfp4)",
+          "huggingface_id": "amd/Kimi-K2.5-MXFP4",
+          "accelerators": "h200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--mm-encoder-tp-mode": "data",
+                "--tool-call-parser": "kimi_k2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "kimi_k2",
+                "--speculative-config": "{\"model\":\"lightseekorg/kimi-k2.5-eagle3-mla\",\"method\":\"eagle3\",\"num_speculative_tokens\":3}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--mm-encoder-tp-mode": "data",
+                "--tool-call-parser": "kimi_k2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "kimi_k2",
+                "--speculative-config": "{\"model\":\"lightseekorg/kimi-k2.5-eagle3-mla\",\"method\":\"eagle3\",\"num_speculative_tokens\":3}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
         }
       ],
       "moonshotai/Kimi-K2.6": [
@@ -10997,6 +11035,46 @@
           "variant_name": "nvfp4"
         }
       ],
+      "amd/Kimi-K2.5-MXFP4": [
+        {
+          "name": "Kimi-K2.5 (mxfp4)",
+          "huggingface_id": "amd/Kimi-K2.5-MXFP4",
+          "accelerators": "gb200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-config.use_trtllm_ragged_deepseek_prefill=True": "",
+                "--kv-cache-dtype": "fp8",
+                "--mm-encoder-tp-mode": "data",
+                "--tool-call-parser": "kimi_k2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "kimi_k2",
+                "--speculative-config": "{\"model\":\"lightseekorg/kimi-k2.5-eagle3-mla\",\"method\":\"eagle3\",\"num_speculative_tokens\":3}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-config.use_trtllm_ragged_deepseek_prefill=True": "",
+                "--kv-cache-dtype": "fp8",
+                "--mm-encoder-tp-mode": "data",
+                "--tool-call-parser": "kimi_k2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "kimi_k2",
+                "--speculative-config": "{\"model\":\"lightseekorg/kimi-k2.5-eagle3-mla\",\"method\":\"eagle3\",\"num_speculative_tokens\":3}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
+        }
+      ],
       "moonshotai/Kimi-K2.6": [
         {
           "name": "Kimi-K2.6",
@@ -15431,6 +15509,50 @@
           "variant_name": "nvfp4"
         }
       ],
+      "amd/Kimi-K2.5-MXFP4": [
+        {
+          "name": "Kimi-K2.5 (mxfp4)",
+          "huggingface_id": "amd/Kimi-K2.5-MXFP4",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--mm-encoder-tp-mode": "data",
+                "--tool-call-parser": "kimi_k2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "kimi_k2",
+                "--speculative-config": "{\"model\":\"lightseekorg/kimi-k2.5-eagle3-mla\",\"method\":\"eagle3\",\"num_speculative_tokens\":3}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--mm-encoder-tp-mode": "data",
+                "--tool-call-parser": "kimi_k2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "kimi_k2",
+                "--speculative-config": "{\"model\":\"lightseekorg/kimi-k2.5-eagle3-mla\",\"method\":\"eagle3\",\"num_speculative_tokens\":3}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
+        }
+      ],
       "moonshotai/Kimi-K2.6": [
         {
           "name": "Kimi-K2.6",
@@ -18586,6 +18708,50 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "amd/Kimi-K2.5-MXFP4": [
+        {
+          "name": "Kimi-K2.5 (mxfp4)",
+          "huggingface_id": "amd/Kimi-K2.5-MXFP4",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--mm-encoder-tp-mode": "data",
+                "--tool-call-parser": "kimi_k2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "kimi_k2",
+                "--speculative-config": "{\"model\":\"lightseekorg/kimi-k2.5-eagle3-mla\",\"method\":\"eagle3\",\"num_speculative_tokens\":3}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--mm-encoder-tp-mode": "data",
+                "--tool-call-parser": "kimi_k2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "kimi_k2",
+                "--speculative-config": "{\"model\":\"lightseekorg/kimi-k2.5-eagle3-mla\",\"method\":\"eagle3\",\"num_speculative_tokens\":3}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
         }
       ],
       "moonshotai/Kimi-K2.6": [
@@ -21772,6 +21938,50 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "amd/Kimi-K2.5-MXFP4": [
+        {
+          "name": "Kimi-K2.5 (mxfp4)",
+          "huggingface_id": "amd/Kimi-K2.5-MXFP4",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--mm-encoder-tp-mode": "data",
+                "--tool-call-parser": "kimi_k2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "kimi_k2",
+                "--speculative-config": "{\"model\":\"lightseekorg/kimi-k2.5-eagle3-mla\",\"method\":\"eagle3\",\"num_speculative_tokens\":3}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--mm-encoder-tp-mode": "data",
+                "--tool-call-parser": "kimi_k2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "kimi_k2",
+                "--speculative-config": "{\"model\":\"lightseekorg/kimi-k2.5-eagle3-mla\",\"method\":\"eagle3\",\"num_speculative_tokens\":3}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
         }
       ],
       "moonshotai/Kimi-K2.6": [
@@ -30265,6 +30475,50 @@
           "variant_name": "nvfp4"
         }
       ],
+      "amd/Kimi-K2.5-MXFP4": [
+        {
+          "name": "Kimi-K2.5 (mxfp4)",
+          "huggingface_id": "amd/Kimi-K2.5-MXFP4",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--mm-encoder-tp-mode": "data",
+                "--tool-call-parser": "kimi_k2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "kimi_k2",
+                "--speculative-config": "{\"model\":\"lightseekorg/kimi-k2.5-eagle3-mla\",\"method\":\"eagle3\",\"num_speculative_tokens\":3}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--mm-encoder-tp-mode": "data",
+                "--tool-call-parser": "kimi_k2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "kimi_k2",
+                "--speculative-config": "{\"model\":\"lightseekorg/kimi-k2.5-eagle3-mla\",\"method\":\"eagle3\",\"num_speculative_tokens\":3}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
+        }
+      ],
       "moonshotai/Kimi-K2.6": [
         {
           "name": "Kimi-K2.6",
@@ -38633,6 +38887,44 @@
           "variant_name": "nvfp4"
         }
       ],
+      "amd/Kimi-K2.5-MXFP4": [
+        {
+          "name": "Kimi-K2.5 (mxfp4)",
+          "huggingface_id": "amd/Kimi-K2.5-MXFP4",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--mm-encoder-tp-mode": "data",
+                "--tool-call-parser": "kimi_k2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "kimi_k2",
+                "--speculative-config": "{\"model\":\"lightseekorg/kimi-k2.5-eagle3-mla\",\"method\":\"eagle3\",\"num_speculative_tokens\":3}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--mm-encoder-tp-mode": "data",
+                "--tool-call-parser": "kimi_k2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "kimi_k2",
+                "--speculative-config": "{\"model\":\"lightseekorg/kimi-k2.5-eagle3-mla\",\"method\":\"eagle3\",\"num_speculative_tokens\":3}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
+        }
+      ],
       "moonshotai/Kimi-K2.6": [
         {
           "name": "Kimi-K2.6",
@@ -46801,6 +47093,44 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "amd/Kimi-K2.5-MXFP4": [
+        {
+          "name": "Kimi-K2.5 (mxfp4)",
+          "huggingface_id": "amd/Kimi-K2.5-MXFP4",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--mm-encoder-tp-mode": "data",
+                "--tool-call-parser": "kimi_k2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "kimi_k2",
+                "--speculative-config": "{\"model\":\"lightseekorg/kimi-k2.5-eagle3-mla\",\"method\":\"eagle3\",\"num_speculative_tokens\":3}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--mm-encoder-tp-mode": "data",
+                "--tool-call-parser": "kimi_k2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "kimi_k2",
+                "--speculative-config": "{\"model\":\"lightseekorg/kimi-k2.5-eagle3-mla\",\"method\":\"eagle3\",\"num_speculative_tokens\":3}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
         }
       ],
       "moonshotai/Kimi-K2.6": [
@@ -54975,6 +55305,44 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "amd/Kimi-K2.5-MXFP4": [
+        {
+          "name": "Kimi-K2.5 (mxfp4)",
+          "huggingface_id": "amd/Kimi-K2.5-MXFP4",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--mm-encoder-tp-mode": "data",
+                "--tool-call-parser": "kimi_k2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "kimi_k2",
+                "--speculative-config": "{\"model\":\"lightseekorg/kimi-k2.5-eagle3-mla\",\"method\":\"eagle3\",\"num_speculative_tokens\":3}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--mm-encoder-tp-mode": "data",
+                "--tool-call-parser": "kimi_k2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "kimi_k2",
+                "--speculative-config": "{\"model\":\"lightseekorg/kimi-k2.5-eagle3-mla\",\"method\":\"eagle3\",\"num_speculative_tokens\":3}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
         }
       ],
       "moonshotai/Kimi-K2.6": [
