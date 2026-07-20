@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-07-19T06:59:53.410265+00:00",
+  "generated_at": "2026-07-20T07:17:44.327381+00:00",
   "vllm_version": "0.25.1",
-  "vllm_recipes_sha": "a7f27e6",
+  "vllm_recipes_sha": "3b87742",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -8360,7 +8360,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -8375,7 +8374,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -8404,7 +8402,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -8419,7 +8416,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -8448,7 +8444,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -8462,7 +8457,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -8490,7 +8484,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -8504,7 +8497,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -8532,7 +8524,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -8546,7 +8537,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -10424,7 +10414,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -10439,7 +10428,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -10468,7 +10456,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -10483,7 +10470,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -10512,7 +10498,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -10526,7 +10511,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -10554,7 +10538,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -10568,7 +10551,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -10596,7 +10578,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -10610,7 +10591,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11352,7 +11332,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11367,7 +11346,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11396,7 +11374,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11411,7 +11388,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11440,7 +11416,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11454,7 +11429,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11482,7 +11456,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11496,7 +11469,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11524,7 +11496,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11538,7 +11509,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11850,7 +11820,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11865,7 +11834,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11894,7 +11862,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11909,7 +11876,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11938,7 +11904,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11952,7 +11917,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11980,7 +11944,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11994,7 +11957,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -12022,7 +11984,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -12036,7 +11997,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -12274,7 +12234,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -12289,7 +12248,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -12318,7 +12276,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -12333,7 +12290,6 @@
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
                 "--attention_config.use_fp4_indexer_cache=True": "",
-                "--moe-backend": "deep_gemm_mega_moe",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14629,6 +14585,308 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "424b_fp8"
+        }
+      ],
+      "deepseek-ai/DeepSeek-OCR": [
+        {
+          "name": "DeepSeek-OCR",
+          "huggingface_id": "deepseek-ai/DeepSeek-OCR",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--logits-processors": "vllm.model_executor.models.deepseek_ocr:NGramPerReqLogitsProcessor",
+                "--mm-processor-cache-gb": "0",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-R1": [
+        {
+          "name": "DeepSeek-R1",
+          "huggingface_id": "deepseek-ai/DeepSeek-R1",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "ghcr.io/embeddedllm/vllm-rocm:ubuntu22.04_rocm6.4.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekr1.jinja",
+                "--reasoning-parser": "deepseek_r1"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekr1.jinja",
+                "--reasoning-parser": "deepseek_r1"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default",
+          "extra_envs": {
+            "VLLM_RPC_TIMEOUT": "1800000",
+            "SAFETENSORS_FAST_GPU": "1"
+          }
+        }
+      ],
+      "deepseek-ai/DeepSeek-R1-0528": [
+        {
+          "name": "DeepSeek-R1 (r1_0528)",
+          "huggingface_id": "deepseek-ai/DeepSeek-R1-0528",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekr1.jinja",
+                "--reasoning-parser": "deepseek_r1"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekr1.jinja",
+                "--reasoning-parser": "deepseek_r1"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "r1_0528"
+        }
+      ],
+      "nvidia/DeepSeek-R1-0528-NVFP4-v2": [
+        {
+          "name": "DeepSeek-R1 (nvfp4)",
+          "huggingface_id": "nvidia/DeepSeek-R1-0528-NVFP4-v2",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekr1.jinja",
+                "--reasoning-parser": "deepseek_r1"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_USE_FLASHINFER_MOE_FP4": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekr1.jinja",
+                "--reasoning-parser": "deepseek_r1"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_USE_FLASHINFER_MOE_FP4": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V3.1": [
+        {
+          "name": "DeepSeek-V3.1",
+          "huggingface_id": "deepseek-ai/DeepSeek-V3.1",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v31",
+                "--chat-template": "examples/tool_chat_template_deepseekv31.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v31",
+                "--chat-template": "examples/tool_chat_template_deepseekv31.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "nvidia/DeepSeek-V3.1-NVFP4": [
+        {
+          "name": "DeepSeek-V3.1 (nvfp4)",
+          "huggingface_id": "nvidia/DeepSeek-V3.1-NVFP4",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v31",
+                "--chat-template": "examples/tool_chat_template_deepseekv31.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_USE_FLASHINFER_MOE_FP4": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v31",
+                "--chat-template": "examples/tool_chat_template_deepseekv31.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_USE_FLASHINFER_MOE_FP4": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V3.2-Exp": [
+        {
+          "name": "DeepSeek-V3.2-Exp",
+          "huggingface_id": "deepseek-ai/DeepSeek-V3.2-Exp",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--block-size": "1",
+                "--kv-cache-dtype": "bfloat16",
+                "--max-num-batched-tokens": "32768",
+                "--tokenizer-mode": "deepseek_v32",
+                "--tool-call-parser": "deepseek_v32",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_RPC_TIMEOUT": "18000000"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--block-size": "1",
+                "--kv-cache-dtype": "bfloat16",
+                "--max-num-batched-tokens": "32768",
+                "--tokenizer-mode": "deepseek_v32",
+                "--tool-call-parser": "deepseek_v32",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_RPC_TIMEOUT": "18000000"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
         }
       ],
       "deepseek-ai/DeepSeek-V3": [
@@ -18101,6 +18359,398 @@
           "variant_name": "424b_fp8"
         }
       ],
+      "deepseek-ai/DeepSeek-OCR": [
+        {
+          "name": "DeepSeek-OCR",
+          "huggingface_id": "deepseek-ai/DeepSeek-OCR",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--logits-processors": "vllm.model_executor.models.deepseek_ocr:NGramPerReqLogitsProcessor",
+                "--mm-processor-cache-gb": "0",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-R1": [
+        {
+          "name": "DeepSeek-R1",
+          "huggingface_id": "deepseek-ai/DeepSeek-R1",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekr1.jinja",
+                "--reasoning-parser": "deepseek_r1"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekr1.jinja",
+                "--reasoning-parser": "deepseek_r1"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default",
+          "extra_envs": {
+            "VLLM_RPC_TIMEOUT": "1800000"
+          }
+        }
+      ],
+      "deepseek-ai/DeepSeek-R1-0528": [
+        {
+          "name": "DeepSeek-R1 (r1_0528)",
+          "huggingface_id": "deepseek-ai/DeepSeek-R1-0528",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekr1.jinja",
+                "--reasoning-parser": "deepseek_r1"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekr1.jinja",
+                "--reasoning-parser": "deepseek_r1"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "r1_0528"
+        }
+      ],
+      "nvidia/DeepSeek-R1-0528-NVFP4-v2": [
+        {
+          "name": "DeepSeek-R1 (nvfp4)",
+          "huggingface_id": "nvidia/DeepSeek-R1-0528-NVFP4-v2",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekr1.jinja",
+                "--reasoning-parser": "deepseek_r1"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_USE_FLASHINFER_MOE_FP4": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekr1.jinja",
+                "--reasoning-parser": "deepseek_r1"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_USE_FLASHINFER_MOE_FP4": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V3.1": [
+        {
+          "name": "DeepSeek-V3.1",
+          "huggingface_id": "deepseek-ai/DeepSeek-V3.1",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v31",
+                "--chat-template": "examples/tool_chat_template_deepseekv31.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v31",
+                "--chat-template": "examples/tool_chat_template_deepseekv31.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "nvidia/DeepSeek-V3.1-NVFP4": [
+        {
+          "name": "DeepSeek-V3.1 (nvfp4)",
+          "huggingface_id": "nvidia/DeepSeek-V3.1-NVFP4",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v31",
+                "--chat-template": "examples/tool_chat_template_deepseekv31.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_USE_FLASHINFER_MOE_FP4": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v31",
+                "--chat-template": "examples/tool_chat_template_deepseekv31.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_USE_FLASHINFER_MOE_FP4": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V3.2-Exp": [
+        {
+          "name": "DeepSeek-V3.2-Exp",
+          "huggingface_id": "deepseek-ai/DeepSeek-V3.2-Exp",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--block-size": "1",
+                "--kv-cache-dtype": "bfloat16",
+                "--max-num-batched-tokens": "32768",
+                "--tokenizer-mode": "deepseek_v32",
+                "--tool-call-parser": "deepseek_v32",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_RPC_TIMEOUT": "18000000"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--block-size": "1",
+                "--kv-cache-dtype": "bfloat16",
+                "--max-num-batched-tokens": "32768",
+                "--tokenizer-mode": "deepseek_v32",
+                "--tool-call-parser": "deepseek_v32",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_RPC_TIMEOUT": "18000000"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V3": [
+        {
+          "name": "DeepSeek-V3",
+          "huggingface_id": "deepseek-ai/DeepSeek-V3",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekv3.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekv3.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default",
+          "extra_envs": {
+            "VLLM_RPC_TIMEOUT": "1800000"
+          }
+        }
+      ],
+      "nvidia/DeepSeek-V3-FP4": [
+        {
+          "name": "DeepSeek-V3 (fp4)",
+          "huggingface_id": "nvidia/DeepSeek-V3-FP4",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekv3.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_USE_FLASHINFER_MOE_FP4": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekv3.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_USE_FLASHINFER_MOE_FP4": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp4"
+        }
+      ],
       "deepseek-ai/DeepSeek-V4-Flash": [
         {
           "name": "DeepSeek-V4-Flash",
@@ -21238,6 +21888,307 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "424b_fp8"
+        }
+      ],
+      "deepseek-ai/DeepSeek-OCR": [
+        {
+          "name": "DeepSeek-OCR",
+          "huggingface_id": "deepseek-ai/DeepSeek-OCR",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--logits-processors": "vllm.model_executor.models.deepseek_ocr:NGramPerReqLogitsProcessor",
+                "--mm-processor-cache-gb": "0",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-R1": [
+        {
+          "name": "DeepSeek-R1",
+          "huggingface_id": "deepseek-ai/DeepSeek-R1",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekr1.jinja",
+                "--reasoning-parser": "deepseek_r1"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekr1.jinja",
+                "--reasoning-parser": "deepseek_r1"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default",
+          "extra_envs": {
+            "VLLM_RPC_TIMEOUT": "1800000"
+          }
+        }
+      ],
+      "deepseek-ai/DeepSeek-R1-0528": [
+        {
+          "name": "DeepSeek-R1 (r1_0528)",
+          "huggingface_id": "deepseek-ai/DeepSeek-R1-0528",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekr1.jinja",
+                "--reasoning-parser": "deepseek_r1"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekr1.jinja",
+                "--reasoning-parser": "deepseek_r1"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "r1_0528"
+        }
+      ],
+      "nvidia/DeepSeek-R1-0528-NVFP4-v2": [
+        {
+          "name": "DeepSeek-R1 (nvfp4)",
+          "huggingface_id": "nvidia/DeepSeek-R1-0528-NVFP4-v2",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekr1.jinja",
+                "--reasoning-parser": "deepseek_r1"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_USE_FLASHINFER_MOE_FP4": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v3",
+                "--chat-template": "examples/tool_chat_template_deepseekr1.jinja",
+                "--reasoning-parser": "deepseek_r1"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_USE_FLASHINFER_MOE_FP4": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V3.1": [
+        {
+          "name": "DeepSeek-V3.1",
+          "huggingface_id": "deepseek-ai/DeepSeek-V3.1",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v31",
+                "--chat-template": "examples/tool_chat_template_deepseekv31.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v31",
+                "--chat-template": "examples/tool_chat_template_deepseekv31.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "nvidia/DeepSeek-V3.1-NVFP4": [
+        {
+          "name": "DeepSeek-V3.1 (nvfp4)",
+          "huggingface_id": "nvidia/DeepSeek-V3.1-NVFP4",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v31",
+                "--chat-template": "examples/tool_chat_template_deepseekv31.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_USE_FLASHINFER_MOE_FP4": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-expert-parallel": "",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "deepseek_v31",
+                "--chat-template": "examples/tool_chat_template_deepseekv31.jinja",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_USE_FLASHINFER_MOE_FP4": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V3.2-Exp": [
+        {
+          "name": "DeepSeek-V3.2-Exp",
+          "huggingface_id": "deepseek-ai/DeepSeek-V3.2-Exp",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--block-size": "1",
+                "--kv-cache-dtype": "bfloat16",
+                "--max-num-batched-tokens": "32768",
+                "--tokenizer-mode": "deepseek_v32",
+                "--tool-call-parser": "deepseek_v32",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_RPC_TIMEOUT": "18000000"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--block-size": "1",
+                "--kv-cache-dtype": "bfloat16",
+                "--max-num-batched-tokens": "32768",
+                "--tokenizer-mode": "deepseek_v32",
+                "--tool-call-parser": "deepseek_v32",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "SAFETENSORS_FAST_GPU": "1",
+                "VLLM_RPC_TIMEOUT": "18000000"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
         }
       ],
       "deepseek-ai/DeepSeek-V3": [
@@ -28386,8 +29337,7 @@
             "latency-focus": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--logits_processors": "vllm.model_executor.models.deepseek_ocr:NGramPerReqLogitsProcessor",
-                "--no-enable-prefix-caching": "",
+                "--logits-processors": "vllm.model_executor.models.deepseek_ocr:NGramPerReqLogitsProcessor",
                 "--mm-processor-cache-gb": "0",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -28640,7 +29590,6 @@
                 "--trust-remote-code": "",
                 "--block-size": "1",
                 "--kv-cache-dtype": "bfloat16",
-                "--no-enable-prefix-caching": "",
                 "--max-num-batched-tokens": "32768",
                 "--tokenizer-mode": "deepseek_v32",
                 "--tool-call-parser": "deepseek_v32",
@@ -28659,7 +29608,6 @@
                 "--trust-remote-code": "",
                 "--block-size": "1",
                 "--kv-cache-dtype": "bfloat16",
-                "--no-enable-prefix-caching": "",
                 "--max-num-batched-tokens": "32768",
                 "--tokenizer-mode": "deepseek_v32",
                 "--tool-call-parser": "deepseek_v32",
@@ -37086,8 +38034,7 @@
             "latency-focus": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--logits_processors": "vllm.model_executor.models.deepseek_ocr:NGramPerReqLogitsProcessor",
-                "--no-enable-prefix-caching": "",
+                "--logits-processors": "vllm.model_executor.models.deepseek_ocr:NGramPerReqLogitsProcessor",
                 "--mm-processor-cache-gb": "0",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -45294,8 +46241,7 @@
             "latency-focus": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--logits_processors": "vllm.model_executor.models.deepseek_ocr:NGramPerReqLogitsProcessor",
-                "--no-enable-prefix-caching": "",
+                "--logits-processors": "vllm.model_executor.models.deepseek_ocr:NGramPerReqLogitsProcessor",
                 "--mm-processor-cache-gb": "0",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -53506,8 +54452,7 @@
             "latency-focus": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--logits_processors": "vllm.model_executor.models.deepseek_ocr:NGramPerReqLogitsProcessor",
-                "--no-enable-prefix-caching": "",
+                "--logits-processors": "vllm.model_executor.models.deepseek_ocr:NGramPerReqLogitsProcessor",
                 "--mm-processor-cache-gb": "0",
                 "--mm-encoder-tp-mode": "data"
               },
