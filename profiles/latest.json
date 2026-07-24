@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-07-23T06:59:57.230435+00:00",
+  "generated_at": "2026-07-24T07:00:31.980221+00:00",
   "vllm_version": "0.25.1",
-  "vllm_recipes_sha": "6ae22de",
+  "vllm_recipes_sha": "8b1005a",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -10068,6 +10068,38 @@
           "variant_name": "default"
         }
       ],
+      "amd/GLM-5.2-MXFP4": [
+        {
+          "name": "GLM-5.2 (mxfp4)",
+          "huggingface_id": "amd/GLM-5.2-MXFP4",
+          "accelerators": "b200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
+        }
+      ],
       "nvidia/GLM-5.2-NVFP4": [
         {
           "name": "GLM-5.2 (nvfp4)",
@@ -11793,6 +11825,38 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "amd/GLM-5.2-MXFP4": [
+        {
+          "name": "GLM-5.2 (mxfp4)",
+          "huggingface_id": "amd/GLM-5.2-MXFP4",
+          "accelerators": "b300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
         }
       ],
       "nvidia/GLM-5.2-NVFP4": [
@@ -17262,6 +17326,48 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "amd/GLM-5.2-MXFP4": [
+        {
+          "name": "GLM-5.2 (mxfp4)",
+          "huggingface_id": "amd/GLM-5.2-MXFP4",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
         }
       ],
       "nvidia/GLM-5.2-NVFP4": [
@@ -24414,6 +24520,48 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "amd/GLM-5.2-MXFP4": [
+        {
+          "name": "GLM-5.2 (mxfp4)",
+          "huggingface_id": "amd/GLM-5.2-MXFP4",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
         }
       ],
       "nvidia/GLM-5.2-NVFP4": [
@@ -35069,6 +35217,48 @@
           "variant_name": "default"
         }
       ],
+      "amd/GLM-5.2-MXFP4": [
+        {
+          "name": "GLM-5.2 (mxfp4)",
+          "huggingface_id": "amd/GLM-5.2-MXFP4",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
+        }
+      ],
       "nvidia/GLM-5.2-NVFP4": [
         {
           "name": "GLM-5.2 (nvfp4)",
@@ -43458,6 +43648,38 @@
           "variant_name": "default"
         }
       ],
+      "amd/GLM-5.2-MXFP4": [
+        {
+          "name": "GLM-5.2 (mxfp4)",
+          "huggingface_id": "amd/GLM-5.2-MXFP4",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
+        }
+      ],
       "nvidia/GLM-5.2-NVFP4": [
         {
           "name": "GLM-5.2 (nvfp4)",
@@ -51825,6 +52047,38 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "amd/GLM-5.2-MXFP4": [
+        {
+          "name": "GLM-5.2 (mxfp4)",
+          "huggingface_id": "amd/GLM-5.2-MXFP4",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
         }
       ],
       "nvidia/GLM-5.2-NVFP4": [
@@ -60198,6 +60452,38 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "amd/GLM-5.2-MXFP4": [
+        {
+          "name": "GLM-5.2 (mxfp4)",
+          "huggingface_id": "amd/GLM-5.2-MXFP4",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.25.1",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
         }
       ],
       "nvidia/GLM-5.2-NVFP4": [
