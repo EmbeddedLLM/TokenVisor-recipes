@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-07-24T07:00:31.980221+00:00",
+  "generated_at": "2026-07-25T06:55:29.903894+00:00",
   "vllm_version": "0.25.1",
-  "vllm_recipes_sha": "8b1005a",
+  "vllm_recipes_sha": "5c3b63b",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -16818,6 +16818,7 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "ROCM_AITER_FA",
                 "--tool-call-parser": "hy_v3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v3",
@@ -16828,11 +16829,13 @@
                 "VLLM_ROCM_USE_AITER_MOE": "0",
                 "VLLM_ROCM_USE_AITER_MHA": "1",
                 "VLLM_ROCM_USE_AITER_RMSNORM": "1",
-                "VLLM_ROCM_USE_AITER_LINEAR": "1"
+                "VLLM_ROCM_USE_AITER_LINEAR": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
               }
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "ROCM_AITER_FA",
                 "--tool-call-parser": "hy_v3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v3",
@@ -16844,7 +16847,8 @@
                 "VLLM_ROCM_USE_AITER_MOE": "0",
                 "VLLM_ROCM_USE_AITER_MHA": "1",
                 "VLLM_ROCM_USE_AITER_RMSNORM": "1",
-                "VLLM_ROCM_USE_AITER_LINEAR": "1"
+                "VLLM_ROCM_USE_AITER_LINEAR": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
               }
             }
           },
@@ -16862,6 +16866,7 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "ROCM_AITER_FA",
                 "--tool-call-parser": "hy_v3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v3",
@@ -16872,11 +16877,13 @@
                 "VLLM_ROCM_USE_AITER_MOE": "0",
                 "VLLM_ROCM_USE_AITER_MHA": "1",
                 "VLLM_ROCM_USE_AITER_RMSNORM": "1",
-                "VLLM_ROCM_USE_AITER_LINEAR": "1"
+                "VLLM_ROCM_USE_AITER_LINEAR": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
               }
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "ROCM_AITER_FA",
                 "--tool-call-parser": "hy_v3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v3",
@@ -16888,7 +16895,8 @@
                 "VLLM_ROCM_USE_AITER_MOE": "0",
                 "VLLM_ROCM_USE_AITER_MHA": "1",
                 "VLLM_ROCM_USE_AITER_RMSNORM": "1",
-                "VLLM_ROCM_USE_AITER_LINEAR": "1"
+                "VLLM_ROCM_USE_AITER_LINEAR": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
               }
             }
           },
@@ -16906,6 +16914,7 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "ROCM_AITER_FA",
                 "--tool-call-parser": "hy_v3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v3",
@@ -16916,11 +16925,13 @@
                 "VLLM_ROCM_USE_AITER_MOE": "0",
                 "VLLM_ROCM_USE_AITER_MHA": "1",
                 "VLLM_ROCM_USE_AITER_RMSNORM": "1",
-                "VLLM_ROCM_USE_AITER_LINEAR": "1"
+                "VLLM_ROCM_USE_AITER_LINEAR": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
               }
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "ROCM_AITER_FA",
                 "--tool-call-parser": "hy_v3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v3",
@@ -16932,7 +16943,8 @@
                 "VLLM_ROCM_USE_AITER_MOE": "0",
                 "VLLM_ROCM_USE_AITER_MHA": "1",
                 "VLLM_ROCM_USE_AITER_RMSNORM": "1",
-                "VLLM_ROCM_USE_AITER_LINEAR": "1"
+                "VLLM_ROCM_USE_AITER_LINEAR": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
               }
             }
           },
@@ -24012,6 +24024,7 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "ROCM_AITER_FA",
                 "--tool-call-parser": "hy_v3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v3",
@@ -24022,11 +24035,13 @@
                 "VLLM_ROCM_USE_AITER_MOE": "0",
                 "VLLM_ROCM_USE_AITER_MHA": "1",
                 "VLLM_ROCM_USE_AITER_RMSNORM": "1",
-                "VLLM_ROCM_USE_AITER_LINEAR": "1"
+                "VLLM_ROCM_USE_AITER_LINEAR": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
               }
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "ROCM_AITER_FA",
                 "--tool-call-parser": "hy_v3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v3",
@@ -24038,7 +24053,8 @@
                 "VLLM_ROCM_USE_AITER_MOE": "0",
                 "VLLM_ROCM_USE_AITER_MHA": "1",
                 "VLLM_ROCM_USE_AITER_RMSNORM": "1",
-                "VLLM_ROCM_USE_AITER_LINEAR": "1"
+                "VLLM_ROCM_USE_AITER_LINEAR": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
               }
             }
           },
@@ -24056,6 +24072,7 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "ROCM_AITER_FA",
                 "--tool-call-parser": "hy_v3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v3",
@@ -24066,11 +24083,13 @@
                 "VLLM_ROCM_USE_AITER_MOE": "0",
                 "VLLM_ROCM_USE_AITER_MHA": "1",
                 "VLLM_ROCM_USE_AITER_RMSNORM": "1",
-                "VLLM_ROCM_USE_AITER_LINEAR": "1"
+                "VLLM_ROCM_USE_AITER_LINEAR": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
               }
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "ROCM_AITER_FA",
                 "--tool-call-parser": "hy_v3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v3",
@@ -24082,7 +24101,8 @@
                 "VLLM_ROCM_USE_AITER_MOE": "0",
                 "VLLM_ROCM_USE_AITER_MHA": "1",
                 "VLLM_ROCM_USE_AITER_RMSNORM": "1",
-                "VLLM_ROCM_USE_AITER_LINEAR": "1"
+                "VLLM_ROCM_USE_AITER_LINEAR": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
               }
             }
           },
@@ -24100,6 +24120,7 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "ROCM_AITER_FA",
                 "--tool-call-parser": "hy_v3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v3",
@@ -24110,11 +24131,13 @@
                 "VLLM_ROCM_USE_AITER_MOE": "0",
                 "VLLM_ROCM_USE_AITER_MHA": "1",
                 "VLLM_ROCM_USE_AITER_RMSNORM": "1",
-                "VLLM_ROCM_USE_AITER_LINEAR": "1"
+                "VLLM_ROCM_USE_AITER_LINEAR": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
               }
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "ROCM_AITER_FA",
                 "--tool-call-parser": "hy_v3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v3",
@@ -24126,7 +24149,8 @@
                 "VLLM_ROCM_USE_AITER_MOE": "0",
                 "VLLM_ROCM_USE_AITER_MHA": "1",
                 "VLLM_ROCM_USE_AITER_RMSNORM": "1",
-                "VLLM_ROCM_USE_AITER_LINEAR": "1"
+                "VLLM_ROCM_USE_AITER_LINEAR": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
               }
             }
           },
@@ -34407,6 +34431,7 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "ROCM_AITER_FA",
                 "--tool-call-parser": "hy_v3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v3",
@@ -34417,11 +34442,13 @@
                 "VLLM_ROCM_USE_AITER_MOE": "0",
                 "VLLM_ROCM_USE_AITER_MHA": "1",
                 "VLLM_ROCM_USE_AITER_RMSNORM": "1",
-                "VLLM_ROCM_USE_AITER_LINEAR": "1"
+                "VLLM_ROCM_USE_AITER_LINEAR": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
               }
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "ROCM_AITER_FA",
                 "--tool-call-parser": "hy_v3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v3",
@@ -34433,7 +34460,8 @@
                 "VLLM_ROCM_USE_AITER_MOE": "0",
                 "VLLM_ROCM_USE_AITER_MHA": "1",
                 "VLLM_ROCM_USE_AITER_RMSNORM": "1",
-                "VLLM_ROCM_USE_AITER_LINEAR": "1"
+                "VLLM_ROCM_USE_AITER_LINEAR": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
               }
             }
           },
@@ -34451,6 +34479,7 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "ROCM_AITER_FA",
                 "--tool-call-parser": "hy_v3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v3",
@@ -34461,11 +34490,13 @@
                 "VLLM_ROCM_USE_AITER_MOE": "0",
                 "VLLM_ROCM_USE_AITER_MHA": "1",
                 "VLLM_ROCM_USE_AITER_RMSNORM": "1",
-                "VLLM_ROCM_USE_AITER_LINEAR": "1"
+                "VLLM_ROCM_USE_AITER_LINEAR": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
               }
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "ROCM_AITER_FA",
                 "--tool-call-parser": "hy_v3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v3",
@@ -34477,7 +34508,8 @@
                 "VLLM_ROCM_USE_AITER_MOE": "0",
                 "VLLM_ROCM_USE_AITER_MHA": "1",
                 "VLLM_ROCM_USE_AITER_RMSNORM": "1",
-                "VLLM_ROCM_USE_AITER_LINEAR": "1"
+                "VLLM_ROCM_USE_AITER_LINEAR": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
               }
             }
           },
@@ -34495,6 +34527,7 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "ROCM_AITER_FA",
                 "--tool-call-parser": "hy_v3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v3",
@@ -34505,11 +34538,13 @@
                 "VLLM_ROCM_USE_AITER_MOE": "0",
                 "VLLM_ROCM_USE_AITER_MHA": "1",
                 "VLLM_ROCM_USE_AITER_RMSNORM": "1",
-                "VLLM_ROCM_USE_AITER_LINEAR": "1"
+                "VLLM_ROCM_USE_AITER_LINEAR": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
               }
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "ROCM_AITER_FA",
                 "--tool-call-parser": "hy_v3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v3",
@@ -34521,7 +34556,8 @@
                 "VLLM_ROCM_USE_AITER_MOE": "0",
                 "VLLM_ROCM_USE_AITER_MHA": "1",
                 "VLLM_ROCM_USE_AITER_RMSNORM": "1",
-                "VLLM_ROCM_USE_AITER_LINEAR": "1"
+                "VLLM_ROCM_USE_AITER_LINEAR": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
               }
             }
           },
