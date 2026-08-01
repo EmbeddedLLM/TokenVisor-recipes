@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-07-31T07:09:52.471521+00:00",
+  "generated_at": "2026-08-01T06:58:50.629810+00:00",
   "vllm_version": "0.26.0",
-  "vllm_recipes_sha": "7783b00",
+  "vllm_recipes_sha": "47f5be7",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -4876,9 +4876,47 @@
           "variant_name": "fp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4-Flash": [
+      "deepseek-ai/DeepSeek-V4-Flash-0731": [
         {
           "name": "DeepSeek-V4-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+          "accelerators": "h200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash": [
+        {
+          "name": "DeepSeek-V4-Flash (fp8)",
           "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash",
           "accelerators": "h200",
           "provider": "vllm",
@@ -4892,8 +4930,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {}
             },
@@ -4906,14 +4943,13 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
-          "variant_name": "default"
+          "variant_name": "fp8"
         }
       ],
       "nvidia/DeepSeek-V4-Flash-NVFP4": [
@@ -4932,8 +4968,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {}
             },
@@ -4946,7 +4981,6 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -4954,6 +4988,44 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash-DSpark": [
+        {
+          "name": "DeepSeek-V4-Flash (dspark)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-DSpark",
+          "accelerators": "h200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "dspark"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Pro": [
@@ -8682,9 +8754,49 @@
           "variant_name": "fp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4-Flash": [
+      "deepseek-ai/DeepSeek-V4-Flash-0731": [
         {
           "name": "DeepSeek-V4-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+          "accelerators": "b200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash": [
+        {
+          "name": "DeepSeek-V4-Flash (fp8)",
           "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash",
           "accelerators": "b200",
           "provider": "vllm",
@@ -8699,8 +8811,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {}
             },
@@ -8714,14 +8825,13 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
-          "variant_name": "default"
+          "variant_name": "fp8"
         }
       ],
       "nvidia/DeepSeek-V4-Flash-NVFP4": [
@@ -8741,8 +8851,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {}
             },
@@ -8756,7 +8865,6 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -8764,6 +8872,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash-DSpark": [
+        {
+          "name": "DeepSeek-V4-Flash (dspark)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-DSpark",
+          "accelerators": "b200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "dspark"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Pro": [
@@ -10816,9 +10964,49 @@
           "variant_name": "fp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4-Flash": [
+      "deepseek-ai/DeepSeek-V4-Flash-0731": [
         {
           "name": "DeepSeek-V4-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+          "accelerators": "gb200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash": [
+        {
+          "name": "DeepSeek-V4-Flash (fp8)",
           "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash",
           "accelerators": "gb200",
           "provider": "vllm",
@@ -10833,8 +11021,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {}
             },
@@ -10848,14 +11035,13 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
-          "variant_name": "default"
+          "variant_name": "fp8"
         }
       ],
       "nvidia/DeepSeek-V4-Flash-NVFP4": [
@@ -10875,8 +11061,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {}
             },
@@ -10890,7 +11075,6 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -10898,6 +11082,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash-DSpark": [
+        {
+          "name": "DeepSeek-V4-Flash (dspark)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-DSpark",
+          "accelerators": "gb200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "dspark"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Pro": [
@@ -11798,9 +12022,49 @@
       ]
     },
     "b300": {
-      "deepseek-ai/DeepSeek-V4-Flash": [
+      "deepseek-ai/DeepSeek-V4-Flash-0731": [
         {
           "name": "DeepSeek-V4-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+          "accelerators": "b300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash": [
+        {
+          "name": "DeepSeek-V4-Flash (fp8)",
           "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash",
           "accelerators": "b300",
           "provider": "vllm",
@@ -11815,8 +12079,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {}
             },
@@ -11830,14 +12093,13 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
-          "variant_name": "default"
+          "variant_name": "fp8"
         }
       ],
       "nvidia/DeepSeek-V4-Flash-NVFP4": [
@@ -11857,8 +12119,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {}
             },
@@ -11872,7 +12133,6 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -11880,6 +12140,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash-DSpark": [
+        {
+          "name": "DeepSeek-V4-Flash (dspark)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-DSpark",
+          "accelerators": "b300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "dspark"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Pro": [
@@ -12430,9 +12730,49 @@
       ]
     },
     "gb300": {
-      "deepseek-ai/DeepSeek-V4-Flash": [
+      "deepseek-ai/DeepSeek-V4-Flash-0731": [
         {
           "name": "DeepSeek-V4-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+          "accelerators": "gb300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash": [
+        {
+          "name": "DeepSeek-V4-Flash (fp8)",
           "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash",
           "accelerators": "gb300",
           "provider": "vllm",
@@ -12447,8 +12787,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {}
             },
@@ -12462,14 +12801,13 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
-          "variant_name": "default"
+          "variant_name": "fp8"
         }
       ],
       "nvidia/DeepSeek-V4-Flash-NVFP4": [
@@ -12489,8 +12827,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {}
             },
@@ -12504,7 +12841,6 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -12512,6 +12848,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash-DSpark": [
+        {
+          "name": "DeepSeek-V4-Flash (dspark)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-DSpark",
+          "accelerators": "gb300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "dspark"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Pro": [
@@ -13127,9 +13503,49 @@
           "variant_name": "nvfp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4-Flash": [
+      "deepseek-ai/DeepSeek-V4-Flash-0731": [
         {
           "name": "DeepSeek-V4-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+          "accelerators": "dgx_station_gb300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash": [
+        {
+          "name": "DeepSeek-V4-Flash (fp8)",
           "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash",
           "accelerators": "dgx_station_gb300",
           "provider": "vllm",
@@ -13144,8 +13560,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {}
             },
@@ -13159,14 +13574,13 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
-          "variant_name": "default"
+          "variant_name": "fp8"
         }
       ],
       "nvidia/DeepSeek-V4-Flash-NVFP4": [
@@ -13186,8 +13600,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {}
             },
@@ -13201,7 +13614,6 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -13209,6 +13621,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash-DSpark": [
+        {
+          "name": "DeepSeek-V4-Flash (dspark)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-DSpark",
+          "accelerators": "dgx_station_gb300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "dspark"
         }
       ],
       "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16": [
@@ -16793,10 +17245,10 @@
           "variant_name": "fp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4-Flash": [
+      "deepseek-ai/DeepSeek-V4-Flash-0731": [
         {
           "name": "DeepSeek-V4-Flash",
-          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
           "accelerators": "mi300x",
           "provider": "vllm_amd",
           "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
@@ -16814,8 +17266,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1"
@@ -16835,7 +17286,6 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -16845,6 +17295,58 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash": [
+        {
+          "name": "DeepSeek-V4-Flash (fp8)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.9",
+                "--max-num-seqs": "512",
+                "--max-num-batched-tokens": "8192",
+                "--compilation-config": "{\"mode\": 3, \"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.9",
+                "--max-num-seqs": "512",
+                "--max-num-batched-tokens": "8192",
+                "--compilation-config": "{\"mode\": 3, \"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
         }
       ],
       "nvidia/DeepSeek-V4-Flash-NVFP4": [
@@ -16868,8 +17370,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1"
@@ -16889,7 +17390,6 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -16899,6 +17399,58 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash-DSpark": [
+        {
+          "name": "DeepSeek-V4-Flash (dspark)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-DSpark",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.9",
+                "--max-num-seqs": "512",
+                "--max-num-batched-tokens": "8192",
+                "--compilation-config": "{\"mode\": 3, \"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.9",
+                "--max-num-seqs": "512",
+                "--max-num-batched-tokens": "8192",
+                "--compilation-config": "{\"mode\": 3, \"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "dspark"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Pro": [
@@ -20836,10 +21388,10 @@
           "variant_name": "fp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4-Flash": [
+      "deepseek-ai/DeepSeek-V4-Flash-0731": [
         {
           "name": "DeepSeek-V4-Flash",
-          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
           "accelerators": "mi325x",
           "provider": "vllm_amd",
           "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
@@ -20857,8 +21409,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1"
@@ -20878,7 +21429,6 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -20888,6 +21438,58 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash": [
+        {
+          "name": "DeepSeek-V4-Flash (fp8)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.9",
+                "--max-num-seqs": "512",
+                "--max-num-batched-tokens": "8192",
+                "--compilation-config": "{\"mode\": 3, \"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.9",
+                "--max-num-seqs": "512",
+                "--max-num-batched-tokens": "8192",
+                "--compilation-config": "{\"mode\": 3, \"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
         }
       ],
       "nvidia/DeepSeek-V4-Flash-NVFP4": [
@@ -20911,8 +21513,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1"
@@ -20932,7 +21533,6 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -20942,6 +21542,58 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash-DSpark": [
+        {
+          "name": "DeepSeek-V4-Flash (dspark)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-DSpark",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.9",
+                "--max-num-seqs": "512",
+                "--max-num-batched-tokens": "8192",
+                "--compilation-config": "{\"mode\": 3, \"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.9",
+                "--max-num-seqs": "512",
+                "--max-num-batched-tokens": "8192",
+                "--compilation-config": "{\"mode\": 3, \"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "dspark"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Pro": [
@@ -24566,10 +25218,10 @@
           "variant_name": "fp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4-Flash": [
+      "deepseek-ai/DeepSeek-V4-Flash-0731": [
         {
           "name": "DeepSeek-V4-Flash",
-          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
           "accelerators": "mi355x",
           "provider": "vllm_amd",
           "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
@@ -24587,8 +25239,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1"
@@ -24608,7 +25259,6 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -24618,6 +25268,58 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash": [
+        {
+          "name": "DeepSeek-V4-Flash (fp8)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.9",
+                "--max-num-seqs": "512",
+                "--max-num-batched-tokens": "8192",
+                "--compilation-config": "{\"mode\": 3, \"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.9",
+                "--max-num-seqs": "512",
+                "--max-num-batched-tokens": "8192",
+                "--compilation-config": "{\"mode\": 3, \"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
         }
       ],
       "nvidia/DeepSeek-V4-Flash-NVFP4": [
@@ -24641,8 +25343,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1"
@@ -24662,7 +25363,6 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -24672,6 +25372,58 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash-DSpark": [
+        {
+          "name": "DeepSeek-V4-Flash (dspark)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-DSpark",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.9",
+                "--max-num-seqs": "512",
+                "--max-num-batched-tokens": "8192",
+                "--compilation-config": "{\"mode\": 3, \"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.9",
+                "--max-num-seqs": "512",
+                "--max-num-batched-tokens": "8192",
+                "--compilation-config": "{\"mode\": 3, \"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "dspark"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Pro": [
@@ -32613,10 +33365,10 @@
           "variant_name": "fp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4-Flash": [
+      "deepseek-ai/DeepSeek-V4-Flash-0731": [
         {
           "name": "DeepSeek-V4-Flash",
-          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
           "accelerators": "amd",
           "provider": "vllm_amd",
           "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
@@ -32634,8 +33386,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1"
@@ -32655,7 +33406,6 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -32665,6 +33415,58 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash": [
+        {
+          "name": "DeepSeek-V4-Flash (fp8)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.9",
+                "--max-num-seqs": "512",
+                "--max-num-batched-tokens": "8192",
+                "--compilation-config": "{\"mode\": 3, \"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.9",
+                "--max-num-seqs": "512",
+                "--max-num-batched-tokens": "8192",
+                "--compilation-config": "{\"mode\": 3, \"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
         }
       ],
       "nvidia/DeepSeek-V4-Flash-NVFP4": [
@@ -32688,8 +33490,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1"
@@ -32709,7 +33510,6 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -32719,6 +33519,58 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash-DSpark": [
+        {
+          "name": "DeepSeek-V4-Flash (dspark)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-DSpark",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.9",
+                "--max-num-seqs": "512",
+                "--max-num-batched-tokens": "8192",
+                "--compilation-config": "{\"mode\": 3, \"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.9",
+                "--max-num-seqs": "512",
+                "--max-num-batched-tokens": "8192",
+                "--compilation-config": "{\"mode\": 3, \"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "dspark"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Pro": [
@@ -41771,9 +42623,47 @@
           "variant_name": "fp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4-Flash": [
+      "deepseek-ai/DeepSeek-V4-Flash-0731": [
         {
           "name": "DeepSeek-V4-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash": [
+        {
+          "name": "DeepSeek-V4-Flash (fp8)",
           "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash",
           "accelerators": "google",
           "provider": "vllm",
@@ -41787,8 +42677,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {}
             },
@@ -41801,14 +42690,13 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
-          "variant_name": "default"
+          "variant_name": "fp8"
         }
       ],
       "nvidia/DeepSeek-V4-Flash-NVFP4": [
@@ -41827,8 +42715,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {}
             },
@@ -41841,7 +42728,6 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -41849,6 +42735,44 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash-DSpark": [
+        {
+          "name": "DeepSeek-V4-Flash (dspark)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-DSpark",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "dspark"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Pro": [
@@ -50436,9 +51360,47 @@
           "variant_name": "fp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4-Flash": [
+      "deepseek-ai/DeepSeek-V4-Flash-0731": [
         {
           "name": "DeepSeek-V4-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash": [
+        {
+          "name": "DeepSeek-V4-Flash (fp8)",
           "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash",
           "accelerators": "intel",
           "provider": "vllm",
@@ -50452,8 +51414,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {}
             },
@@ -50466,14 +51427,13 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
-          "variant_name": "default"
+          "variant_name": "fp8"
         }
       ],
       "nvidia/DeepSeek-V4-Flash-NVFP4": [
@@ -50492,8 +51452,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {}
             },
@@ -50506,7 +51465,6 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -50514,6 +51472,44 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash-DSpark": [
+        {
+          "name": "DeepSeek-V4-Flash (dspark)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-DSpark",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "dspark"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Pro": [
@@ -59105,9 +60101,47 @@
           "variant_name": "fp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4-Flash": [
+      "deepseek-ai/DeepSeek-V4-Flash-0731": [
         {
           "name": "DeepSeek-V4-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash": [
+        {
+          "name": "DeepSeek-V4-Flash (fp8)",
           "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash",
           "accelerators": "nvidia",
           "provider": "vllm",
@@ -59121,8 +60155,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {}
             },
@@ -59135,14 +60168,13 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
-          "variant_name": "default"
+          "variant_name": "fp8"
         }
       ],
       "nvidia/DeepSeek-V4-Flash-NVFP4": [
@@ -59161,8 +60193,7 @@
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+                "--reasoning-parser": "deepseek_v4"
               },
               "extra_envs": {}
             },
@@ -59175,7 +60206,6 @@
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "deepseek_v4",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":2}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -59183,6 +60213,44 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash-DSpark": [
+        {
+          "name": "DeepSeek-V4-Flash (dspark)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-DSpark",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "dspark"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Pro": [
