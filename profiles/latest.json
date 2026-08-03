@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-08-02T07:01:57.466347+00:00",
+  "generated_at": "2026-08-03T07:20:35.061151+00:00",
   "vllm_version": "0.26.0",
-  "vllm_recipes_sha": "f53c5ef",
+  "vllm_recipes_sha": "82bae24",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -2049,8 +2049,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -2059,8 +2060,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -2083,8 +2085,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -2093,8 +2096,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -2116,8 +2120,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -2125,8 +2130,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -2148,8 +2154,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -2157,8 +2164,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -6178,8 +6186,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -6188,8 +6197,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -6212,8 +6222,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -6222,8 +6233,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -6245,8 +6257,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -6254,8 +6267,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -6277,8 +6291,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -6286,8 +6301,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -9342,7 +9358,7 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TRTLLM_RAGGED\"}",
                 "--enable-prefix-caching": "",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -9365,7 +9381,7 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TRTLLM_RAGGED\"}",
                 "--enable-prefix-caching": "",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -9449,8 +9465,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -9459,8 +9476,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -9483,8 +9501,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -9493,8 +9512,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -9516,8 +9536,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -9525,8 +9546,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -9548,8 +9570,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -9557,8 +9580,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -10631,6 +10655,38 @@
       ]
     },
     "gb200": {
+      "MiniMaxAI/MiniMax-H3": [
+        {
+          "name": "MiniMax-H3",
+          "huggingface_id": "MiniMaxAI/MiniMax-H3",
+          "accelerators": "gb200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--host": "0.0.0.0",
+                "--port": "8000",
+                "--num-gpus": "4",
+                "--usp": "4",
+                "--ring": "1",
+                "--vae-patch-parallel-size": "4",
+                "--vae-parallel-mode": "tile",
+                "--vae-use-tiling": "",
+                "--diffusion-attention-backend": "FLASH_ATTN"
+              },
+              "extra_envs": {
+                "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
+                "VLLM_OMNI_VIDEO_SYNC_TIMEOUT": "1800",
+                "FLASHINFER_DISABLE_VERSION_CHECK": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
       "Qwen/Qwen3.5-397B-A17B": [
         {
           "name": "Qwen3.5-397B",
@@ -11797,7 +11853,7 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TRTLLM_RAGGED\"}",
                 "--enable-prefix-caching": "",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -11820,7 +11876,7 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TRTLLM_RAGGED\"}",
                 "--enable-prefix-caching": "",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -12022,6 +12078,38 @@
       ]
     },
     "b300": {
+      "MiniMaxAI/MiniMax-H3": [
+        {
+          "name": "MiniMax-H3",
+          "huggingface_id": "MiniMaxAI/MiniMax-H3",
+          "accelerators": "b300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--host": "0.0.0.0",
+                "--port": "8000",
+                "--num-gpus": "4",
+                "--usp": "4",
+                "--ring": "1",
+                "--vae-patch-parallel-size": "4",
+                "--vae-parallel-mode": "tile",
+                "--vae-use-tiling": "",
+                "--diffusion-attention-backend": "FLASH_ATTN"
+              },
+              "extra_envs": {
+                "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
+                "VLLM_OMNI_VIDEO_SYNC_TIMEOUT": "1800",
+                "FLASHINFER_DISABLE_VERSION_CHECK": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
       "deepseek-ai/DeepSeek-V4-Flash-0731": [
         {
           "name": "DeepSeek-V4-Flash",
@@ -12490,7 +12578,7 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TRTLLM_RAGGED\"}",
                 "--enable-prefix-caching": "",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -12513,7 +12601,7 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TRTLLM_RAGGED\"}",
                 "--enable-prefix-caching": "",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -13026,7 +13114,7 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TRTLLM_RAGGED\"}",
                 "--enable-prefix-caching": "",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -13049,7 +13137,7 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TRTLLM_RAGGED\"}",
                 "--enable-prefix-caching": "",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -13246,6 +13334,148 @@
       ]
     },
     "dgx_station_gb300": {
+      "google/gemma-4-26B-A4B-it": [
+        {
+          "name": "Gemma 4 26B-A4B IT",
+          "huggingface_id": "google/gemma-4-26B-A4B-it",
+          "accelerators": "dgx_station_gb300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "RedHatAI/gemma-4-26B-A4B-it-FP8-dynamic": [
+        {
+          "name": "Gemma 4 26B-A4B IT (fp8)",
+          "huggingface_id": "RedHatAI/gemma-4-26B-A4B-it-FP8-dynamic",
+          "accelerators": "dgx_station_gb300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "RedHatAI/gemma-4-26B-A4B-it-NVFP4": [
+        {
+          "name": "Gemma 4 26B-A4B IT (nvfp4)",
+          "huggingface_id": "RedHatAI/gemma-4-26B-A4B-it-NVFP4",
+          "accelerators": "dgx_station_gb300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "nvidia/Gemma-4-26B-A4B-NVFP4": [
+        {
+          "name": "Gemma 4 26B-A4B IT (nvidia_nvfp4)",
+          "huggingface_id": "nvidia/Gemma-4-26B-A4B-NVFP4",
+          "accelerators": "dgx_station_gb300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvidia_nvfp4"
+        }
+      ],
       "MiniMaxAI/MiniMax-M2.7": [
         {
           "name": "MiniMax-M2.7",
@@ -13676,8 +13906,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -13686,8 +13917,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -13710,8 +13942,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -13720,8 +13953,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -13743,8 +13977,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -13752,8 +13987,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -13775,8 +14011,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -13784,8 +14021,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -14394,8 +14632,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -14404,8 +14643,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -14428,8 +14668,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -14438,8 +14679,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -14461,8 +14703,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -14470,8 +14713,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -14493,8 +14737,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -14502,8 +14747,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -14515,6 +14761,148 @@
       ]
     },
     "rtx_pro_6000": {
+      "google/gemma-4-26B-A4B-it": [
+        {
+          "name": "Gemma 4 26B-A4B IT",
+          "huggingface_id": "google/gemma-4-26B-A4B-it",
+          "accelerators": "rtx_pro_6000",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "RedHatAI/gemma-4-26B-A4B-it-FP8-dynamic": [
+        {
+          "name": "Gemma 4 26B-A4B IT (fp8)",
+          "huggingface_id": "RedHatAI/gemma-4-26B-A4B-it-FP8-dynamic",
+          "accelerators": "rtx_pro_6000",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "RedHatAI/gemma-4-26B-A4B-it-NVFP4": [
+        {
+          "name": "Gemma 4 26B-A4B IT (nvfp4)",
+          "huggingface_id": "RedHatAI/gemma-4-26B-A4B-it-NVFP4",
+          "accelerators": "rtx_pro_6000",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "nvidia/Gemma-4-26B-A4B-NVFP4": [
+        {
+          "name": "Gemma 4 26B-A4B IT (nvidia_nvfp4)",
+          "huggingface_id": "nvidia/Gemma-4-26B-A4B-NVFP4",
+          "accelerators": "rtx_pro_6000",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvidia_nvfp4"
+        }
+      ],
       "Qwen/Qwen3.6-27B": [
         {
           "name": "Qwen3.6-27B",
@@ -14715,8 +15103,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -14725,8 +15114,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -14749,8 +15139,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -14759,8 +15150,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -14782,8 +15174,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -14791,8 +15184,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -14814,8 +15208,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -14823,8 +15218,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -14836,6 +15232,148 @@
       ]
     },
     "rtx_5090": {
+      "google/gemma-4-26B-A4B-it": [
+        {
+          "name": "Gemma 4 26B-A4B IT",
+          "huggingface_id": "google/gemma-4-26B-A4B-it",
+          "accelerators": "rtx_5090",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "RedHatAI/gemma-4-26B-A4B-it-FP8-dynamic": [
+        {
+          "name": "Gemma 4 26B-A4B IT (fp8)",
+          "huggingface_id": "RedHatAI/gemma-4-26B-A4B-it-FP8-dynamic",
+          "accelerators": "rtx_5090",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "RedHatAI/gemma-4-26B-A4B-it-NVFP4": [
+        {
+          "name": "Gemma 4 26B-A4B IT (nvfp4)",
+          "huggingface_id": "RedHatAI/gemma-4-26B-A4B-it-NVFP4",
+          "accelerators": "rtx_5090",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "nvidia/Gemma-4-26B-A4B-NVFP4": [
+        {
+          "name": "Gemma 4 26B-A4B IT (nvidia_nvfp4)",
+          "huggingface_id": "nvidia/Gemma-4-26B-A4B-NVFP4",
+          "accelerators": "rtx_5090",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvidia_nvfp4"
+        }
+      ],
       "Qwen/Qwen3.6-27B": [
         {
           "name": "Qwen3.6-27B",
@@ -15445,6 +15983,38 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "mobile"
+        }
+      ],
+      "MiniMaxAI/MiniMax-H3": [
+        {
+          "name": "MiniMax-H3",
+          "huggingface_id": "MiniMaxAI/MiniMax-H3",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--host": "0.0.0.0",
+                "--port": "8000",
+                "--num-gpus": "4",
+                "--usp": "4",
+                "--ring": "1",
+                "--vae-patch-parallel-size": "4",
+                "--vae-parallel-mode": "tile",
+                "--vae-use-tiling": "",
+                "--diffusion-attention-backend": "FLASH_ATTN"
+              },
+              "extra_envs": {
+                "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
+                "VLLM_OMNI_VIDEO_SYNC_TIMEOUT": "1800",
+                "FLASHINFER_DISABLE_VERSION_CHECK": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
         }
       ],
       "MiniMaxAI/MiniMax-M2.1": [
@@ -19819,6 +20389,38 @@
           "variant_name": "mobile"
         }
       ],
+      "MiniMaxAI/MiniMax-H3": [
+        {
+          "name": "MiniMax-H3",
+          "huggingface_id": "MiniMaxAI/MiniMax-H3",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--host": "0.0.0.0",
+                "--port": "8000",
+                "--num-gpus": "4",
+                "--usp": "4",
+                "--ring": "1",
+                "--vae-patch-parallel-size": "4",
+                "--vae-parallel-mode": "tile",
+                "--vae-use-tiling": "",
+                "--diffusion-attention-backend": "FLASH_ATTN"
+              },
+              "extra_envs": {
+                "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
+                "VLLM_OMNI_VIDEO_SYNC_TIMEOUT": "1800",
+                "FLASHINFER_DISABLE_VERSION_CHECK": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
       "MiniMaxAI/MiniMax-M2.1": [
         {
           "name": "MiniMax-M2.1",
@@ -23471,6 +24073,38 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "mobile"
+        }
+      ],
+      "MiniMaxAI/MiniMax-H3": [
+        {
+          "name": "MiniMax-H3",
+          "huggingface_id": "MiniMaxAI/MiniMax-H3",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--host": "0.0.0.0",
+                "--port": "8000",
+                "--num-gpus": "4",
+                "--usp": "4",
+                "--ring": "1",
+                "--vae-patch-parallel-size": "4",
+                "--vae-parallel-mode": "tile",
+                "--vae-use-tiling": "",
+                "--diffusion-attention-backend": "FLASH_ATTN"
+              },
+              "extra_envs": {
+                "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
+                "VLLM_OMNI_VIDEO_SYNC_TIMEOUT": "1800",
+                "FLASHINFER_DISABLE_VERSION_CHECK": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
         }
       ],
       "MiniMaxAI/MiniMax-M2.1": [
@@ -28490,6 +29124,142 @@
       ]
     },
     "xeon6": {
+      "google/diffusiongemma-26B-A4B-it": [
+        {
+          "name": "DiffusionGemma 26B-A4B IT",
+          "huggingface_id": "google/diffusiongemma-26B-A4B-it",
+          "accelerators": "xeon6",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--max-num-seqs": "4",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--max-num-seqs": "4",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "RedHatAI/diffusiongemma-26B-A4B-it-FP8-dynamic": [
+        {
+          "name": "DiffusionGemma 26B-A4B IT (fp8)",
+          "huggingface_id": "RedHatAI/diffusiongemma-26B-A4B-it-FP8-dynamic",
+          "accelerators": "xeon6",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--max-num-seqs": "4",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--max-num-seqs": "4",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "RedHatAI/diffusiongemma-26B-A4B-it-NVFP4": [
+        {
+          "name": "DiffusionGemma 26B-A4B IT (nvfp4)",
+          "huggingface_id": "RedHatAI/diffusiongemma-26B-A4B-it-NVFP4",
+          "accelerators": "xeon6",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--max-num-seqs": "4",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--max-num-seqs": "4",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "nvidia/diffusiongemma-26B-A4B-it-NVFP4": [
+        {
+          "name": "DiffusionGemma 26B-A4B IT (nvidia_nvfp4)",
+          "huggingface_id": "nvidia/diffusiongemma-26B-A4B-it-NVFP4",
+          "accelerators": "xeon6",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--max-num-seqs": "4",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--max-num-seqs": "4",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvidia_nvfp4"
+        }
+      ],
       "google/gemma-4-26B-A4B-it": [
         {
           "name": "Gemma 4 26B-A4B IT",
@@ -30213,6 +30983,38 @@
             "latency-focus": {
               "extra_args": {},
               "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "MiniMaxAI/MiniMax-H3": [
+        {
+          "name": "MiniMax-H3",
+          "huggingface_id": "MiniMaxAI/MiniMax-H3",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--host": "0.0.0.0",
+                "--port": "8000",
+                "--num-gpus": "4",
+                "--usp": "4",
+                "--ring": "1",
+                "--vae-patch-parallel-size": "4",
+                "--vae-parallel-mode": "tile",
+                "--vae-use-tiling": "",
+                "--diffusion-attention-backend": "FLASH_ATTN"
+              },
+              "extra_envs": {
+                "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
+                "VLLM_OMNI_VIDEO_SYNC_TIMEOUT": "1800",
+                "FLASHINFER_DISABLE_VERSION_CHECK": "1"
+              }
             }
           },
           "default_strategy": "latency-focus",
@@ -35675,8 +36477,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -35685,8 +36488,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -35709,8 +36513,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -35719,8 +36524,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -35742,8 +36548,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -35751,8 +36558,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -35774,8 +36582,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -35783,8 +36592,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -39753,6 +40563,38 @@
           "variant_name": "default"
         }
       ],
+      "MiniMaxAI/MiniMax-H3": [
+        {
+          "name": "MiniMax-H3",
+          "huggingface_id": "MiniMaxAI/MiniMax-H3",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--host": "0.0.0.0",
+                "--port": "8000",
+                "--num-gpus": "4",
+                "--usp": "4",
+                "--ring": "1",
+                "--vae-patch-parallel-size": "4",
+                "--vae-parallel-mode": "tile",
+                "--vae-use-tiling": "",
+                "--diffusion-attention-backend": "FLASH_ATTN"
+              },
+              "extra_envs": {
+                "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
+                "VLLM_OMNI_VIDEO_SYNC_TIMEOUT": "1800",
+                "FLASHINFER_DISABLE_VERSION_CHECK": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
       "MiniMaxAI/MiniMax-M2.1": [
         {
           "name": "MiniMax-M2.1",
@@ -44634,8 +45476,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -44644,8 +45487,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -44668,8 +45512,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -44678,8 +45523,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -44701,8 +45547,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -44710,8 +45557,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -44733,8 +45581,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -44742,8 +45591,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -48490,6 +49340,38 @@
           "variant_name": "default"
         }
       ],
+      "MiniMaxAI/MiniMax-H3": [
+        {
+          "name": "MiniMax-H3",
+          "huggingface_id": "MiniMaxAI/MiniMax-H3",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--host": "0.0.0.0",
+                "--port": "8000",
+                "--num-gpus": "4",
+                "--usp": "4",
+                "--ring": "1",
+                "--vae-patch-parallel-size": "4",
+                "--vae-parallel-mode": "tile",
+                "--vae-use-tiling": "",
+                "--diffusion-attention-backend": "FLASH_ATTN"
+              },
+              "extra_envs": {
+                "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
+                "VLLM_OMNI_VIDEO_SYNC_TIMEOUT": "1800",
+                "FLASHINFER_DISABLE_VERSION_CHECK": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
       "MiniMaxAI/MiniMax-M2.1": [
         {
           "name": "MiniMax-M2.1",
@@ -53371,8 +54253,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -53381,8 +54264,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -53405,8 +54289,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -53415,8 +54300,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -53438,8 +54324,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -53447,8 +54334,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -53470,8 +54358,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -53479,8 +54368,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -57227,6 +58117,38 @@
           "variant_name": "default"
         }
       ],
+      "MiniMaxAI/MiniMax-H3": [
+        {
+          "name": "MiniMax-H3",
+          "huggingface_id": "MiniMaxAI/MiniMax-H3",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--host": "0.0.0.0",
+                "--port": "8000",
+                "--num-gpus": "4",
+                "--usp": "4",
+                "--ring": "1",
+                "--vae-patch-parallel-size": "4",
+                "--vae-parallel-mode": "tile",
+                "--vae-use-tiling": "",
+                "--diffusion-attention-backend": "FLASH_ATTN"
+              },
+              "extra_envs": {
+                "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
+                "VLLM_OMNI_VIDEO_SYNC_TIMEOUT": "1800",
+                "FLASHINFER_DISABLE_VERSION_CHECK": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
       "MiniMaxAI/MiniMax-M2.1": [
         {
           "name": "MiniMax-M2.1",
@@ -62112,8 +63034,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -62122,8 +63045,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -62146,8 +63070,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -62156,8 +63081,9 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -62179,8 +63105,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -62188,8 +63115,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -62211,8 +63139,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
-                "--reasoning-parser": "nemotron_v3"
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
               "extra_envs": {}
             },
@@ -62220,8 +63149,9 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_coder",
+                "--tool-call-parser": "qwen3_xml",
                 "--reasoning-parser": "nemotron_v3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
