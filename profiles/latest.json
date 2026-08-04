@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-08-03T07:20:35.061151+00:00",
+  "generated_at": "2026-08-04T07:02:08.229749+00:00",
   "vllm_version": "0.26.0",
-  "vllm_recipes_sha": "82bae24",
+  "vllm_recipes_sha": "2635d69",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -3684,6 +3684,7 @@
                 "--block-size": "128",
                 "--trust-remote-code": "",
                 "--attention_config.indexer_kv_dtype": "fp8",
+                "--attention_config.minimax_m3_msa_decode_backend": "cutlass",
                 "--tool-call-parser": "minimax_m3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "minimax_m3"
@@ -3697,6 +3698,7 @@
                 "--block-size": "128",
                 "--trust-remote-code": "",
                 "--attention_config.indexer_kv_dtype": "fp8",
+                "--attention_config.minimax_m3_msa_decode_backend": "cutlass",
                 "--tool-call-parser": "minimax_m3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "minimax_m3",
@@ -8424,6 +8426,7 @@
                 "--block-size": "128",
                 "--trust-remote-code": "",
                 "--attention_config.indexer_kv_dtype": "fp8",
+                "--attention_config.minimax_m3_msa_decode_backend": "cutlass",
                 "--tool-call-parser": "minimax_m3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "minimax_m3"
@@ -8437,6 +8440,7 @@
                 "--block-size": "128",
                 "--trust-remote-code": "",
                 "--attention_config.indexer_kv_dtype": "fp8",
+                "--attention_config.minimax_m3_msa_decode_backend": "cutlass",
                 "--tool-call-parser": "minimax_m3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "minimax_m3",
@@ -16004,12 +16008,13 @@
                 "--vae-patch-parallel-size": "4",
                 "--vae-parallel-mode": "tile",
                 "--vae-use-tiling": "",
-                "--diffusion-attention-backend": "FLASH_ATTN"
+                "--diffusion-attention-backend": "FLASH_ATTN",
+                "--text-encoder-tp-size": "4"
               },
               "extra_envs": {
                 "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
                 "VLLM_OMNI_VIDEO_SYNC_TIMEOUT": "1800",
-                "FLASHINFER_DISABLE_VERSION_CHECK": "1"
+                "VLLM_ROCM_USE_AITER": "1"
               }
             }
           },
@@ -16409,6 +16414,7 @@
                 "--attention-backend": "TRITON_ATTN",
                 "--trust-remote-code": "",
                 "--attention_config.indexer_kv_dtype": "fp8",
+                "--attention_config.minimax_m3_msa_decode_backend": "cutlass",
                 "--tool-call-parser": "minimax_m3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "minimax_m3"
@@ -16426,6 +16432,7 @@
                 "--attention-backend": "TRITON_ATTN",
                 "--trust-remote-code": "",
                 "--attention_config.indexer_kv_dtype": "fp8",
+                "--attention_config.minimax_m3_msa_decode_backend": "cutlass",
                 "--tool-call-parser": "minimax_m3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "minimax_m3",
@@ -20408,12 +20415,13 @@
                 "--vae-patch-parallel-size": "4",
                 "--vae-parallel-mode": "tile",
                 "--vae-use-tiling": "",
-                "--diffusion-attention-backend": "FLASH_ATTN"
+                "--diffusion-attention-backend": "FLASH_ATTN",
+                "--text-encoder-tp-size": "4"
               },
               "extra_envs": {
                 "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
                 "VLLM_OMNI_VIDEO_SYNC_TIMEOUT": "1800",
-                "FLASHINFER_DISABLE_VERSION_CHECK": "1"
+                "VLLM_ROCM_USE_AITER": "1"
               }
             }
           },
@@ -24094,12 +24102,13 @@
                 "--vae-patch-parallel-size": "4",
                 "--vae-parallel-mode": "tile",
                 "--vae-use-tiling": "",
-                "--diffusion-attention-backend": "FLASH_ATTN"
+                "--diffusion-attention-backend": "FLASH_ATTN",
+                "--text-encoder-tp-size": "4"
               },
               "extra_envs": {
                 "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
                 "VLLM_OMNI_VIDEO_SYNC_TIMEOUT": "1800",
-                "FLASHINFER_DISABLE_VERSION_CHECK": "1"
+                "VLLM_ROCM_USE_AITER": "1"
               }
             }
           },
@@ -24499,6 +24508,7 @@
                 "--attention-backend": "TRITON_ATTN",
                 "--trust-remote-code": "",
                 "--attention_config.indexer_kv_dtype": "fp8",
+                "--attention_config.minimax_m3_msa_decode_backend": "cutlass",
                 "--tool-call-parser": "minimax_m3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "minimax_m3"
@@ -24516,6 +24526,7 @@
                 "--attention-backend": "TRITON_ATTN",
                 "--trust-remote-code": "",
                 "--attention_config.indexer_kv_dtype": "fp8",
+                "--attention_config.minimax_m3_msa_decode_backend": "cutlass",
                 "--tool-call-parser": "minimax_m3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "minimax_m3",
@@ -26761,6 +26772,7 @@
                 "--max-num-seqs": "128",
                 "--reasoning-parser": "kimi_k3",
                 "--max-num-batched-tokens": "4096",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\",\"custom_ops\":[\"+fused_rms_norm_gated\"]}",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
                 "--speculative-config": "{\"model\":\"Inferact/Kimi-K3-DSpark\", \"num_speculative_tokens\":7, \"method\": \"dspark\", \"attention_backend\": \"FLASHINFER_MLA\", \"draft_sample_method\": \"probabilistic\", \"rejection_sample_method\": \"block\"}"
@@ -26783,6 +26795,7 @@
                 "--max-num-seqs": "128",
                 "--reasoning-parser": "kimi_k3",
                 "--max-num-batched-tokens": "4096",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\",\"custom_ops\":[\"+fused_rms_norm_gated\"]}",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
                 "--speculative-config": "{\"model\":\"Inferact/Kimi-K3-DSpark\", \"num_speculative_tokens\":7, \"method\": \"dspark\", \"attention_backend\": \"FLASHINFER_MLA\", \"draft_sample_method\": \"probabilistic\", \"rejection_sample_method\": \"block\"}",
@@ -31008,12 +31021,13 @@
                 "--vae-patch-parallel-size": "4",
                 "--vae-parallel-mode": "tile",
                 "--vae-use-tiling": "",
-                "--diffusion-attention-backend": "FLASH_ATTN"
+                "--diffusion-attention-backend": "FLASH_ATTN",
+                "--text-encoder-tp-size": "4"
               },
               "extra_envs": {
                 "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
                 "VLLM_OMNI_VIDEO_SYNC_TIMEOUT": "1800",
-                "FLASHINFER_DISABLE_VERSION_CHECK": "1"
+                "VLLM_ROCM_USE_AITER": "1"
               }
             }
           },
@@ -31413,6 +31427,7 @@
                 "--attention-backend": "TRITON_ATTN",
                 "--trust-remote-code": "",
                 "--attention_config.indexer_kv_dtype": "fp8",
+                "--attention_config.minimax_m3_msa_decode_backend": "cutlass",
                 "--tool-call-parser": "minimax_m3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "minimax_m3"
@@ -31430,6 +31445,7 @@
                 "--attention-backend": "TRITON_ATTN",
                 "--trust-remote-code": "",
                 "--attention_config.indexer_kv_dtype": "fp8",
+                "--attention_config.minimax_m3_msa_decode_backend": "cutlass",
                 "--tool-call-parser": "minimax_m3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "minimax_m3",
@@ -36170,6 +36186,7 @@
                 "--max-num-seqs": "128",
                 "--reasoning-parser": "kimi_k3",
                 "--max-num-batched-tokens": "4096",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\",\"custom_ops\":[\"+fused_rms_norm_gated\"]}",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
                 "--speculative-config": "{\"model\":\"Inferact/Kimi-K3-DSpark\", \"num_speculative_tokens\":7, \"method\": \"dspark\", \"attention_backend\": \"FLASHINFER_MLA\", \"draft_sample_method\": \"probabilistic\", \"rejection_sample_method\": \"block\"}"
@@ -36192,6 +36209,7 @@
                 "--max-num-seqs": "128",
                 "--reasoning-parser": "kimi_k3",
                 "--max-num-batched-tokens": "4096",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\",\"custom_ops\":[\"+fused_rms_norm_gated\"]}",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
                 "--speculative-config": "{\"model\":\"Inferact/Kimi-K3-DSpark\", \"num_speculative_tokens\":7, \"method\": \"dspark\", \"attention_backend\": \"FLASHINFER_MLA\", \"draft_sample_method\": \"probabilistic\", \"rejection_sample_method\": \"block\"}",
@@ -40586,8 +40604,7 @@
               },
               "extra_envs": {
                 "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
-                "VLLM_OMNI_VIDEO_SYNC_TIMEOUT": "1800",
-                "FLASHINFER_DISABLE_VERSION_CHECK": "1"
+                "VLLM_OMNI_VIDEO_SYNC_TIMEOUT": "1800"
               }
             }
           },
@@ -40916,6 +40933,7 @@
                 "--block-size": "128",
                 "--trust-remote-code": "",
                 "--attention_config.indexer_kv_dtype": "fp8",
+                "--attention_config.minimax_m3_msa_decode_backend": "cutlass",
                 "--tool-call-parser": "minimax_m3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "minimax_m3"
@@ -40929,6 +40947,7 @@
                 "--block-size": "128",
                 "--trust-remote-code": "",
                 "--attention_config.indexer_kv_dtype": "fp8",
+                "--attention_config.minimax_m3_msa_decode_backend": "cutlass",
                 "--tool-call-parser": "minimax_m3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "minimax_m3",
@@ -49363,8 +49382,7 @@
               },
               "extra_envs": {
                 "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
-                "VLLM_OMNI_VIDEO_SYNC_TIMEOUT": "1800",
-                "FLASHINFER_DISABLE_VERSION_CHECK": "1"
+                "VLLM_OMNI_VIDEO_SYNC_TIMEOUT": "1800"
               }
             }
           },
@@ -49693,6 +49711,7 @@
                 "--block-size": "128",
                 "--trust-remote-code": "",
                 "--attention_config.indexer_kv_dtype": "fp8",
+                "--attention_config.minimax_m3_msa_decode_backend": "cutlass",
                 "--tool-call-parser": "minimax_m3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "minimax_m3"
@@ -49706,6 +49725,7 @@
                 "--block-size": "128",
                 "--trust-remote-code": "",
                 "--attention_config.indexer_kv_dtype": "fp8",
+                "--attention_config.minimax_m3_msa_decode_backend": "cutlass",
                 "--tool-call-parser": "minimax_m3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "minimax_m3",
@@ -58140,8 +58160,7 @@
               },
               "extra_envs": {
                 "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
-                "VLLM_OMNI_VIDEO_SYNC_TIMEOUT": "1800",
-                "FLASHINFER_DISABLE_VERSION_CHECK": "1"
+                "VLLM_OMNI_VIDEO_SYNC_TIMEOUT": "1800"
               }
             }
           },
@@ -58474,6 +58493,7 @@
                 "--block-size": "128",
                 "--trust-remote-code": "",
                 "--attention_config.indexer_kv_dtype": "fp8",
+                "--attention_config.minimax_m3_msa_decode_backend": "cutlass",
                 "--tool-call-parser": "minimax_m3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "minimax_m3"
@@ -58487,6 +58507,7 @@
                 "--block-size": "128",
                 "--trust-remote-code": "",
                 "--attention_config.indexer_kv_dtype": "fp8",
+                "--attention_config.minimax_m3_msa_decode_backend": "cutlass",
                 "--tool-call-parser": "minimax_m3",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "minimax_m3",
