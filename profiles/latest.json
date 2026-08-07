@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-08-06T07:03:30.926648+00:00",
+  "generated_at": "2026-08-07T06:31:28.606344+00:00",
   "vllm_version": "0.26.0",
-  "vllm_recipes_sha": "3323577",
+  "vllm_recipes_sha": "689d6b9",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -14,6 +14,7 @@
     "dgx_spark_gb10": "nvidia",
     "rtx_pro_6000": "nvidia",
     "rtx_pro_6000_2x": "nvidia",
+    "rtx_pro_6000_8x": "nvidia",
     "rtx_5090": "nvidia",
     "rtx_4090_2x": "nvidia",
     "rtx_5090_2x": "nvidia",
@@ -7473,6 +7474,46 @@
           "variant_name": "default"
         }
       ],
+      "lightseekorg/Inkling-MXFP4": [
+        {
+          "name": "TML Inkling (mxfp4)",
+          "huggingface_id": "lightseekorg/Inkling-MXFP4",
+          "accelerators": "h200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":8}"
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":8}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
+        }
+      ],
       "thinkingmachines/Inkling": [
         {
           "name": "TML Inkling (bf16)",
@@ -8866,7 +8907,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -8879,7 +8920,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -8906,7 +8947,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -8919,7 +8960,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -8946,7 +8987,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -8959,7 +9000,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -8986,7 +9027,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -8999,7 +9040,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -10554,6 +10595,46 @@
           "variant_name": "default"
         }
       ],
+      "lightseekorg/Inkling-MXFP4": [
+        {
+          "name": "TML Inkling (mxfp4)",
+          "huggingface_id": "lightseekorg/Inkling-MXFP4",
+          "accelerators": "b200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":8}"
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":8}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
+        }
+      ],
       "thinkingmachines/Inkling": [
         {
           "name": "TML Inkling (bf16)",
@@ -11172,7 +11253,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11185,7 +11266,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11212,7 +11293,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11225,7 +11306,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11252,7 +11333,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11265,7 +11346,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11292,7 +11373,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11305,7 +11386,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -12161,6 +12242,46 @@
           "variant_name": "default"
         }
       ],
+      "lightseekorg/Inkling-MXFP4": [
+        {
+          "name": "TML Inkling (mxfp4)",
+          "huggingface_id": "lightseekorg/Inkling-MXFP4",
+          "accelerators": "gb200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":8}"
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":8}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
+        }
+      ],
       "thinkingmachines/Inkling": [
         {
           "name": "TML Inkling (bf16)",
@@ -12466,7 +12587,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -12479,7 +12600,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -12506,7 +12627,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -12519,7 +12640,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -12546,7 +12667,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -12559,7 +12680,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -12586,7 +12707,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -12599,7 +12720,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -13230,7 +13351,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -13243,7 +13364,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -13270,7 +13391,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -13283,7 +13404,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -13310,7 +13431,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -13323,7 +13444,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -13350,7 +13471,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -13363,7 +13484,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14201,7 +14322,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14214,7 +14335,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14241,7 +14362,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14254,7 +14375,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14281,7 +14402,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14294,7 +14415,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14321,7 +14442,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14334,7 +14455,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.use_fp4_indexer_cache": "True",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -15687,6 +15808,38 @@
       ]
     },
     "rtx_pro_6000_2x": {
+      "MiniMaxAI/MiniMax-H3": [
+        {
+          "name": "MiniMax-H3",
+          "huggingface_id": "MiniMaxAI/MiniMax-H3",
+          "accelerators": "rtx_pro_6000_2x",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--host": "0.0.0.0",
+                "--port": "8000",
+                "--num-gpus": "4",
+                "--usp": "4",
+                "--ring": "1",
+                "--vae-patch-parallel-size": "4",
+                "--vae-parallel-mode": "tile",
+                "--vae-use-tiling": "",
+                "--diffusion-attention-backend": "FLASH_ATTN"
+              },
+              "extra_envs": {
+                "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
+                "VLLM_OMNI_VIDEO_SYNC_TIMEOUT": "1800",
+                "FLASHINFER_DISABLE_VERSION_CHECK": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
       "MiniMaxAI/MiniMax-M2.7": [
         {
           "name": "MiniMax-M2.7",
@@ -15755,6 +15908,168 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ]
+    },
+    "rtx_pro_6000_8x": {
+      "deepseek-ai/DeepSeek-V4-Flash-0731": [
+        {
+          "name": "DeepSeek-V4-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+          "accelerators": "rtx_pro_6000_8x",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache": "True",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache": "True",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash": [
+        {
+          "name": "DeepSeek-V4-Flash (fp8)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash",
+          "accelerators": "rtx_pro_6000_8x",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache": "True",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache": "True",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "nvidia/DeepSeek-V4-Flash-NVFP4": [
+        {
+          "name": "DeepSeek-V4-Flash (nvfp4)",
+          "huggingface_id": "nvidia/DeepSeek-V4-Flash-NVFP4",
+          "accelerators": "rtx_pro_6000_8x",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache": "True",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache": "True",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash-DSpark": [
+        {
+          "name": "DeepSeek-V4-Flash (dspark)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-DSpark",
+          "accelerators": "rtx_pro_6000_8x",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache": "True",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--attention_config.use_fp4_indexer_cache": "True",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "dspark"
         }
       ]
     },
@@ -19989,6 +20304,46 @@
           "variant_name": "default"
         }
       ],
+      "EmbeddedLLM/Inkling-Small-MXFP4": [
+        {
+          "name": "TML Inkling-Small (mxfp4)",
+          "huggingface_id": "EmbeddedLLM/Inkling-Small-MXFP4",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
+        }
+      ],
       "thinkingmachines/Inkling-Small": [
         {
           "name": "TML Inkling-Small (bf16)",
@@ -20001,22 +20356,19 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--tokenizer-mode": "inkling",
-                "--kernel-config.enable_flashinfer_autotune=False": "",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "inkling",
                 "--reasoning-parser": "inkling",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
               },
               "extra_envs": {
-                "VLLM_USE_V2_MODEL_RUNNER": "1",
-                "FLASH_ATTENTION_CUTE_DSL_CACHE_ENABLED": "1"
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
               }
             },
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
                 "--tokenizer-mode": "inkling",
-                "--kernel-config.enable_flashinfer_autotune=False": "",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "inkling",
                 "--reasoning-parser": "inkling",
@@ -20024,8 +20376,7 @@
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
-                "VLLM_USE_V2_MODEL_RUNNER": "1",
-                "FLASH_ATTENTION_CUTE_DSL_CACHE_ENABLED": "1"
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
               }
             }
           },
@@ -20075,6 +20426,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "lightseekorg/Inkling-MXFP4": [
+        {
+          "name": "TML Inkling (mxfp4)",
+          "huggingface_id": "lightseekorg/Inkling-MXFP4",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":8}"
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":8}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
         }
       ],
       "thinkingmachines/Inkling": [
@@ -23946,182 +24337,6 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
-        }
-      ],
-      "thinkingmachines/Inkling-Small-NVFP4": [
-        {
-          "name": "TML Inkling-Small",
-          "huggingface_id": "thinkingmachines/Inkling-Small-NVFP4",
-          "accelerators": "mi325x",
-          "provider": "vllm_amd",
-          "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
-          "strategies": {
-            "latency-focus": {
-              "extra_args": {
-                "--trust-remote-code": "",
-                "--tokenizer-mode": "inkling",
-                "--kernel-config.enable_flashinfer_autotune=False": "",
-                "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "inkling",
-                "--reasoning-parser": "inkling",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
-              },
-              "extra_envs": {
-                "VLLM_USE_V2_MODEL_RUNNER": "1",
-                "FLASH_ATTENTION_CUTE_DSL_CACHE_ENABLED": "1"
-              }
-            },
-            "balance": {
-              "extra_args": {
-                "--trust-remote-code": "",
-                "--tokenizer-mode": "inkling",
-                "--kernel-config.enable_flashinfer_autotune=False": "",
-                "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "inkling",
-                "--reasoning-parser": "inkling",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
-                "--enable-expert-parallel": ""
-              },
-              "extra_envs": {
-                "VLLM_USE_V2_MODEL_RUNNER": "1",
-                "FLASH_ATTENTION_CUTE_DSL_CACHE_ENABLED": "1"
-              }
-            }
-          },
-          "default_strategy": "latency-focus",
-          "variant_name": "default"
-        }
-      ],
-      "thinkingmachines/Inkling-Small": [
-        {
-          "name": "TML Inkling-Small (bf16)",
-          "huggingface_id": "thinkingmachines/Inkling-Small",
-          "accelerators": "mi325x",
-          "provider": "vllm_amd",
-          "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
-          "strategies": {
-            "latency-focus": {
-              "extra_args": {
-                "--trust-remote-code": "",
-                "--tokenizer-mode": "inkling",
-                "--kernel-config.enable_flashinfer_autotune=False": "",
-                "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "inkling",
-                "--reasoning-parser": "inkling",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
-              },
-              "extra_envs": {
-                "VLLM_USE_V2_MODEL_RUNNER": "1",
-                "FLASH_ATTENTION_CUTE_DSL_CACHE_ENABLED": "1"
-              }
-            },
-            "balance": {
-              "extra_args": {
-                "--trust-remote-code": "",
-                "--tokenizer-mode": "inkling",
-                "--kernel-config.enable_flashinfer_autotune=False": "",
-                "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "inkling",
-                "--reasoning-parser": "inkling",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
-                "--enable-expert-parallel": ""
-              },
-              "extra_envs": {
-                "VLLM_USE_V2_MODEL_RUNNER": "1",
-                "FLASH_ATTENTION_CUTE_DSL_CACHE_ENABLED": "1"
-              }
-            }
-          },
-          "default_strategy": "latency-focus",
-          "variant_name": "bf16"
-        }
-      ],
-      "thinkingmachines/Inkling-NVFP4": [
-        {
-          "name": "TML Inkling",
-          "huggingface_id": "thinkingmachines/Inkling-NVFP4",
-          "accelerators": "mi325x",
-          "provider": "vllm_amd",
-          "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
-          "strategies": {
-            "latency-focus": {
-              "extra_args": {
-                "--trust-remote-code": "",
-                "--tokenizer-mode": "inkling",
-                "--kernel-config.enable_flashinfer_autotune=False": "",
-                "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "inkling",
-                "--reasoning-parser": "inkling",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":8}"
-              },
-              "extra_envs": {
-                "VLLM_USE_V2_MODEL_RUNNER": "1",
-                "FLASH_ATTENTION_CUTE_DSL_CACHE_ENABLED": "1"
-              }
-            },
-            "balance": {
-              "extra_args": {
-                "--trust-remote-code": "",
-                "--tokenizer-mode": "inkling",
-                "--kernel-config.enable_flashinfer_autotune=False": "",
-                "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "inkling",
-                "--reasoning-parser": "inkling",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":8}",
-                "--enable-expert-parallel": ""
-              },
-              "extra_envs": {
-                "VLLM_USE_V2_MODEL_RUNNER": "1",
-                "FLASH_ATTENTION_CUTE_DSL_CACHE_ENABLED": "1"
-              }
-            }
-          },
-          "default_strategy": "latency-focus",
-          "variant_name": "default"
-        }
-      ],
-      "thinkingmachines/Inkling": [
-        {
-          "name": "TML Inkling (bf16)",
-          "huggingface_id": "thinkingmachines/Inkling",
-          "accelerators": "mi325x",
-          "provider": "vllm_amd",
-          "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
-          "strategies": {
-            "latency-focus": {
-              "extra_args": {
-                "--trust-remote-code": "",
-                "--tokenizer-mode": "inkling",
-                "--kernel-config.enable_flashinfer_autotune=False": "",
-                "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "inkling",
-                "--reasoning-parser": "inkling",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":8}"
-              },
-              "extra_envs": {
-                "VLLM_USE_V2_MODEL_RUNNER": "1",
-                "FLASH_ATTENTION_CUTE_DSL_CACHE_ENABLED": "1"
-              }
-            },
-            "balance": {
-              "extra_args": {
-                "--trust-remote-code": "",
-                "--tokenizer-mode": "inkling",
-                "--kernel-config.enable_flashinfer_autotune=False": "",
-                "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "inkling",
-                "--reasoning-parser": "inkling",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":8}",
-                "--enable-expert-parallel": ""
-              },
-              "extra_envs": {
-                "VLLM_USE_V2_MODEL_RUNNER": "1",
-                "FLASH_ATTENTION_CUTE_DSL_CACHE_ENABLED": "1"
-              }
-            }
-          },
-          "default_strategy": "latency-focus",
-          "variant_name": "bf16"
         }
       ],
       "zai-org/GLM-4.5": [
@@ -28125,6 +28340,46 @@
           "variant_name": "default"
         }
       ],
+      "EmbeddedLLM/Inkling-Small-MXFP4": [
+        {
+          "name": "TML Inkling-Small (mxfp4)",
+          "huggingface_id": "EmbeddedLLM/Inkling-Small-MXFP4",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
+        }
+      ],
       "thinkingmachines/Inkling-Small": [
         {
           "name": "TML Inkling-Small (bf16)",
@@ -28137,22 +28392,19 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--tokenizer-mode": "inkling",
-                "--kernel-config.enable_flashinfer_autotune=False": "",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "inkling",
                 "--reasoning-parser": "inkling",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
               },
               "extra_envs": {
-                "VLLM_USE_V2_MODEL_RUNNER": "1",
-                "FLASH_ATTENTION_CUTE_DSL_CACHE_ENABLED": "1"
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
               }
             },
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
                 "--tokenizer-mode": "inkling",
-                "--kernel-config.enable_flashinfer_autotune=False": "",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "inkling",
                 "--reasoning-parser": "inkling",
@@ -28160,8 +28412,7 @@
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
-                "VLLM_USE_V2_MODEL_RUNNER": "1",
-                "FLASH_ATTENTION_CUTE_DSL_CACHE_ENABLED": "1"
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
               }
             }
           },
@@ -28211,6 +28462,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "lightseekorg/Inkling-MXFP4": [
+        {
+          "name": "TML Inkling (mxfp4)",
+          "huggingface_id": "lightseekorg/Inkling-MXFP4",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":8}"
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":8}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
         }
       ],
       "thinkingmachines/Inkling": [
@@ -39637,6 +39928,46 @@
           "variant_name": "default"
         }
       ],
+      "EmbeddedLLM/Inkling-Small-MXFP4": [
+        {
+          "name": "TML Inkling-Small (mxfp4)",
+          "huggingface_id": "EmbeddedLLM/Inkling-Small-MXFP4",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
+        }
+      ],
       "thinkingmachines/Inkling-Small": [
         {
           "name": "TML Inkling-Small (bf16)",
@@ -39649,22 +39980,19 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--tokenizer-mode": "inkling",
-                "--kernel-config.enable_flashinfer_autotune=False": "",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "inkling",
                 "--reasoning-parser": "inkling",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
               },
               "extra_envs": {
-                "VLLM_USE_V2_MODEL_RUNNER": "1",
-                "FLASH_ATTENTION_CUTE_DSL_CACHE_ENABLED": "1"
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
               }
             },
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
                 "--tokenizer-mode": "inkling",
-                "--kernel-config.enable_flashinfer_autotune=False": "",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "inkling",
                 "--reasoning-parser": "inkling",
@@ -39672,8 +40000,7 @@
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
-                "VLLM_USE_V2_MODEL_RUNNER": "1",
-                "FLASH_ATTENTION_CUTE_DSL_CACHE_ENABLED": "1"
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
               }
             }
           },
@@ -39723,6 +40050,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "lightseekorg/Inkling-MXFP4": [
+        {
+          "name": "TML Inkling (mxfp4)",
+          "huggingface_id": "lightseekorg/Inkling-MXFP4",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":8}"
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":8}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
         }
       ],
       "thinkingmachines/Inkling": [
@@ -48565,6 +48932,46 @@
           "variant_name": "default"
         }
       ],
+      "EmbeddedLLM/Inkling-Small-MXFP4": [
+        {
+          "name": "TML Inkling-Small (mxfp4)",
+          "huggingface_id": "EmbeddedLLM/Inkling-Small-MXFP4",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
+        }
+      ],
       "thinkingmachines/Inkling-Small": [
         {
           "name": "TML Inkling-Small (bf16)",
@@ -48577,22 +48984,19 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--tokenizer-mode": "inkling",
-                "--kernel-config.enable_flashinfer_autotune=False": "",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "inkling",
                 "--reasoning-parser": "inkling",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
               },
               "extra_envs": {
-                "VLLM_USE_V2_MODEL_RUNNER": "1",
-                "FLASH_ATTENTION_CUTE_DSL_CACHE_ENABLED": "1"
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
               }
             },
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
                 "--tokenizer-mode": "inkling",
-                "--kernel-config.enable_flashinfer_autotune=False": "",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "inkling",
                 "--reasoning-parser": "inkling",
@@ -48600,8 +49004,7 @@
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
-                "VLLM_USE_V2_MODEL_RUNNER": "1",
-                "FLASH_ATTENTION_CUTE_DSL_CACHE_ENABLED": "1"
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
               }
             }
           },
@@ -48651,6 +49054,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "lightseekorg/Inkling-MXFP4": [
+        {
+          "name": "TML Inkling (mxfp4)",
+          "huggingface_id": "lightseekorg/Inkling-MXFP4",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":8}"
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":8}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
         }
       ],
       "thinkingmachines/Inkling": [
@@ -57429,6 +57872,46 @@
           "variant_name": "default"
         }
       ],
+      "EmbeddedLLM/Inkling-Small-MXFP4": [
+        {
+          "name": "TML Inkling-Small (mxfp4)",
+          "huggingface_id": "EmbeddedLLM/Inkling-Small-MXFP4",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
+        }
+      ],
       "thinkingmachines/Inkling-Small": [
         {
           "name": "TML Inkling-Small (bf16)",
@@ -57441,22 +57924,19 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--tokenizer-mode": "inkling",
-                "--kernel-config.enable_flashinfer_autotune=False": "",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "inkling",
                 "--reasoning-parser": "inkling",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
               },
               "extra_envs": {
-                "VLLM_USE_V2_MODEL_RUNNER": "1",
-                "FLASH_ATTENTION_CUTE_DSL_CACHE_ENABLED": "1"
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
               }
             },
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
                 "--tokenizer-mode": "inkling",
-                "--kernel-config.enable_flashinfer_autotune=False": "",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "inkling",
                 "--reasoning-parser": "inkling",
@@ -57464,8 +57944,7 @@
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
-                "VLLM_USE_V2_MODEL_RUNNER": "1",
-                "FLASH_ATTENTION_CUTE_DSL_CACHE_ENABLED": "1"
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
               }
             }
           },
@@ -57515,6 +57994,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "lightseekorg/Inkling-MXFP4": [
+        {
+          "name": "TML Inkling (mxfp4)",
+          "huggingface_id": "lightseekorg/Inkling-MXFP4",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":8}"
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":8}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
         }
       ],
       "thinkingmachines/Inkling": [
@@ -66297,6 +66816,46 @@
           "variant_name": "default"
         }
       ],
+      "EmbeddedLLM/Inkling-Small-MXFP4": [
+        {
+          "name": "TML Inkling-Small (mxfp4)",
+          "huggingface_id": "EmbeddedLLM/Inkling-Small-MXFP4",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
+        }
+      ],
       "thinkingmachines/Inkling-Small": [
         {
           "name": "TML Inkling-Small (bf16)",
@@ -66309,22 +66868,19 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--tokenizer-mode": "inkling",
-                "--kernel-config.enable_flashinfer_autotune=False": "",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "inkling",
                 "--reasoning-parser": "inkling",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
               },
               "extra_envs": {
-                "VLLM_USE_V2_MODEL_RUNNER": "1",
-                "FLASH_ATTENTION_CUTE_DSL_CACHE_ENABLED": "1"
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
               }
             },
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
                 "--tokenizer-mode": "inkling",
-                "--kernel-config.enable_flashinfer_autotune=False": "",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "inkling",
                 "--reasoning-parser": "inkling",
@@ -66332,8 +66888,7 @@
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
-                "VLLM_USE_V2_MODEL_RUNNER": "1",
-                "FLASH_ATTENTION_CUTE_DSL_CACHE_ENABLED": "1"
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
               }
             }
           },
@@ -66383,6 +66938,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "lightseekorg/Inkling-MXFP4": [
+        {
+          "name": "TML Inkling (mxfp4)",
+          "huggingface_id": "lightseekorg/Inkling-MXFP4",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":8}"
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tokenizer-mode": "inkling",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "inkling",
+                "--reasoning-parser": "inkling",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":8}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_USE_V2_MODEL_RUNNER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
         }
       ],
       "thinkingmachines/Inkling": [
