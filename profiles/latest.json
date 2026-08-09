@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-08-08T06:21:10.496361+00:00",
+  "generated_at": "2026-08-09T06:21:30.623762+00:00",
   "vllm_version": "0.26.0",
-  "vllm_recipes_sha": "689d6b9",
+  "vllm_recipes_sha": "cfc7d55",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -14,6 +14,7 @@
     "dgx_spark_gb10": "nvidia",
     "rtx_pro_6000": "nvidia",
     "rtx_pro_6000_2x": "nvidia",
+    "rtx_pro_5000_4x": "nvidia",
     "rtx_pro_6000_8x": "nvidia",
     "rtx_5090": "nvidia",
     "rtx_4090_2x": "nvidia",
@@ -10893,8 +10894,7 @@
                 "--ring": "1",
                 "--vae-patch-parallel-size": "4",
                 "--vae-parallel-mode": "tile",
-                "--vae-use-tiling": "",
-                "--diffusion-attention-backend": "FLASH_ATTN"
+                "--vae-use-tiling": ""
               },
               "extra_envs": {
                 "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
@@ -12412,8 +12412,7 @@
                 "--ring": "1",
                 "--vae-patch-parallel-size": "4",
                 "--vae-parallel-mode": "tile",
-                "--vae-use-tiling": "",
-                "--diffusion-attention-backend": "FLASH_ATTN"
+                "--vae-use-tiling": ""
               },
               "extra_envs": {
                 "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
@@ -15826,8 +15825,7 @@
                 "--ring": "1",
                 "--vae-patch-parallel-size": "4",
                 "--vae-parallel-mode": "tile",
-                "--vae-use-tiling": "",
-                "--diffusion-attention-backend": "FLASH_ATTN"
+                "--vae-use-tiling": ""
               },
               "extra_envs": {
                 "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
@@ -15908,6 +15906,39 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ]
+    },
+    "rtx_pro_5000_4x": {
+      "MiniMaxAI/MiniMax-H3": [
+        {
+          "name": "MiniMax-H3",
+          "huggingface_id": "MiniMaxAI/MiniMax-H3",
+          "accelerators": "rtx_pro_5000_4x",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--host": "0.0.0.0",
+                "--port": "8000",
+                "--num-gpus": "4",
+                "--usp": "4",
+                "--ring": "1",
+                "--vae-patch-parallel-size": "4",
+                "--vae-parallel-mode": "tile",
+                "--vae-use-tiling": ""
+              },
+              "extra_envs": {
+                "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
+                "VLLM_OMNI_VIDEO_SYNC_TIMEOUT": "1800",
+                "FLASHINFER_DISABLE_VERSION_CHECK": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
         }
       ]
     },
@@ -16423,8 +16454,7 @@
                 "--ring": "1",
                 "--vae-patch-parallel-size": "4",
                 "--vae-parallel-mode": "tile",
-                "--vae-use-tiling": "",
-                "--diffusion-attention-backend": "FLASH_ATTN"
+                "--vae-use-tiling": ""
               },
               "extra_envs": {
                 "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
@@ -16456,8 +16486,7 @@
                 "--ring": "1",
                 "--vae-patch-parallel-size": "4",
                 "--vae-parallel-mode": "tile",
-                "--vae-use-tiling": "",
-                "--diffusion-attention-backend": "FLASH_ATTN"
+                "--vae-use-tiling": ""
               },
               "extra_envs": {
                 "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
@@ -16913,7 +16942,6 @@
                 "--vae-patch-parallel-size": "4",
                 "--vae-parallel-mode": "tile",
                 "--vae-use-tiling": "",
-                "--diffusion-attention-backend": "FLASH_ATTN",
                 "--text-encoder-tp-size": "4"
               },
               "extra_envs": {
@@ -21404,7 +21432,6 @@
                 "--vae-patch-parallel-size": "4",
                 "--vae-parallel-mode": "tile",
                 "--vae-use-tiling": "",
-                "--diffusion-attention-backend": "FLASH_ATTN",
                 "--text-encoder-tp-size": "4"
               },
               "extra_envs": {
@@ -25063,7 +25090,6 @@
                 "--vae-patch-parallel-size": "4",
                 "--vae-parallel-mode": "tile",
                 "--vae-use-tiling": "",
-                "--diffusion-attention-backend": "FLASH_ATTN",
                 "--text-encoder-tp-size": "4"
               },
               "extra_envs": {
@@ -32360,7 +32386,6 @@
                 "--vae-patch-parallel-size": "4",
                 "--vae-parallel-mode": "tile",
                 "--vae-use-tiling": "",
-                "--diffusion-attention-backend": "FLASH_ATTN",
                 "--text-encoder-tp-size": "4"
               },
               "extra_envs": {
@@ -42122,8 +42147,7 @@
                 "--ring": "1",
                 "--vae-patch-parallel-size": "4",
                 "--vae-parallel-mode": "tile",
-                "--vae-use-tiling": "",
-                "--diffusion-attention-backend": "FLASH_ATTN"
+                "--vae-use-tiling": ""
               },
               "extra_envs": {
                 "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
@@ -51062,8 +51086,7 @@
                 "--ring": "1",
                 "--vae-patch-parallel-size": "4",
                 "--vae-parallel-mode": "tile",
-                "--vae-use-tiling": "",
-                "--diffusion-attention-backend": "FLASH_ATTN"
+                "--vae-use-tiling": ""
               },
               "extra_envs": {
                 "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
@@ -60002,8 +60025,7 @@
                 "--ring": "1",
                 "--vae-patch-parallel-size": "4",
                 "--vae-parallel-mode": "tile",
-                "--vae-use-tiling": "",
-                "--diffusion-attention-backend": "FLASH_ATTN"
+                "--vae-use-tiling": ""
               },
               "extra_envs": {
                 "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
