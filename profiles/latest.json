@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-08-09T06:21:30.623762+00:00",
+  "generated_at": "2026-08-10T06:38:38.130289+00:00",
   "vllm_version": "0.26.0",
-  "vllm_recipes_sha": "cfc7d55",
+  "vllm_recipes_sha": "5943215",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -15005,6 +15005,37 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvidia_nvfp4"
+        }
+      ],
+      "MiniMaxAI/MiniMax-H3": [
+        {
+          "name": "MiniMax-H3",
+          "huggingface_id": "MiniMaxAI/MiniMax-H3",
+          "accelerators": "dgx_spark_gb10",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.26.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--host": "0.0.0.0",
+                "--port": "8000",
+                "--num-gpus": "4",
+                "--usp": "4",
+                "--ring": "1",
+                "--vae-patch-parallel-size": "4",
+                "--vae-parallel-mode": "tile",
+                "--vae-use-tiling": ""
+              },
+              "extra_envs": {
+                "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
+                "VLLM_OMNI_VIDEO_SYNC_TIMEOUT": "1800",
+                "FLASHINFER_DISABLE_VERSION_CHECK": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
         }
       ],
       "Qwen/Qwen3.6-27B": [
