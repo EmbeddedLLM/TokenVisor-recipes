@@ -36,11 +36,24 @@ STRIP_ARGS = {"--tensor-parallel-size", "--max-model-len", "-tp"}
 # Minimum vLLM release that a recipe must require; recipes below this are skipped.
 MIN_VLLM_VERSION = "0.7.0"
 
+# Sorts above any real numeric segment so non-semver requirements like
+# `min_vllm_version: "nightly"` are never treated as below MIN_VLLM_VERSION.
+_PRE_RELEASE_SENTINEL = 1_000_000
+
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
 def parse_version(v: str) -> tuple[int, ...]:
-    """Normalize a version string to a comparable tuple."""
-    return tuple(int(x) for x in v.lstrip("v").split("."))
+    """Normalize a version string to a comparable tuple.
+
+    Non-numeric segments (e.g. "nightly" in `min_vllm_version`, or the
+    "1-nightly" suffix of a PEP440 dev version) sort above any numeric
+    segment, so pre-release/nightly requirements are never skipped by a
+    numeric minimum-version check.
+    """
+    parts: list[int] = []
+    for x in v.lstrip("v").split("."):
+        parts.append(int(x) if x.isdigit() else _PRE_RELEASE_SENTINEL)
+    return tuple(parts)
 
 
 def infer_generation(taxonomy: dict, accelerator: str) -> str | None:
