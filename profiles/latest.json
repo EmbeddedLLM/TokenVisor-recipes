@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-08-28T10:03:09.280097+00:00",
+  "generated_at": "2026-08-29T06:27:49.699383+00:00",
   "vllm_version": "0.28.0",
-  "vllm_recipes_sha": "6a56098",
+  "vllm_recipes_sha": "876e17b",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -195,6 +195,30 @@
           "variant_name": "default"
         }
       ],
+      "RedHatAI/gemma-4-12B-it-NVFP4": [
+        {
+          "name": "Gemma 4 12B IT (nvfp4)",
+          "huggingface_id": "RedHatAI/gemma-4-12B-it-NVFP4",
+          "accelerators": "h100",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-12B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
       "google/gemma-4-12B-it-qat-w4a16-ct": [
         {
           "name": "Gemma 4 12B IT (w4a16)",
@@ -218,6 +242,30 @@
           "variant_name": "w4a16"
         }
       ],
+      "RedHatAI/gemma-4-12B-it-FP8-Dynamic": [
+        {
+          "name": "Gemma 4 12B IT (fp8)",
+          "huggingface_id": "RedHatAI/gemma-4-12B-it-FP8-Dynamic",
+          "accelerators": "h100",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-12B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
       "google/gemma-4-26B-A4B-it": [
         {
           "name": "Gemma 4 26B-A4B IT",
@@ -231,8 +279,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -242,7 +289,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -266,8 +312,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -278,7 +323,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -302,8 +346,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -314,7 +357,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -338,8 +380,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -350,7 +391,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -411,8 +451,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
@@ -435,8 +474,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
@@ -459,14 +497,36 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/gemma-4-31B-it-NVFP4": [
+        {
+          "name": "Gemma 4 31B IT (redhat_nvfp4)",
+          "huggingface_id": "RedHatAI/gemma-4-31B-it-NVFP4",
+          "accelerators": "h100",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4"
         }
       ],
       "google/gemma-4-31B-it-qat-w4a16-ct": [
@@ -482,14 +542,36 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
           "variant_name": "w4a16"
+        }
+      ],
+      "RedHatAI/gemma-4-31B-it-FP8-block": [
+        {
+          "name": "Gemma 4 31B IT (redhat_fp8)",
+          "huggingface_id": "RedHatAI/gemma-4-31B-it-FP8-block",
+          "accelerators": "h100",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_fp8"
         }
       ],
       "google/gemma-4-E2B-it": [
@@ -1021,6 +1103,62 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/MiniMax-M2.5-NVFP4": [
+        {
+          "name": "MiniMax-M2.5 (redhat_nvfp4)",
+          "huggingface_id": "RedHatAI/MiniMax-M2.5-NVFP4",
+          "accelerators": "h100",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"PIECEWISE\"}",
+                "--max-num-seqs": "512",
+                "--max-num-batched-tokens": "32768",
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--attention-backend": "FLASHINFER",
+                "--enable-flashinfer-autotune": "",
+                "--tool-call-parser": "minimax_m2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "minimax_m2"
+              },
+              "extra_envs": {
+                "PYTHONNOUSERSITE": "1",
+                "VLLM_USE_DEEP_GEMM": "0",
+                "VLLM_BLOCKSCALE_FP8_GEMM_FLASHINFER": "0",
+                "VLLM_FLOAT32_MATMUL_PRECISION": "high"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"PIECEWISE\"}",
+                "--max-num-seqs": "512",
+                "--max-num-batched-tokens": "32768",
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--attention-backend": "FLASHINFER",
+                "--enable-flashinfer-autotune": "",
+                "--tool-call-parser": "minimax_m2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "minimax_m2",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "PYTHONNOUSERSITE": "1",
+                "VLLM_USE_DEEP_GEMM": "0",
+                "VLLM_BLOCKSCALE_FP8_GEMM_FLASHINFER": "0",
+                "VLLM_FLOAT32_MATMUL_PRECISION": "high"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4"
         }
       ],
       "MiniMaxAI/MiniMax-M2.7": [
@@ -3210,8 +3348,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -3221,7 +3358,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -3245,8 +3381,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -3257,7 +3392,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -3281,8 +3415,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -3293,7 +3426,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -3317,8 +3449,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -3329,7 +3460,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -3419,7 +3549,8 @@
               "extra_args": {
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "hermes",
-                "--reasoning-parser": "qwen3"
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}"
               },
               "extra_envs": {}
             },
@@ -3428,6 +3559,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "hermes",
                 "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -3435,6 +3567,72 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "RedHatAI/Mellum2-12B-A2.5B-Thinking-FP8-Dynamic": [
+        {
+          "name": "Mellum2-12B-A2.5B-Thinking (fp8)",
+          "huggingface_id": "RedHatAI/Mellum2-12B-A2.5B-Thinking-FP8-Dynamic",
+          "accelerators": "h200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "RedHatAI/Mellum2-12B-A2.5B-Thinking-NVFP4": [
+        {
+          "name": "Mellum2-12B-A2.5B-Thinking (nvfp4)",
+          "huggingface_id": "RedHatAI/Mellum2-12B-A2.5B-Thinking-NVFP4",
+          "accelerators": "h200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
         }
       ],
       "Lightricks/LTX-2.5-Diffusers": [
@@ -3782,6 +3980,62 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/MiniMax-M2.5-NVFP4": [
+        {
+          "name": "MiniMax-M2.5 (redhat_nvfp4)",
+          "huggingface_id": "RedHatAI/MiniMax-M2.5-NVFP4",
+          "accelerators": "h200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"PIECEWISE\"}",
+                "--max-num-seqs": "512",
+                "--max-num-batched-tokens": "32768",
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--attention-backend": "FLASHINFER",
+                "--enable-flashinfer-autotune": "",
+                "--tool-call-parser": "minimax_m2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "minimax_m2"
+              },
+              "extra_envs": {
+                "PYTHONNOUSERSITE": "1",
+                "VLLM_USE_DEEP_GEMM": "0",
+                "VLLM_BLOCKSCALE_FP8_GEMM_FLASHINFER": "0",
+                "VLLM_FLOAT32_MATMUL_PRECISION": "high"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"PIECEWISE\"}",
+                "--max-num-seqs": "512",
+                "--max-num-batched-tokens": "32768",
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--attention-backend": "FLASHINFER",
+                "--enable-flashinfer-autotune": "",
+                "--tool-call-parser": "minimax_m2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "minimax_m2",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "PYTHONNOUSERSITE": "1",
+                "VLLM_USE_DEEP_GEMM": "0",
+                "VLLM_BLOCKSCALE_FP8_GEMM_FLASHINFER": "0",
+                "VLLM_FLOAT32_MATMUL_PRECISION": "high"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4"
         }
       ],
       "MiniMaxAI/MiniMax-M2.7": [
@@ -15365,6 +15619,108 @@
           "variant_name": "bf16"
         }
       ],
+      "zai-org/GLM-5.3": [
+        {
+          "name": "GLM-5.3",
+          "huggingface_id": "zai-org/GLM-5.3",
+          "accelerators": "b300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "Inferact/GLM-5.3-NVFP4": [
+        {
+          "name": "GLM-5.3 (nvfp4)",
+          "huggingface_id": "Inferact/GLM-5.3-NVFP4",
+          "accelerators": "b300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "zai-org/GLM-5.3-BF16": [
+        {
+          "name": "GLM-5.3 (bf16)",
+          "huggingface_id": "zai-org/GLM-5.3-BF16",
+          "accelerators": "b300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "bf16"
+        }
+      ],
       "nvidia/Gemma-4-26B-A4B-NVFP4": [
         {
           "name": "Gemma 4 26B-A4B IT (NVFP4)",
@@ -15679,6 +16035,28 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/Qwen3.8-27B-INT4": [
+        {
+          "name": "Qwen3.8-27B (int4)",
+          "huggingface_id": "RedHatAI/Qwen3.8-27B-INT4",
+          "accelerators": "gb300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "int4"
         }
       ],
       "Eco-Tech/Qwen3.8-27B-w8a8": [
@@ -16708,8 +17086,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -16719,7 +17096,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -16743,8 +17119,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -16755,7 +17130,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -16779,8 +17153,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -16791,7 +17164,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -16815,8 +17187,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -16827,7 +17198,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -17866,8 +18236,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -17877,7 +18246,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -17901,8 +18269,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -17913,7 +18280,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -17937,8 +18303,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -17949,7 +18314,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -17973,8 +18337,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -17985,7 +18348,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -18716,8 +19078,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -18727,7 +19088,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -18751,8 +19111,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -18763,7 +19122,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -18787,8 +19145,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -18799,7 +19156,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -18823,8 +19179,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -18835,7 +19190,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -19673,8 +20027,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -19684,7 +20037,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -19708,8 +20060,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -19720,7 +20071,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -19744,8 +20094,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -19756,7 +20105,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -19780,8 +20128,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -19792,7 +20139,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -20043,6 +20389,28 @@
           "variant_name": "nvfp4"
         }
       ],
+      "RedHatAI/Qwen3.8-27B-INT4": [
+        {
+          "name": "Qwen3.8-27B (int4)",
+          "huggingface_id": "RedHatAI/Qwen3.8-27B-INT4",
+          "accelerators": "rtx_5090",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "int4"
+        }
+      ],
       "Eco-Tech/Qwen3.8-27B-w8a8": [
         {
           "name": "Qwen3.8-27B (ascend_w8a8)",
@@ -20277,6 +20645,28 @@
           "variant_name": "nvfp4"
         }
       ],
+      "RedHatAI/Qwen3.8-27B-INT4": [
+        {
+          "name": "Qwen3.8-27B (int4)",
+          "huggingface_id": "RedHatAI/Qwen3.8-27B-INT4",
+          "accelerators": "rtx_5090_2x",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "int4"
+        }
+      ],
       "Eco-Tech/Qwen3.8-27B-w8a8": [
         {
           "name": "Qwen3.8-27B (ascend_w8a8)",
@@ -20395,8 +20785,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -20406,7 +20795,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -20430,8 +20818,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -20442,7 +20829,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -20466,8 +20852,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -20478,7 +20863,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -20502,8 +20886,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -20514,7 +20897,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -20537,8 +20919,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
@@ -20561,8 +20942,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
@@ -20585,14 +20965,36 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/gemma-4-31B-it-NVFP4": [
+        {
+          "name": "Gemma 4 31B IT (redhat_nvfp4)",
+          "huggingface_id": "RedHatAI/gemma-4-31B-it-NVFP4",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4"
         }
       ],
       "google/gemma-4-31B-it-qat-w4a16-ct": [
@@ -20608,14 +21010,36 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
           "variant_name": "w4a16"
+        }
+      ],
+      "RedHatAI/gemma-4-31B-it-FP8-block": [
+        {
+          "name": "Gemma 4 31B IT (redhat_fp8)",
+          "huggingface_id": "RedHatAI/gemma-4-31B-it-FP8-block",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_fp8"
         }
       ],
       "google/gemma-4-E2B-it": [
@@ -20988,6 +21412,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/MiniMax-M2.5-NVFP4": [
+        {
+          "name": "MiniMax-M2.5 (redhat_nvfp4)",
+          "huggingface_id": "RedHatAI/MiniMax-M2.5-NVFP4",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_FA",
+                "--tool-call-parser": "minimax_m2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "minimax_m2"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_SHUFFLE_KV_CACHE_LAYOUT": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_FA",
+                "--tool-call-parser": "minimax_m2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "minimax_m2",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_SHUFFLE_KV_CACHE_LAYOUT": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4"
         }
       ],
       "MiniMaxAI/MiniMax-M2.7": [
@@ -25790,8 +26254,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -25801,7 +26264,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -25825,8 +26287,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -25837,7 +26298,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -25861,8 +26321,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -25873,7 +26332,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -25897,8 +26355,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -25909,7 +26366,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -25932,8 +26388,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
@@ -25956,8 +26411,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
@@ -25980,14 +26434,36 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/gemma-4-31B-it-NVFP4": [
+        {
+          "name": "Gemma 4 31B IT (redhat_nvfp4)",
+          "huggingface_id": "RedHatAI/gemma-4-31B-it-NVFP4",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4"
         }
       ],
       "google/gemma-4-31B-it-qat-w4a16-ct": [
@@ -26003,14 +26479,36 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
           "variant_name": "w4a16"
+        }
+      ],
+      "RedHatAI/gemma-4-31B-it-FP8-block": [
+        {
+          "name": "Gemma 4 31B IT (redhat_fp8)",
+          "huggingface_id": "RedHatAI/gemma-4-31B-it-FP8-block",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_fp8"
         }
       ],
       "google/gemma-4-E2B-it": [
@@ -26383,6 +26881,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/MiniMax-M2.5-NVFP4": [
+        {
+          "name": "MiniMax-M2.5 (redhat_nvfp4)",
+          "huggingface_id": "RedHatAI/MiniMax-M2.5-NVFP4",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_FA",
+                "--tool-call-parser": "minimax_m2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "minimax_m2"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_SHUFFLE_KV_CACHE_LAYOUT": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_FA",
+                "--tool-call-parser": "minimax_m2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "minimax_m2",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_SHUFFLE_KV_CACHE_LAYOUT": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4"
         }
       ],
       "MiniMaxAI/MiniMax-M2.7": [
@@ -30353,8 +30891,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -30364,7 +30901,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -30388,8 +30924,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -30400,7 +30935,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -30424,8 +30958,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -30436,7 +30969,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -30460,8 +30992,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -30472,7 +31003,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -30495,8 +31025,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
@@ -30519,8 +31048,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
@@ -30543,14 +31071,36 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/gemma-4-31B-it-NVFP4": [
+        {
+          "name": "Gemma 4 31B IT (redhat_nvfp4)",
+          "huggingface_id": "RedHatAI/gemma-4-31B-it-NVFP4",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4"
         }
       ],
       "google/gemma-4-31B-it-qat-w4a16-ct": [
@@ -30566,14 +31116,36 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
           "variant_name": "w4a16"
+        }
+      ],
+      "RedHatAI/gemma-4-31B-it-FP8-block": [
+        {
+          "name": "Gemma 4 31B IT (redhat_fp8)",
+          "huggingface_id": "RedHatAI/gemma-4-31B-it-FP8-block",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_fp8"
         }
       ],
       "google/gemma-4-E2B-it": [
@@ -30946,6 +31518,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/MiniMax-M2.5-NVFP4": [
+        {
+          "name": "MiniMax-M2.5 (redhat_nvfp4)",
+          "huggingface_id": "RedHatAI/MiniMax-M2.5-NVFP4",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_FA",
+                "--tool-call-parser": "minimax_m2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "minimax_m2"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_SHUFFLE_KV_CACHE_LAYOUT": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_FA",
+                "--tool-call-parser": "minimax_m2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "minimax_m2",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_SHUFFLE_KV_CACHE_LAYOUT": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4"
         }
       ],
       "MiniMaxAI/MiniMax-M2.7": [
@@ -35940,8 +36552,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -35951,7 +36562,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -35975,8 +36585,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -35987,7 +36596,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -36011,8 +36619,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -36023,7 +36630,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -36047,8 +36653,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -36059,7 +36664,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -36082,8 +36686,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
@@ -36106,8 +36709,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
@@ -36130,14 +36732,36 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/gemma-4-31B-it-NVFP4": [
+        {
+          "name": "Gemma 4 31B IT (redhat_nvfp4)",
+          "huggingface_id": "RedHatAI/gemma-4-31B-it-NVFP4",
+          "accelerators": "trillium",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4"
         }
       ],
       "google/gemma-4-31B-it-qat-w4a16-ct": [
@@ -36153,14 +36777,36 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
           "variant_name": "w4a16"
+        }
+      ],
+      "RedHatAI/gemma-4-31B-it-FP8-block": [
+        {
+          "name": "Gemma 4 31B IT (redhat_fp8)",
+          "huggingface_id": "RedHatAI/gemma-4-31B-it-FP8-block",
+          "accelerators": "trillium",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_fp8"
         }
       ],
       "google/gemma-4-E2B-it": [
@@ -36564,8 +37210,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -36575,7 +37220,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -36599,8 +37243,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -36611,7 +37254,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -36635,8 +37277,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -36647,7 +37288,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -36671,8 +37311,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -36683,7 +37322,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -36706,8 +37344,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
@@ -36730,8 +37367,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
@@ -36754,14 +37390,36 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/gemma-4-31B-it-NVFP4": [
+        {
+          "name": "Gemma 4 31B IT (redhat_nvfp4)",
+          "huggingface_id": "RedHatAI/gemma-4-31B-it-NVFP4",
+          "accelerators": "ironwood",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4"
         }
       ],
       "google/gemma-4-31B-it-qat-w4a16-ct": [
@@ -36777,14 +37435,36 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
           "variant_name": "w4a16"
+        }
+      ],
+      "RedHatAI/gemma-4-31B-it-FP8-block": [
+        {
+          "name": "Gemma 4 31B IT (redhat_fp8)",
+          "huggingface_id": "RedHatAI/gemma-4-31B-it-FP8-block",
+          "accelerators": "ironwood",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_fp8"
         }
       ],
       "google/gemma-4-E2B-it": [
@@ -37338,8 +38018,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -37349,7 +38028,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -37373,8 +38051,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -37385,7 +38062,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -37409,8 +38085,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -37421,7 +38096,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -37445,8 +38119,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -37457,7 +38130,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -38788,6 +39460,28 @@
           "variant_name": "nvfp4"
         }
       ],
+      "RedHatAI/Qwen3.8-27B-INT4": [
+        {
+          "name": "Qwen3.8-27B (int4)",
+          "huggingface_id": "RedHatAI/Qwen3.8-27B-INT4",
+          "accelerators": "ascend_950pr",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "int4"
+        }
+      ],
       "Eco-Tech/Qwen3.8-27B-w8a8": [
         {
           "name": "Qwen3.8-27B (ascend_w8a8)",
@@ -39218,6 +39912,30 @@
           "variant_name": "default"
         }
       ],
+      "RedHatAI/gemma-4-12B-it-NVFP4": [
+        {
+          "name": "Gemma 4 12B IT (nvfp4)",
+          "huggingface_id": "RedHatAI/gemma-4-12B-it-NVFP4",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-12B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
       "google/gemma-4-12B-it-qat-w4a16-ct": [
         {
           "name": "Gemma 4 12B IT (w4a16)",
@@ -39241,6 +39959,30 @@
           "variant_name": "w4a16"
         }
       ],
+      "RedHatAI/gemma-4-12B-it-FP8-Dynamic": [
+        {
+          "name": "Gemma 4 12B IT (fp8)",
+          "huggingface_id": "RedHatAI/gemma-4-12B-it-FP8-Dynamic",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-12B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
       "google/gemma-4-26B-A4B-it": [
         {
           "name": "Gemma 4 26B-A4B IT",
@@ -39254,8 +39996,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -39265,7 +40006,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -39289,8 +40029,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -39301,7 +40040,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -39325,8 +40063,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -39337,7 +40074,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -39361,8 +40097,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -39373,7 +40108,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -39434,8 +40168,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
@@ -39458,8 +40191,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
@@ -39482,14 +40214,36 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/gemma-4-31B-it-NVFP4": [
+        {
+          "name": "Gemma 4 31B IT (redhat_nvfp4)",
+          "huggingface_id": "RedHatAI/gemma-4-31B-it-NVFP4",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4"
         }
       ],
       "google/gemma-4-31B-it-qat-w4a16-ct": [
@@ -39505,14 +40259,36 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
           "variant_name": "w4a16"
+        }
+      ],
+      "RedHatAI/gemma-4-31B-it-FP8-block": [
+        {
+          "name": "Gemma 4 31B IT (redhat_fp8)",
+          "huggingface_id": "RedHatAI/gemma-4-31B-it-FP8-block",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_fp8"
         }
       ],
       "google/gemma-4-E2B-it": [
@@ -39813,7 +40589,8 @@
               "extra_args": {
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "hermes",
-                "--reasoning-parser": "qwen3"
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}"
               },
               "extra_envs": {}
             },
@@ -39822,6 +40599,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "hermes",
                 "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -39829,6 +40607,72 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "RedHatAI/Mellum2-12B-A2.5B-Thinking-FP8-Dynamic": [
+        {
+          "name": "Mellum2-12B-A2.5B-Thinking (fp8)",
+          "huggingface_id": "RedHatAI/Mellum2-12B-A2.5B-Thinking-FP8-Dynamic",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "RedHatAI/Mellum2-12B-A2.5B-Thinking-NVFP4": [
+        {
+          "name": "Mellum2-12B-A2.5B-Thinking (nvfp4)",
+          "huggingface_id": "RedHatAI/Mellum2-12B-A2.5B-Thinking-NVFP4",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
         }
       ],
       "Lightricks/LTX-2.5-Diffusers": [
@@ -40218,6 +41062,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/MiniMax-M2.5-NVFP4": [
+        {
+          "name": "MiniMax-M2.5 (redhat_nvfp4)",
+          "huggingface_id": "RedHatAI/MiniMax-M2.5-NVFP4",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_FA",
+                "--tool-call-parser": "minimax_m2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "minimax_m2"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_SHUFFLE_KV_CACHE_LAYOUT": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_FA",
+                "--tool-call-parser": "minimax_m2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "minimax_m2",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_SHUFFLE_KV_CACHE_LAYOUT": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4"
         }
       ],
       "MiniMaxAI/MiniMax-M2.7": [
@@ -42752,6 +43636,28 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/Qwen3.8-27B-INT4": [
+        {
+          "name": "Qwen3.8-27B (int4)",
+          "huggingface_id": "RedHatAI/Qwen3.8-27B-INT4",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "int4"
         }
       ],
       "Eco-Tech/Qwen3.8-27B-w8a8": [
@@ -49916,6 +50822,138 @@
           "variant_name": "bf16"
         }
       ],
+      "zai-org/GLM-5.3": [
+        {
+          "name": "GLM-5.3",
+          "huggingface_id": "zai-org/GLM-5.3",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "Inferact/GLM-5.3-NVFP4": [
+        {
+          "name": "GLM-5.3 (nvfp4)",
+          "huggingface_id": "Inferact/GLM-5.3-NVFP4",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "zai-org/GLM-5.3-BF16": [
+        {
+          "name": "GLM-5.3 (bf16)",
+          "huggingface_id": "zai-org/GLM-5.3-BF16",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "bf16"
+        }
+      ],
       "zai-org/GLM-5": [
         {
           "name": "GLM-5",
@@ -50367,6 +51405,30 @@
           "variant_name": "default"
         }
       ],
+      "RedHatAI/gemma-4-12B-it-NVFP4": [
+        {
+          "name": "Gemma 4 12B IT (nvfp4)",
+          "huggingface_id": "RedHatAI/gemma-4-12B-it-NVFP4",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-12B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
       "google/gemma-4-12B-it-qat-w4a16-ct": [
         {
           "name": "Gemma 4 12B IT (w4a16)",
@@ -50390,6 +51452,30 @@
           "variant_name": "w4a16"
         }
       ],
+      "RedHatAI/gemma-4-12B-it-FP8-Dynamic": [
+        {
+          "name": "Gemma 4 12B IT (fp8)",
+          "huggingface_id": "RedHatAI/gemma-4-12B-it-FP8-Dynamic",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-12B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
       "google/gemma-4-26B-A4B-it": [
         {
           "name": "Gemma 4 26B-A4B IT",
@@ -50403,8 +51489,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -50414,7 +51499,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -50438,8 +51522,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -50450,7 +51533,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -50474,8 +51556,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -50486,7 +51567,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -50510,8 +51590,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -50522,7 +51601,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -50583,8 +51661,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
@@ -50607,8 +51684,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
@@ -50631,14 +51707,36 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/gemma-4-31B-it-NVFP4": [
+        {
+          "name": "Gemma 4 31B IT (redhat_nvfp4)",
+          "huggingface_id": "RedHatAI/gemma-4-31B-it-NVFP4",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4"
         }
       ],
       "google/gemma-4-31B-it-qat-w4a16-ct": [
@@ -50654,14 +51752,36 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
           "variant_name": "w4a16"
+        }
+      ],
+      "RedHatAI/gemma-4-31B-it-FP8-block": [
+        {
+          "name": "Gemma 4 31B IT (redhat_fp8)",
+          "huggingface_id": "RedHatAI/gemma-4-31B-it-FP8-block",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_fp8"
         }
       ],
       "google/gemma-4-E2B-it": [
@@ -50962,7 +52082,8 @@
               "extra_args": {
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "hermes",
-                "--reasoning-parser": "qwen3"
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}"
               },
               "extra_envs": {}
             },
@@ -50971,6 +52092,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "hermes",
                 "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -50978,6 +52100,72 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "RedHatAI/Mellum2-12B-A2.5B-Thinking-FP8-Dynamic": [
+        {
+          "name": "Mellum2-12B-A2.5B-Thinking (fp8)",
+          "huggingface_id": "RedHatAI/Mellum2-12B-A2.5B-Thinking-FP8-Dynamic",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "RedHatAI/Mellum2-12B-A2.5B-Thinking-NVFP4": [
+        {
+          "name": "Mellum2-12B-A2.5B-Thinking (nvfp4)",
+          "huggingface_id": "RedHatAI/Mellum2-12B-A2.5B-Thinking-NVFP4",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
         }
       ],
       "Lightricks/LTX-2.5-Diffusers": [
@@ -51343,6 +52531,38 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/MiniMax-M2.5-NVFP4": [
+        {
+          "name": "MiniMax-M2.5 (redhat_nvfp4)",
+          "huggingface_id": "RedHatAI/MiniMax-M2.5-NVFP4",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tool-call-parser": "minimax_m2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "minimax_m2"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tool-call-parser": "minimax_m2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "minimax_m2",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4"
         }
       ],
       "MiniMaxAI/MiniMax-M2.7": [
@@ -53722,6 +54942,28 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/Qwen3.8-27B-INT4": [
+        {
+          "name": "Qwen3.8-27B (int4)",
+          "huggingface_id": "RedHatAI/Qwen3.8-27B-INT4",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "int4"
         }
       ],
       "Eco-Tech/Qwen3.8-27B-w8a8": [
@@ -60170,6 +61412,108 @@
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
               }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "bf16"
+        }
+      ],
+      "zai-org/GLM-5.3": [
+        {
+          "name": "GLM-5.3",
+          "huggingface_id": "zai-org/GLM-5.3",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "Inferact/GLM-5.3-NVFP4": [
+        {
+          "name": "GLM-5.3 (nvfp4)",
+          "huggingface_id": "Inferact/GLM-5.3-NVFP4",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "zai-org/GLM-5.3-BF16": [
+        {
+          "name": "GLM-5.3 (bf16)",
+          "huggingface_id": "zai-org/GLM-5.3-BF16",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
@@ -60627,6 +61971,30 @@
           "variant_name": "default"
         }
       ],
+      "RedHatAI/gemma-4-12B-it-NVFP4": [
+        {
+          "name": "Gemma 4 12B IT (nvfp4)",
+          "huggingface_id": "RedHatAI/gemma-4-12B-it-NVFP4",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-12B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
       "google/gemma-4-12B-it-qat-w4a16-ct": [
         {
           "name": "Gemma 4 12B IT (w4a16)",
@@ -60650,6 +62018,30 @@
           "variant_name": "w4a16"
         }
       ],
+      "RedHatAI/gemma-4-12B-it-FP8-Dynamic": [
+        {
+          "name": "Gemma 4 12B IT (fp8)",
+          "huggingface_id": "RedHatAI/gemma-4-12B-it-FP8-Dynamic",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-12B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
       "google/gemma-4-26B-A4B-it": [
         {
           "name": "Gemma 4 26B-A4B IT",
@@ -60663,8 +62055,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -60674,7 +62065,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -60698,8 +62088,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -60710,7 +62099,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -60734,8 +62122,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -60746,7 +62133,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -60770,8 +62156,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -60782,7 +62167,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -60843,8 +62227,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
@@ -60867,8 +62250,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
@@ -60891,14 +62273,36 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/gemma-4-31B-it-NVFP4": [
+        {
+          "name": "Gemma 4 31B IT (redhat_nvfp4)",
+          "huggingface_id": "RedHatAI/gemma-4-31B-it-NVFP4",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4"
         }
       ],
       "google/gemma-4-31B-it-qat-w4a16-ct": [
@@ -60914,14 +62318,36 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
           "variant_name": "w4a16"
+        }
+      ],
+      "RedHatAI/gemma-4-31B-it-FP8-block": [
+        {
+          "name": "Gemma 4 31B IT (redhat_fp8)",
+          "huggingface_id": "RedHatAI/gemma-4-31B-it-FP8-block",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_fp8"
         }
       ],
       "google/gemma-4-E2B-it": [
@@ -61222,7 +62648,8 @@
               "extra_args": {
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "hermes",
-                "--reasoning-parser": "qwen3"
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}"
               },
               "extra_envs": {}
             },
@@ -61231,6 +62658,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "hermes",
                 "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -61238,6 +62666,72 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "RedHatAI/Mellum2-12B-A2.5B-Thinking-FP8-Dynamic": [
+        {
+          "name": "Mellum2-12B-A2.5B-Thinking (fp8)",
+          "huggingface_id": "RedHatAI/Mellum2-12B-A2.5B-Thinking-FP8-Dynamic",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "RedHatAI/Mellum2-12B-A2.5B-Thinking-NVFP4": [
+        {
+          "name": "Mellum2-12B-A2.5B-Thinking (nvfp4)",
+          "huggingface_id": "RedHatAI/Mellum2-12B-A2.5B-Thinking-NVFP4",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
         }
       ],
       "Lightricks/LTX-2.5-Diffusers": [
@@ -61603,6 +63097,38 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/MiniMax-M2.5-NVFP4": [
+        {
+          "name": "MiniMax-M2.5 (redhat_nvfp4)",
+          "huggingface_id": "RedHatAI/MiniMax-M2.5-NVFP4",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tool-call-parser": "minimax_m2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "minimax_m2"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tool-call-parser": "minimax_m2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "minimax_m2",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4"
         }
       ],
       "MiniMaxAI/MiniMax-M2.7": [
@@ -63982,6 +65508,28 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/Qwen3.8-27B-INT4": [
+        {
+          "name": "Qwen3.8-27B (int4)",
+          "huggingface_id": "RedHatAI/Qwen3.8-27B-INT4",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "int4"
         }
       ],
       "Eco-Tech/Qwen3.8-27B-w8a8": [
@@ -70430,6 +71978,108 @@
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
               }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "bf16"
+        }
+      ],
+      "zai-org/GLM-5.3": [
+        {
+          "name": "GLM-5.3",
+          "huggingface_id": "zai-org/GLM-5.3",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "Inferact/GLM-5.3-NVFP4": [
+        {
+          "name": "GLM-5.3 (nvfp4)",
+          "huggingface_id": "Inferact/GLM-5.3-NVFP4",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "zai-org/GLM-5.3-BF16": [
+        {
+          "name": "GLM-5.3 (bf16)",
+          "huggingface_id": "zai-org/GLM-5.3-BF16",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
@@ -70887,6 +72537,30 @@
           "variant_name": "default"
         }
       ],
+      "RedHatAI/gemma-4-12B-it-NVFP4": [
+        {
+          "name": "Gemma 4 12B IT (nvfp4)",
+          "huggingface_id": "RedHatAI/gemma-4-12B-it-NVFP4",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-12B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
       "google/gemma-4-12B-it-qat-w4a16-ct": [
         {
           "name": "Gemma 4 12B IT (w4a16)",
@@ -70910,6 +72584,30 @@
           "variant_name": "w4a16"
         }
       ],
+      "RedHatAI/gemma-4-12B-it-FP8-Dynamic": [
+        {
+          "name": "Gemma 4 12B IT (fp8)",
+          "huggingface_id": "RedHatAI/gemma-4-12B-it-FP8-Dynamic",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-12B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
       "google/gemma-4-26B-A4B-it": [
         {
           "name": "Gemma 4 26B-A4B IT",
@@ -70923,8 +72621,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -70934,7 +72631,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -70958,8 +72654,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -70970,7 +72665,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -70994,8 +72688,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -71006,7 +72699,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -71030,8 +72722,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -71042,7 +72733,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -71103,8 +72793,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
@@ -71127,8 +72816,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
@@ -71151,14 +72839,36 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/gemma-4-31B-it-NVFP4": [
+        {
+          "name": "Gemma 4 31B IT (redhat_nvfp4)",
+          "huggingface_id": "RedHatAI/gemma-4-31B-it-NVFP4",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4"
         }
       ],
       "google/gemma-4-31B-it-qat-w4a16-ct": [
@@ -71174,14 +72884,36 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
           "variant_name": "w4a16"
+        }
+      ],
+      "RedHatAI/gemma-4-31B-it-FP8-block": [
+        {
+          "name": "Gemma 4 31B IT (redhat_fp8)",
+          "huggingface_id": "RedHatAI/gemma-4-31B-it-FP8-block",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_fp8"
         }
       ],
       "google/gemma-4-E2B-it": [
@@ -71482,7 +73214,8 @@
               "extra_args": {
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "hermes",
-                "--reasoning-parser": "qwen3"
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}"
               },
               "extra_envs": {}
             },
@@ -71491,6 +73224,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "hermes",
                 "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -71498,6 +73232,72 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "RedHatAI/Mellum2-12B-A2.5B-Thinking-FP8-Dynamic": [
+        {
+          "name": "Mellum2-12B-A2.5B-Thinking (fp8)",
+          "huggingface_id": "RedHatAI/Mellum2-12B-A2.5B-Thinking-FP8-Dynamic",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "RedHatAI/Mellum2-12B-A2.5B-Thinking-NVFP4": [
+        {
+          "name": "Mellum2-12B-A2.5B-Thinking (nvfp4)",
+          "huggingface_id": "RedHatAI/Mellum2-12B-A2.5B-Thinking-NVFP4",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
         }
       ],
       "Lightricks/LTX-2.5-Diffusers": [
@@ -71863,6 +73663,38 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/MiniMax-M2.5-NVFP4": [
+        {
+          "name": "MiniMax-M2.5 (redhat_nvfp4)",
+          "huggingface_id": "RedHatAI/MiniMax-M2.5-NVFP4",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tool-call-parser": "minimax_m2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "minimax_m2"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--tool-call-parser": "minimax_m2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "minimax_m2",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4"
         }
       ],
       "MiniMaxAI/MiniMax-M2.7": [
@@ -74242,6 +76074,28 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/Qwen3.8-27B-INT4": [
+        {
+          "name": "Qwen3.8-27B (int4)",
+          "huggingface_id": "RedHatAI/Qwen3.8-27B-INT4",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "int4"
         }
       ],
       "Eco-Tech/Qwen3.8-27B-w8a8": [
@@ -80690,6 +82544,108 @@
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
               }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "bf16"
+        }
+      ],
+      "zai-org/GLM-5.3": [
+        {
+          "name": "GLM-5.3",
+          "huggingface_id": "zai-org/GLM-5.3",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "Inferact/GLM-5.3-NVFP4": [
+        {
+          "name": "GLM-5.3 (nvfp4)",
+          "huggingface_id": "Inferact/GLM-5.3-NVFP4",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "zai-org/GLM-5.3-BF16": [
+        {
+          "name": "GLM-5.3 (bf16)",
+          "huggingface_id": "zai-org/GLM-5.3-BF16",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
@@ -81147,6 +83103,30 @@
           "variant_name": "default"
         }
       ],
+      "RedHatAI/gemma-4-12B-it-NVFP4": [
+        {
+          "name": "Gemma 4 12B IT (nvfp4)",
+          "huggingface_id": "RedHatAI/gemma-4-12B-it-NVFP4",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-12B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
       "google/gemma-4-12B-it-qat-w4a16-ct": [
         {
           "name": "Gemma 4 12B IT (w4a16)",
@@ -81170,6 +83150,30 @@
           "variant_name": "w4a16"
         }
       ],
+      "RedHatAI/gemma-4-12B-it-FP8-Dynamic": [
+        {
+          "name": "Gemma 4 12B IT (fp8)",
+          "huggingface_id": "RedHatAI/gemma-4-12B-it-FP8-Dynamic",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4",
+                "--speculative-config": "{\"model\":\"google/gemma-4-12B-it-assistant\",\"num_speculative_tokens\":4}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
       "google/gemma-4-26B-A4B-it": [
         {
           "name": "Gemma 4 26B-A4B IT",
@@ -81183,8 +83187,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -81194,7 +83197,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -81218,8 +83220,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -81230,7 +83231,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -81254,8 +83254,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -81266,7 +83265,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -81290,8 +83288,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             },
@@ -81302,7 +83299,6 @@
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "examples/tool_chat_template_gemma4.jinja",
                 "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-26B-A4B-it-assistant\",\"num_speculative_tokens\":4}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -81363,8 +83359,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
@@ -81387,8 +83382,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
@@ -81411,14 +83405,36 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/gemma-4-31B-it-NVFP4": [
+        {
+          "name": "Gemma 4 31B IT (redhat_nvfp4)",
+          "huggingface_id": "RedHatAI/gemma-4-31B-it-NVFP4",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4"
         }
       ],
       "google/gemma-4-31B-it-qat-w4a16-ct": [
@@ -81434,14 +83450,36 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "gemma4",
                 "--chat-template": "/vllm-workspace/examples/tool_chat_template_gemma4.jinja",
-                "--reasoning-parser": "gemma4",
-                "--speculative-config": "{\"model\":\"google/gemma-4-31B-it-assistant\",\"num_speculative_tokens\":4}"
+                "--reasoning-parser": "gemma4"
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
           "variant_name": "w4a16"
+        }
+      ],
+      "RedHatAI/gemma-4-31B-it-FP8-block": [
+        {
+          "name": "Gemma 4 31B IT (redhat_fp8)",
+          "huggingface_id": "RedHatAI/gemma-4-31B-it-FP8-block",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "gemma4",
+                "--chat-template": "examples/tool_chat_template_gemma4.jinja",
+                "--reasoning-parser": "gemma4"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_fp8"
         }
       ],
       "google/gemma-4-E2B-it": [
@@ -81742,7 +83780,8 @@
               "extra_args": {
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "hermes",
-                "--reasoning-parser": "qwen3"
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}"
               },
               "extra_envs": {}
             },
@@ -81751,6 +83790,7 @@
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "hermes",
                 "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -81758,6 +83798,72 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "RedHatAI/Mellum2-12B-A2.5B-Thinking-FP8-Dynamic": [
+        {
+          "name": "Mellum2-12B-A2.5B-Thinking (fp8)",
+          "huggingface_id": "RedHatAI/Mellum2-12B-A2.5B-Thinking-FP8-Dynamic",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "RedHatAI/Mellum2-12B-A2.5B-Thinking-NVFP4": [
+        {
+          "name": "Mellum2-12B-A2.5B-Thinking (nvfp4)",
+          "huggingface_id": "RedHatAI/Mellum2-12B-A2.5B-Thinking-NVFP4",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"model\": \"RedHatAI/Mellum2-12B-A2.5B-Thinking-speculator.dflash\", \"num_speculative_tokens\": 7, \"method\": \"dflash\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
         }
       ],
       "Lightricks/LTX-2.5-Diffusers": [
@@ -82127,6 +84233,40 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/MiniMax-M2.5-NVFP4": [
+        {
+          "name": "MiniMax-M2.5 (redhat_nvfp4)",
+          "huggingface_id": "RedHatAI/MiniMax-M2.5-NVFP4",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"PIECEWISE\"}",
+                "--tool-call-parser": "minimax_m2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "minimax_m2"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"PIECEWISE\"}",
+                "--tool-call-parser": "minimax_m2",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "minimax_m2",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4"
         }
       ],
       "MiniMaxAI/MiniMax-M2.7": [
@@ -84506,6 +86646,28 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/Qwen3.8-27B-INT4": [
+        {
+          "name": "Qwen3.8-27B (int4)",
+          "huggingface_id": "RedHatAI/Qwen3.8-27B-INT4",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "int4"
         }
       ],
       "Eco-Tech/Qwen3.8-27B-w8a8": [
@@ -90954,6 +93116,108 @@
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
               }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "bf16"
+        }
+      ],
+      "zai-org/GLM-5.3": [
+        {
+          "name": "GLM-5.3",
+          "huggingface_id": "zai-org/GLM-5.3",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "Inferact/GLM-5.3-NVFP4": [
+        {
+          "name": "GLM-5.3 (nvfp4)",
+          "huggingface_id": "Inferact/GLM-5.3-NVFP4",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "zai-org/GLM-5.3-BF16": [
+        {
+          "name": "GLM-5.3 (bf16)",
+          "huggingface_id": "zai-org/GLM-5.3-BF16",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
