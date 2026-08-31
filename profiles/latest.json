@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-08-30T06:28:05.504202+00:00",
+  "generated_at": "2026-08-31T06:39:28.907491+00:00",
   "vllm_version": "0.28.0",
-  "vllm_recipes_sha": "c557d69",
+  "vllm_recipes_sha": "b5bcd99",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -19548,6 +19548,92 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "base_bf16"
+        }
+      ],
+      "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4": [
+        {
+          "name": "NVIDIA Nemotron 3.5 Lightning",
+          "huggingface_id": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+          "accelerators": "rtx_pro_6000",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--mamba-backend": "flashinfer",
+                "--mamba-cache-mode": "align",
+                "--enable-prefix-caching": "",
+                "--max-num-batched-tokens": "16384",
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "marlin",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--mamba-backend": "flashinfer",
+                "--mamba-cache-mode": "align",
+                "--enable-prefix-caching": "",
+                "--max-num-batched-tokens": "16384",
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "marlin",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16": [
+        {
+          "name": "NVIDIA Nemotron 3.5 Lightning (bf16)",
+          "huggingface_id": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+          "accelerators": "rtx_pro_6000",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--mamba-backend": "flashinfer",
+                "--mamba-cache-mode": "align",
+                "--enable-prefix-caching": "",
+                "--max-num-batched-tokens": "16384",
+                "--moe-backend": "flashinfer_cutlass",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3"
+              },
+              "extra_envs": {
+                "VLLM_USE_FASTOKENS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--mamba-backend": "flashinfer",
+                "--mamba-cache-mode": "align",
+                "--enable-prefix-caching": "",
+                "--max-num-batched-tokens": "16384",
+                "--moe-backend": "flashinfer_cutlass",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "nemotron_v3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_USE_FASTOKENS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "bf16"
         }
       ]
     },
@@ -49120,25 +49206,6 @@
           "variant_name": "default"
         }
       ],
-      "pfnet/plamo-2-translate": [
-        {
-          "name": "PLaMo 2 Translate",
-          "huggingface_id": "pfnet/plamo-2-translate",
-          "accelerators": "amd",
-          "provider": "vllm_amd",
-          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
-          "strategies": {
-            "latency-focus": {
-              "extra_args": {
-                "--trust-remote-code": ""
-              },
-              "extra_envs": {}
-            }
-          },
-          "default_strategy": "latency-focus",
-          "variant_name": "default"
-        }
-      ],
       "pfnet/plamo-3-nict-31b-base": [
         {
           "name": "PLaMo 3 NICT 31B Base",
@@ -59896,25 +59963,6 @@
           "variant_name": "default"
         }
       ],
-      "pfnet/plamo-2-translate": [
-        {
-          "name": "PLaMo 2 Translate",
-          "huggingface_id": "pfnet/plamo-2-translate",
-          "accelerators": "google",
-          "provider": "vllm",
-          "custom_image": "vllm/vllm-openai:v0.28.0",
-          "strategies": {
-            "latency-focus": {
-              "extra_args": {
-                "--trust-remote-code": ""
-              },
-              "extra_envs": {}
-            }
-          },
-          "default_strategy": "latency-focus",
-          "variant_name": "default"
-        }
-      ],
       "pfnet/plamo-3-nict-31b-base": [
         {
           "name": "PLaMo 3 NICT 31B Base",
@@ -70454,25 +70502,6 @@
             "latency-focus": {
               "extra_args": {
                 "--omni": ""
-              },
-              "extra_envs": {}
-            }
-          },
-          "default_strategy": "latency-focus",
-          "variant_name": "default"
-        }
-      ],
-      "pfnet/plamo-2-translate": [
-        {
-          "name": "PLaMo 2 Translate",
-          "huggingface_id": "pfnet/plamo-2-translate",
-          "accelerators": "huawei",
-          "provider": "vllm",
-          "custom_image": "vllm/vllm-openai:v0.28.0",
-          "strategies": {
-            "latency-focus": {
-              "extra_args": {
-                "--trust-remote-code": ""
               },
               "extra_envs": {}
             }
@@ -81028,25 +81057,6 @@
           "variant_name": "default"
         }
       ],
-      "pfnet/plamo-2-translate": [
-        {
-          "name": "PLaMo 2 Translate",
-          "huggingface_id": "pfnet/plamo-2-translate",
-          "accelerators": "intel",
-          "provider": "vllm",
-          "custom_image": "vllm/vllm-openai:v0.28.0",
-          "strategies": {
-            "latency-focus": {
-              "extra_args": {
-                "--trust-remote-code": ""
-              },
-              "extra_envs": {}
-            }
-          },
-          "default_strategy": "latency-focus",
-          "variant_name": "default"
-        }
-      ],
       "pfnet/plamo-3-nict-31b-base": [
         {
           "name": "PLaMo 3 NICT 31B Base",
@@ -91592,25 +91602,6 @@
             "latency-focus": {
               "extra_args": {
                 "--omni": ""
-              },
-              "extra_envs": {}
-            }
-          },
-          "default_strategy": "latency-focus",
-          "variant_name": "default"
-        }
-      ],
-      "pfnet/plamo-2-translate": [
-        {
-          "name": "PLaMo 2 Translate",
-          "huggingface_id": "pfnet/plamo-2-translate",
-          "accelerators": "nvidia",
-          "provider": "vllm",
-          "custom_image": "vllm/vllm-openai:v0.28.0",
-          "strategies": {
-            "latency-focus": {
-              "extra_args": {
-                "--trust-remote-code": ""
               },
               "extra_envs": {}
             }
