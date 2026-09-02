@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-09-01T06:32:43.737935+00:00",
+  "generated_at": "2026-09-02T06:35:57.513359+00:00",
   "vllm_version": "0.28.0",
-  "vllm_recipes_sha": "4bcc189",
+  "vllm_recipes_sha": "b2b0740",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -3475,6 +3475,168 @@
               "extra_envs": {
                 "VLLM_USE_V2_MODEL_RUNNER": "1"
               }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-0.9B": [
+        {
+          "name": "K2-Horizon-0.9B",
+          "huggingface_id": "IFM/K2-Horizon-0.9B",
+          "accelerators": "h200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--rope-scaling": "{\"rope_type\":\"yarn\",\"factor\":16.0,\"original_max_position_embeddings\":8192}",
+                "--gpu-memory-utilization": "0.85",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-3.7B": [
+        {
+          "name": "K2-Horizon-3.7B",
+          "huggingface_id": "IFM/K2-Horizon-3.7B",
+          "accelerators": "h200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-32B": [
+        {
+          "name": "K2-Horizon-32B",
+          "huggingface_id": "IFM/K2-Horizon-32B",
+          "accelerators": "h200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-36B": [
+        {
+          "name": "K2-Horizon-36B",
+          "huggingface_id": "IFM/K2-Horizon-36B",
+          "accelerators": "h200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-375B": [
+        {
+          "name": "K2-Horizon-375B",
+          "huggingface_id": "IFM/K2-Horizon-375B",
+          "accelerators": "h200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-7B": [
+        {
+          "name": "K2-Horizon-7B",
+          "huggingface_id": "IFM/K2-Horizon-7B",
+          "accelerators": "h200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
@@ -12726,6 +12888,44 @@
           "variant_name": "fp4"
         }
       ],
+      "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp": [
+        {
+          "name": "DeepSeek-V4-Flash-Vision-Exp",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+          "accelerators": "gb200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--speculative-config": "{\"method\":\"dspark\",\"model\":\"deepseek-ai/DeepSeek-V4-Flash-Vision-Exp\",\"num_speculative_tokens\":3,\"draft_sample_method\":\"probabilistic\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--speculative-config": "{\"method\":\"dspark\",\"model\":\"deepseek-ai/DeepSeek-V4-Flash-Vision-Exp\",\"num_speculative_tokens\":3,\"draft_sample_method\":\"probabilistic\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
       "deepseek-ai/DeepSeek-V4-Flash-0731": [
         {
           "name": "DeepSeek-V4-Flash",
@@ -15586,8 +15786,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {}
             },
@@ -15597,7 +15796,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -15620,8 +15818,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {}
             },
@@ -15631,7 +15828,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -15654,8 +15850,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {}
             },
@@ -15665,7 +15860,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -41771,6 +41965,168 @@
           "default_strategy": "latency-focus",
           "variant_name": "dspark"
         }
+      ],
+      "zai-org/GLM-5.3": [
+        {
+          "name": "GLM-5.3",
+          "huggingface_id": "zai-org/GLM-5.3",
+          "accelerators": "ascend_950pr_8x",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--trust-remote-code": "",
+                "--block-size": "512",
+                "--max-num-seqs": "16",
+                "--gpu-memory-utilization": "0.9",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45"
+              },
+              "extra_envs": {
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1",
+                "HCCL_BUFFSIZE": "1024",
+                "HCCL_OP_EXPANSION_MODE": "AIV"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--trust-remote-code": "",
+                "--block-size": "512",
+                "--max-num-seqs": "16",
+                "--gpu-memory-utilization": "0.9",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1",
+                "HCCL_BUFFSIZE": "1024",
+                "HCCL_OP_EXPANSION_MODE": "AIV"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "Inferact/GLM-5.3-NVFP4": [
+        {
+          "name": "GLM-5.3 (nvfp4)",
+          "huggingface_id": "Inferact/GLM-5.3-NVFP4",
+          "accelerators": "ascend_950pr_8x",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--trust-remote-code": "",
+                "--block-size": "512",
+                "--max-num-seqs": "16",
+                "--gpu-memory-utilization": "0.9",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45"
+              },
+              "extra_envs": {
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1",
+                "HCCL_BUFFSIZE": "1024",
+                "HCCL_OP_EXPANSION_MODE": "AIV"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--trust-remote-code": "",
+                "--block-size": "512",
+                "--max-num-seqs": "16",
+                "--gpu-memory-utilization": "0.9",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1",
+                "HCCL_BUFFSIZE": "1024",
+                "HCCL_OP_EXPANSION_MODE": "AIV"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "zai-org/GLM-5.3-BF16": [
+        {
+          "name": "GLM-5.3 (bf16)",
+          "huggingface_id": "zai-org/GLM-5.3-BF16",
+          "accelerators": "ascend_950pr_8x",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--trust-remote-code": "",
+                "--block-size": "512",
+                "--max-num-seqs": "16",
+                "--gpu-memory-utilization": "0.9",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45"
+              },
+              "extra_envs": {
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1",
+                "HCCL_BUFFSIZE": "1024",
+                "HCCL_OP_EXPANSION_MODE": "AIV"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--trust-remote-code": "",
+                "--block-size": "512",
+                "--max-num-seqs": "16",
+                "--gpu-memory-utilization": "0.9",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm45",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1",
+                "HCCL_BUFFSIZE": "1024",
+                "HCCL_OP_EXPANSION_MODE": "AIV"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "bf16"
+        }
       ]
     },
     "rtxpro-6000-blackwell-server-edition": {
@@ -42640,6 +42996,168 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "small_4b"
+        }
+      ],
+      "IFM/K2-Horizon-0.9B": [
+        {
+          "name": "K2-Horizon-0.9B",
+          "huggingface_id": "IFM/K2-Horizon-0.9B",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--rope-scaling": "{\"rope_type\":\"yarn\",\"factor\":16.0,\"original_max_position_embeddings\":8192}",
+                "--gpu-memory-utilization": "0.85",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-3.7B": [
+        {
+          "name": "K2-Horizon-3.7B",
+          "huggingface_id": "IFM/K2-Horizon-3.7B",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-32B": [
+        {
+          "name": "K2-Horizon-32B",
+          "huggingface_id": "IFM/K2-Horizon-32B",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-36B": [
+        {
+          "name": "K2-Horizon-36B",
+          "huggingface_id": "IFM/K2-Horizon-36B",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-375B": [
+        {
+          "name": "K2-Horizon-375B",
+          "huggingface_id": "IFM/K2-Horizon-375B",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-7B": [
+        {
+          "name": "K2-Horizon-7B",
+          "huggingface_id": "IFM/K2-Horizon-7B",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
         }
       ],
       "IndexTeam/IndexTTS-2.5": [
@@ -46841,6 +47359,44 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "fp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp": [
+        {
+          "name": "DeepSeek-V4-Flash-Vision-Exp",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--speculative-config": "{\"method\":\"dspark\",\"model\":\"deepseek-ai/DeepSeek-V4-Flash-Vision-Exp\",\"num_speculative_tokens\":3,\"draft_sample_method\":\"probabilistic\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--speculative-config": "{\"method\":\"dspark\",\"model\":\"deepseek-ai/DeepSeek-V4-Flash-Vision-Exp\",\"num_speculative_tokens\":3,\"draft_sample_method\":\"probabilistic\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Flash-0731": [
@@ -53090,8 +53646,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -53106,7 +53661,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -53134,8 +53688,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -53150,7 +53703,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -53178,8 +53730,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -53194,7 +53745,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -54270,6 +54820,168 @@
           "variant_name": "small_4b"
         }
       ],
+      "IFM/K2-Horizon-0.9B": [
+        {
+          "name": "K2-Horizon-0.9B",
+          "huggingface_id": "IFM/K2-Horizon-0.9B",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--rope-scaling": "{\"rope_type\":\"yarn\",\"factor\":16.0,\"original_max_position_embeddings\":8192}",
+                "--gpu-memory-utilization": "0.85",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-3.7B": [
+        {
+          "name": "K2-Horizon-3.7B",
+          "huggingface_id": "IFM/K2-Horizon-3.7B",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-32B": [
+        {
+          "name": "K2-Horizon-32B",
+          "huggingface_id": "IFM/K2-Horizon-32B",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-36B": [
+        {
+          "name": "K2-Horizon-36B",
+          "huggingface_id": "IFM/K2-Horizon-36B",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-375B": [
+        {
+          "name": "K2-Horizon-375B",
+          "huggingface_id": "IFM/K2-Horizon-375B",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-7B": [
+        {
+          "name": "K2-Horizon-7B",
+          "huggingface_id": "IFM/K2-Horizon-7B",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
       "IndexTeam/IndexTTS-2.5": [
         {
           "name": "IndexTTS-2.5",
@@ -58169,6 +58881,44 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "fp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp": [
+        {
+          "name": "DeepSeek-V4-Flash-Vision-Exp",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--speculative-config": "{\"method\":\"dspark\",\"model\":\"deepseek-ai/DeepSeek-V4-Flash-Vision-Exp\",\"num_speculative_tokens\":3,\"draft_sample_method\":\"probabilistic\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--speculative-config": "{\"method\":\"dspark\",\"model\":\"deepseek-ai/DeepSeek-V4-Flash-Vision-Exp\",\"num_speculative_tokens\":3,\"draft_sample_method\":\"probabilistic\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Flash-0731": [
@@ -63757,8 +64507,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {}
             },
@@ -63768,7 +64517,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -63791,8 +64539,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {}
             },
@@ -63802,7 +64549,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -63825,8 +64571,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {}
             },
@@ -63836,7 +64581,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -64909,6 +65653,168 @@
           "variant_name": "small_4b"
         }
       ],
+      "IFM/K2-Horizon-0.9B": [
+        {
+          "name": "K2-Horizon-0.9B",
+          "huggingface_id": "IFM/K2-Horizon-0.9B",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--rope-scaling": "{\"rope_type\":\"yarn\",\"factor\":16.0,\"original_max_position_embeddings\":8192}",
+                "--gpu-memory-utilization": "0.85",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-3.7B": [
+        {
+          "name": "K2-Horizon-3.7B",
+          "huggingface_id": "IFM/K2-Horizon-3.7B",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-32B": [
+        {
+          "name": "K2-Horizon-32B",
+          "huggingface_id": "IFM/K2-Horizon-32B",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-36B": [
+        {
+          "name": "K2-Horizon-36B",
+          "huggingface_id": "IFM/K2-Horizon-36B",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-375B": [
+        {
+          "name": "K2-Horizon-375B",
+          "huggingface_id": "IFM/K2-Horizon-375B",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-7B": [
+        {
+          "name": "K2-Horizon-7B",
+          "huggingface_id": "IFM/K2-Horizon-7B",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
       "IndexTeam/IndexTTS-2.5": [
         {
           "name": "IndexTTS-2.5",
@@ -68808,6 +69714,44 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "fp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp": [
+        {
+          "name": "DeepSeek-V4-Flash-Vision-Exp",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--speculative-config": "{\"method\":\"dspark\",\"model\":\"deepseek-ai/DeepSeek-V4-Flash-Vision-Exp\",\"num_speculative_tokens\":3,\"draft_sample_method\":\"probabilistic\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--speculative-config": "{\"method\":\"dspark\",\"model\":\"deepseek-ai/DeepSeek-V4-Flash-Vision-Exp\",\"num_speculative_tokens\":3,\"draft_sample_method\":\"probabilistic\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Flash-0731": [
@@ -74396,8 +75340,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {}
             },
@@ -74407,7 +75350,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -74430,8 +75372,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {}
             },
@@ -74441,7 +75382,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -74464,8 +75404,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {}
             },
@@ -74475,7 +75414,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -75548,6 +76486,168 @@
           "variant_name": "small_4b"
         }
       ],
+      "IFM/K2-Horizon-0.9B": [
+        {
+          "name": "K2-Horizon-0.9B",
+          "huggingface_id": "IFM/K2-Horizon-0.9B",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--rope-scaling": "{\"rope_type\":\"yarn\",\"factor\":16.0,\"original_max_position_embeddings\":8192}",
+                "--gpu-memory-utilization": "0.85",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-3.7B": [
+        {
+          "name": "K2-Horizon-3.7B",
+          "huggingface_id": "IFM/K2-Horizon-3.7B",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-32B": [
+        {
+          "name": "K2-Horizon-32B",
+          "huggingface_id": "IFM/K2-Horizon-32B",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-36B": [
+        {
+          "name": "K2-Horizon-36B",
+          "huggingface_id": "IFM/K2-Horizon-36B",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-375B": [
+        {
+          "name": "K2-Horizon-375B",
+          "huggingface_id": "IFM/K2-Horizon-375B",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-7B": [
+        {
+          "name": "K2-Horizon-7B",
+          "huggingface_id": "IFM/K2-Horizon-7B",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
       "IndexTeam/IndexTTS-2.5": [
         {
           "name": "IndexTTS-2.5",
@@ -79447,6 +80547,44 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "fp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp": [
+        {
+          "name": "DeepSeek-V4-Flash-Vision-Exp",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--speculative-config": "{\"method\":\"dspark\",\"model\":\"deepseek-ai/DeepSeek-V4-Flash-Vision-Exp\",\"num_speculative_tokens\":3,\"draft_sample_method\":\"probabilistic\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--speculative-config": "{\"method\":\"dspark\",\"model\":\"deepseek-ai/DeepSeek-V4-Flash-Vision-Exp\",\"num_speculative_tokens\":3,\"draft_sample_method\":\"probabilistic\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Flash-0731": [
@@ -85035,8 +86173,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {}
             },
@@ -85046,7 +86183,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -85069,8 +86205,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {}
             },
@@ -85080,7 +86215,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -85103,8 +86237,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {}
             },
@@ -85114,7 +86247,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -86187,6 +87319,168 @@
           "variant_name": "small_4b"
         }
       ],
+      "IFM/K2-Horizon-0.9B": [
+        {
+          "name": "K2-Horizon-0.9B",
+          "huggingface_id": "IFM/K2-Horizon-0.9B",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--rope-scaling": "{\"rope_type\":\"yarn\",\"factor\":16.0,\"original_max_position_embeddings\":8192}",
+                "--gpu-memory-utilization": "0.85",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-3.7B": [
+        {
+          "name": "K2-Horizon-3.7B",
+          "huggingface_id": "IFM/K2-Horizon-3.7B",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-32B": [
+        {
+          "name": "K2-Horizon-32B",
+          "huggingface_id": "IFM/K2-Horizon-32B",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-36B": [
+        {
+          "name": "K2-Horizon-36B",
+          "huggingface_id": "IFM/K2-Horizon-36B",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-375B": [
+        {
+          "name": "K2-Horizon-375B",
+          "huggingface_id": "IFM/K2-Horizon-375B",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "IFM/K2-Horizon-7B": [
+        {
+          "name": "K2-Horizon-7B",
+          "huggingface_id": "IFM/K2-Horizon-7B",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "k2_horizon",
+                "--reasoning-parser": "k2_horizon"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
       "IndexTeam/IndexTTS-2.5": [
         {
           "name": "IndexTTS-2.5",
@@ -90098,6 +91392,44 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "fp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp": [
+        {
+          "name": "DeepSeek-V4-Flash-Vision-Exp",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--speculative-config": "{\"method\":\"dspark\",\"model\":\"deepseek-ai/DeepSeek-V4-Flash-Vision-Exp\",\"num_speculative_tokens\":3,\"draft_sample_method\":\"probabilistic\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--speculative-config": "{\"method\":\"dspark\",\"model\":\"deepseek-ai/DeepSeek-V4-Flash-Vision-Exp\",\"num_speculative_tokens\":3,\"draft_sample_method\":\"probabilistic\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Flash-0731": [
@@ -95686,8 +97018,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {}
             },
@@ -95697,7 +97028,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -95720,8 +97050,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {}
             },
@@ -95731,7 +97060,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -95754,8 +97082,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {}
             },
@@ -95765,7 +97092,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
