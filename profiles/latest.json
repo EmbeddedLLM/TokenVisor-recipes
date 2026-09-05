@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-09-04T06:30:43.237488+00:00",
+  "generated_at": "2026-09-05T06:27:15.028790+00:00",
   "vllm_version": "0.28.0",
-  "vllm_recipes_sha": "2192430",
+  "vllm_recipes_sha": "c754b65",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -1499,6 +1499,132 @@
           "variant_name": "nvfp4"
         }
       ],
+      "Inferact/Qwen3.8-Flash-Next-NVFP4": [
+        {
+          "name": "Qwen3.8-Flash-Next",
+          "huggingface_id": "Inferact/Qwen3.8-Flash-Next-NVFP4",
+          "accelerators": "h100",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--max-num-seqs": "256",
+                "--gpu-memory-utilization": "0.85",
+                "--enable-prefix-caching": "",
+                "--no-enable-flashinfer-autotune": "",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--max-num-seqs": "256",
+                "--gpu-memory-utilization": "0.85",
+                "--enable-prefix-caching": "",
+                "--no-enable-flashinfer-autotune": "",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "Qwen/Qwen3.8-Flash-Next-FP8": [
+        {
+          "name": "Qwen3.8-Flash-Next (fp8)",
+          "huggingface_id": "Qwen/Qwen3.8-Flash-Next-FP8",
+          "accelerators": "h100",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--max-num-seqs": "256",
+                "--gpu-memory-utilization": "0.85",
+                "--enable-prefix-caching": "",
+                "--no-enable-flashinfer-autotune": "",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--max-num-seqs": "256",
+                "--gpu-memory-utilization": "0.85",
+                "--enable-prefix-caching": "",
+                "--no-enable-flashinfer-autotune": "",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "Qwen/Qwen3.8-Flash-Next": [
+        {
+          "name": "Qwen3.8-Flash-Next (bf16)",
+          "huggingface_id": "Qwen/Qwen3.8-Flash-Next",
+          "accelerators": "h100",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--max-num-seqs": "256",
+                "--gpu-memory-utilization": "0.85",
+                "--enable-prefix-caching": "",
+                "--no-enable-flashinfer-autotune": "",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--max-num-seqs": "256",
+                "--gpu-memory-utilization": "0.85",
+                "--enable-prefix-caching": "",
+                "--no-enable-flashinfer-autotune": "",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_xml",
+                "--reasoning-parser": "qwen3",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "bf16"
+        }
+      ],
       "deepseek-ai/DeepSeek-V3.2": [
         {
           "name": "DeepSeek-V3.2",
@@ -2533,7 +2659,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -2555,7 +2681,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -2577,7 +2703,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -2599,7 +2725,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -2621,7 +2747,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -3000,8 +3126,7 @@
                 "--no-enable-flashinfer-autotune": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -3013,7 +3138,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -3038,8 +3162,7 @@
                 "--no-enable-flashinfer-autotune": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -3051,7 +3174,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -3076,8 +3198,7 @@
                 "--no-enable-flashinfer-autotune": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -3089,7 +3210,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -7585,7 +7705,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -7607,7 +7727,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -7629,7 +7749,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -7651,7 +7771,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -7673,7 +7793,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -11349,7 +11469,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -11371,7 +11491,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -11393,7 +11513,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -11415,7 +11535,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -11437,7 +11557,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -12255,8 +12375,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -12268,7 +12387,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -12293,8 +12411,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -12306,7 +12423,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -12331,8 +12447,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -12344,7 +12459,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -14220,8 +14334,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -14233,7 +14346,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -14258,8 +14370,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -14271,7 +14382,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -14296,8 +14406,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -14309,7 +14418,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -26566,8 +26674,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -26581,7 +26688,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -26608,8 +26714,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -26623,7 +26728,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -26650,8 +26754,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -26665,7 +26768,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -31281,8 +31383,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -31296,7 +31397,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -31323,8 +31423,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -31338,7 +31437,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -31365,8 +31463,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -31380,7 +31477,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -37105,8 +37201,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -37120,7 +37215,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -37147,8 +37241,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -37162,7 +37255,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -37189,8 +37281,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -37204,7 +37295,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -41961,8 +42051,7 @@
                 "--gpu-memory-utilization": "0.90",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -41982,7 +42071,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -42015,8 +42103,7 @@
                 "--gpu-memory-utilization": "0.90",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -42036,7 +42123,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -42069,8 +42155,7 @@
                 "--gpu-memory-utilization": "0.90",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -42090,7 +42175,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -50916,7 +51000,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -50938,7 +51022,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -50960,7 +51044,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -50982,7 +51066,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -51004,7 +51088,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -53659,8 +53743,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -53674,7 +53757,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -53701,8 +53783,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -53716,7 +53797,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -53743,8 +53823,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -53758,7 +53837,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -62059,7 +62137,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -62081,7 +62159,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -62103,7 +62181,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -62125,7 +62203,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -62147,7 +62225,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -64538,8 +64616,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -64550,7 +64627,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -64574,8 +64650,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -64586,7 +64661,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -64610,8 +64684,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -64622,7 +64695,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -72892,7 +72964,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -72914,7 +72986,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -72936,7 +73008,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -72958,7 +73030,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -72980,7 +73052,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -75371,8 +75443,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -75383,7 +75454,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -75407,8 +75477,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -75419,7 +75488,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -75443,8 +75511,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -75455,7 +75522,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -83725,7 +83791,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -83747,7 +83813,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -83769,7 +83835,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -83791,7 +83857,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -83813,7 +83879,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -86204,8 +86270,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -86216,7 +86281,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -86240,8 +86304,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -86252,7 +86315,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -86276,8 +86338,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -86288,7 +86349,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -94570,7 +94630,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -94592,7 +94652,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -94614,7 +94674,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -94636,7 +94696,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -94658,7 +94718,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
+                "--tool-parser-plugin": "nemotron_toolcall_parser_no_streaming.py",
                 "--tool-call-parser": "nemotron_json"
               },
               "extra_envs": {}
@@ -97049,8 +97109,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -97061,7 +97120,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -97085,8 +97143,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -97097,7 +97154,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -97121,8 +97177,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}"
+                "--reasoning-parser": "glm45"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -97133,7 +97188,6 @@
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm45",
-                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":5}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
