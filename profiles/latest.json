@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-09-07T06:40:09.517276+00:00",
+  "generated_at": "2026-09-08T06:30:49.957174+00:00",
   "vllm_version": "0.28.0",
-  "vllm_recipes_sha": "023882d",
+  "vllm_recipes_sha": "abacf57",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -10901,8 +10901,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -10923,8 +10924,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -10959,8 +10961,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -10981,8 +10984,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -11017,8 +11021,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--quantization": "ascend",
                 "--enable-expert-parallel": "",
@@ -11054,8 +11059,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--quantization": "ascend",
                 "--enable-expert-parallel": "",
@@ -13980,8 +13986,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -14002,8 +14009,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -14038,8 +14046,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -14060,8 +14069,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -14096,8 +14106,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--quantization": "ascend",
                 "--enable-expert-parallel": "",
@@ -14133,8 +14144,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--quantization": "ascend",
                 "--enable-expert-parallel": "",
@@ -15487,8 +15499,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -15509,8 +15522,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -15545,8 +15559,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -15567,8 +15582,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -15603,8 +15619,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--quantization": "ascend",
                 "--enable-expert-parallel": "",
@@ -15640,8 +15657,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--quantization": "ascend",
                 "--enable-expert-parallel": "",
@@ -16998,8 +17016,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -17020,8 +17039,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -17056,8 +17076,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -17078,8 +17099,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "kimi_k3",
@@ -17114,8 +17136,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--quantization": "ascend",
                 "--enable-expert-parallel": "",
@@ -17151,8 +17174,9 @@
                 "--load-format": "fastsafetensors",
                 "--no-enable-flashinfer-autotune": "",
                 "--kv-cache-dtype": "fp8",
-                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"flashinfer\"}",
+                "--attention-config": "{\"use_prefill_query_quantization\":true,\"mla_prefill_backend\":\"TOKENSPEED_MLA\"}",
                 "--enable-prefix-caching": "",
+                "--attention-backend": "TOKENSPEED_MLA",
                 "--prefix-match-unit": "128",
                 "--quantization": "ascend",
                 "--enable-expert-parallel": "",
@@ -51505,6 +51529,27 @@
           "variant_name": "default"
         }
       ],
+      "openbmb/MiniCPM5-2B": [
+        {
+          "name": "MiniCPM5-2B",
+          "huggingface_id": "openbmb/MiniCPM5-2B",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "minicpm5",
+                "--default-chat-template-kwargs": "{\"enable_thinking\": true}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
       "openbmb/VoxCPM2": [
         {
           "name": "VoxCPM2",
@@ -62627,6 +62672,27 @@
           "variant_name": "default"
         }
       ],
+      "openbmb/MiniCPM5-2B": [
+        {
+          "name": "MiniCPM5-2B",
+          "huggingface_id": "openbmb/MiniCPM5-2B",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "minicpm5",
+                "--default-chat-template-kwargs": "{\"enable_thinking\": true}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
       "openbmb/VoxCPM2": [
         {
           "name": "VoxCPM2",
@@ -73489,6 +73555,27 @@
           "variant_name": "default"
         }
       ],
+      "openbmb/MiniCPM5-2B": [
+        {
+          "name": "MiniCPM5-2B",
+          "huggingface_id": "openbmb/MiniCPM5-2B",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "minicpm5",
+                "--default-chat-template-kwargs": "{\"enable_thinking\": true}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
       "openbmb/VoxCPM2": [
         {
           "name": "VoxCPM2",
@@ -84342,6 +84429,27 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--default-chat-template-kwargs": "{\"enable_thinking\": true}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "openbmb/MiniCPM5-2B": [
+        {
+          "name": "MiniCPM5-2B",
+          "huggingface_id": "openbmb/MiniCPM5-2B",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "minicpm5",
                 "--default-chat-template-kwargs": "{\"enable_thinking\": true}"
               },
               "extra_envs": {}
@@ -95216,6 +95324,27 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--default-chat-template-kwargs": "{\"enable_thinking\": true}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "openbmb/MiniCPM5-2B": [
+        {
+          "name": "MiniCPM5-2B",
+          "huggingface_id": "openbmb/MiniCPM5-2B",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.28.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "minicpm5",
                 "--default-chat-template-kwargs": "{\"enable_thinking\": true}"
               },
               "extra_envs": {}
