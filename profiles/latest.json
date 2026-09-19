@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-09-18T06:30:55.346881+00:00",
+  "generated_at": "2026-09-19T06:28:06.588033+00:00",
   "vllm_version": "0.29.0",
-  "vllm_recipes_sha": "296ce72",
+  "vllm_recipes_sha": "1039b26",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -3276,7 +3276,7 @@
                 "--no-enable-flashinfer-autotune": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -3287,7 +3287,7 @@
                 "--no-enable-flashinfer-autotune": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -3312,7 +3312,7 @@
                 "--no-enable-flashinfer-autotune": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -3323,7 +3323,7 @@
                 "--no-enable-flashinfer-autotune": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -3348,7 +3348,7 @@
                 "--no-enable-flashinfer-autotune": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -3359,7 +3359,7 @@
                 "--no-enable-flashinfer-autotune": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -9709,7 +9709,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -9720,7 +9720,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -9745,7 +9745,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -9756,7 +9756,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -9782,7 +9782,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -9794,7 +9794,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -9820,7 +9820,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -9830,7 +9830,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -9854,7 +9854,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -9864,7 +9864,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -9889,7 +9889,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -9900,7 +9900,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -9929,7 +9929,7 @@
                 "--max-num-seqs": "64",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -9944,7 +9944,7 @@
                 "--max-num-seqs": "64",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -9967,7 +9967,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -9976,7 +9976,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -9999,7 +9999,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -10008,7 +10008,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -10033,7 +10033,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -10044,7 +10044,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             }
@@ -10066,7 +10066,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -10075,7 +10075,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -10099,7 +10099,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3"
               },
@@ -10111,7 +10111,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3",
                 "--enable-expert-parallel": ""
@@ -10137,7 +10137,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3"
               },
@@ -10149,7 +10149,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3",
                 "--enable-expert-parallel": ""
@@ -10176,7 +10176,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3"
               },
@@ -10189,7 +10189,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3",
                 "--enable-expert-parallel": ""
@@ -12989,7 +12989,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -12998,7 +12998,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -13021,7 +13021,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -13030,7 +13030,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -13053,7 +13053,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -13062,7 +13062,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -13085,7 +13085,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -13094,7 +13094,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -13117,7 +13117,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -13128,7 +13128,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -13153,7 +13153,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -13164,7 +13164,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -13189,7 +13189,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -13200,7 +13200,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -15357,7 +15357,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -15368,7 +15368,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -15393,7 +15393,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -15404,7 +15404,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -15429,7 +15429,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -15440,7 +15440,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -16827,7 +16827,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -16836,7 +16836,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -16859,7 +16859,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -16868,7 +16868,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -16891,7 +16891,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -16900,7 +16900,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -16923,7 +16923,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -16932,7 +16932,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -16955,7 +16955,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -16964,7 +16964,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -16987,7 +16987,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -16996,7 +16996,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -17021,7 +17021,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -17032,7 +17032,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             }
@@ -17054,7 +17054,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -17063,7 +17063,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -29076,7 +29076,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -29087,7 +29087,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -29112,7 +29112,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -29123,7 +29123,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -29149,7 +29149,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -29161,7 +29161,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -29188,7 +29188,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -29202,7 +29202,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -29230,7 +29230,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -29244,7 +29244,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -29272,7 +29272,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -29286,7 +29286,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -29314,7 +29314,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -29328,7 +29328,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -34172,7 +34172,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -34183,7 +34183,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -34208,7 +34208,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -34219,7 +34219,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -34245,7 +34245,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -34257,7 +34257,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -40419,7 +40419,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -40430,7 +40430,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -40455,7 +40455,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -40466,7 +40466,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -40492,7 +40492,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -40504,7 +40504,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -40532,7 +40532,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -40547,7 +40547,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -40576,7 +40576,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -40591,7 +40591,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -40621,7 +40621,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -40637,7 +40637,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -40671,7 +40671,7 @@
                 "--max-num-seqs": "64",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -40691,7 +40691,7 @@
                 "--max-num-seqs": "64",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -40719,7 +40719,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -40733,7 +40733,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -40761,7 +40761,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -40775,7 +40775,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -40803,7 +40803,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -40817,7 +40817,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -40845,7 +40845,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -40859,7 +40859,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -40886,7 +40886,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -40899,7 +40899,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -40926,7 +40926,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -40939,7 +40939,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -40966,7 +40966,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -40979,7 +40979,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -46963,7 +46963,7 @@
                 "--gpu-memory-utilization": "0.90",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -46982,7 +46982,7 @@
                 "--gpu-memory-utilization": "0.90",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -47015,7 +47015,7 @@
                 "--gpu-memory-utilization": "0.90",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -47034,7 +47034,7 @@
                 "--gpu-memory-utilization": "0.90",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -47067,7 +47067,7 @@
                 "--gpu-memory-utilization": "0.90",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -47086,7 +47086,7 @@
                 "--gpu-memory-utilization": "0.90",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -47119,7 +47119,7 @@
                 "--gpu-memory-utilization": "0.9",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
@@ -47139,7 +47139,7 @@
                 "--gpu-memory-utilization": "0.9",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -47173,7 +47173,7 @@
                 "--gpu-memory-utilization": "0.9",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
@@ -47193,7 +47193,7 @@
                 "--gpu-memory-utilization": "0.9",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -47228,7 +47228,7 @@
                 "--enable-expert-parallel": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
@@ -47249,7 +47249,7 @@
                 "--enable-expert-parallel": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
@@ -47282,7 +47282,7 @@
                 "--gpu-memory-utilization": "0.9",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
@@ -47302,7 +47302,7 @@
                 "--gpu-memory-utilization": "0.9",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -59180,7 +59180,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -59191,7 +59191,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -59216,7 +59216,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -59227,7 +59227,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -59253,7 +59253,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -59265,7 +59265,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -59293,7 +59293,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -59308,7 +59308,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -59337,7 +59337,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -59352,7 +59352,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -59382,7 +59382,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -59398,7 +59398,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -59432,7 +59432,7 @@
                 "--max-num-seqs": "64",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -59452,7 +59452,7 @@
                 "--max-num-seqs": "64",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -59480,7 +59480,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -59494,7 +59494,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -59522,7 +59522,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -59536,7 +59536,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -59564,7 +59564,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -59578,7 +59578,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -59606,7 +59606,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -59620,7 +59620,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -59647,7 +59647,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -59660,7 +59660,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -59687,7 +59687,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -59700,7 +59700,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -59727,7 +59727,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
@@ -59740,7 +59740,7 @@
                 "--attention-backend": "ROCM_AITER_MLA_SPARSE",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -59768,7 +59768,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -59782,7 +59782,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -59810,7 +59810,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -59824,7 +59824,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -59854,7 +59854,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -59870,7 +59870,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -59897,7 +59897,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -59911,7 +59911,7 @@
                 "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -59938,7 +59938,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3"
               },
@@ -59950,7 +59950,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3",
                 "--enable-expert-parallel": ""
@@ -59976,7 +59976,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3"
               },
@@ -59988,7 +59988,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3",
                 "--enable-expert-parallel": ""
@@ -60015,7 +60015,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3"
               },
@@ -60028,7 +60028,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3",
                 "--enable-expert-parallel": ""
@@ -71079,7 +71079,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -71090,7 +71090,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -71115,7 +71115,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -71126,7 +71126,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -71152,7 +71152,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -71164,7 +71164,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -71190,7 +71190,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -71200,7 +71200,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -71224,7 +71224,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -71234,7 +71234,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -71259,7 +71259,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -71270,7 +71270,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -71299,7 +71299,7 @@
                 "--max-num-seqs": "64",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -71314,7 +71314,7 @@
                 "--max-num-seqs": "64",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -71337,7 +71337,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -71346,7 +71346,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -71369,7 +71369,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -71378,7 +71378,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -71401,7 +71401,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -71410,7 +71410,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -71433,7 +71433,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -71442,7 +71442,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -71464,7 +71464,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -71474,7 +71474,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -71498,7 +71498,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -71508,7 +71508,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -71532,7 +71532,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -71542,7 +71542,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -71567,7 +71567,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -71576,7 +71576,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -71599,7 +71599,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -71608,7 +71608,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -71633,7 +71633,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -71644,7 +71644,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             }
@@ -71666,7 +71666,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -71675,7 +71675,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -71699,7 +71699,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3"
               },
@@ -71711,7 +71711,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3",
                 "--enable-expert-parallel": ""
@@ -71737,7 +71737,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3"
               },
@@ -71749,7 +71749,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3",
                 "--enable-expert-parallel": ""
@@ -71776,7 +71776,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3"
               },
@@ -71789,7 +71789,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3",
                 "--enable-expert-parallel": ""
@@ -82840,7 +82840,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -82851,7 +82851,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -82876,7 +82876,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -82887,7 +82887,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -82913,7 +82913,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -82925,7 +82925,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -82951,7 +82951,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -82961,7 +82961,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -82985,7 +82985,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -82995,7 +82995,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -83020,7 +83020,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -83031,7 +83031,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -83060,7 +83060,7 @@
                 "--max-num-seqs": "64",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -83075,7 +83075,7 @@
                 "--max-num-seqs": "64",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -83098,7 +83098,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -83107,7 +83107,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -83130,7 +83130,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -83139,7 +83139,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -83162,7 +83162,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -83171,7 +83171,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -83194,7 +83194,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -83203,7 +83203,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -83225,7 +83225,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -83235,7 +83235,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -83259,7 +83259,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -83269,7 +83269,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -83293,7 +83293,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -83303,7 +83303,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -83328,7 +83328,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -83337,7 +83337,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -83360,7 +83360,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -83369,7 +83369,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -83394,7 +83394,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -83405,7 +83405,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             }
@@ -83427,7 +83427,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -83436,7 +83436,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -83460,7 +83460,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3"
               },
@@ -83472,7 +83472,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3",
                 "--enable-expert-parallel": ""
@@ -83498,7 +83498,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3"
               },
@@ -83510,7 +83510,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3",
                 "--enable-expert-parallel": ""
@@ -83537,7 +83537,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3"
               },
@@ -83550,7 +83550,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3",
                 "--enable-expert-parallel": ""
@@ -94601,7 +94601,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -94612,7 +94612,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -94637,7 +94637,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -94648,7 +94648,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -94674,7 +94674,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -94686,7 +94686,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -94712,7 +94712,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -94722,7 +94722,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -94746,7 +94746,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -94756,7 +94756,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -94781,7 +94781,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -94792,7 +94792,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -94821,7 +94821,7 @@
                 "--max-num-seqs": "64",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -94836,7 +94836,7 @@
                 "--max-num-seqs": "64",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -94859,7 +94859,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -94868,7 +94868,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -94891,7 +94891,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -94900,7 +94900,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -94923,7 +94923,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -94932,7 +94932,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -94955,7 +94955,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -94964,7 +94964,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -94986,7 +94986,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -94996,7 +94996,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -95020,7 +95020,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -95030,7 +95030,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -95054,7 +95054,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -95064,7 +95064,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -95089,7 +95089,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -95098,7 +95098,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -95121,7 +95121,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -95130,7 +95130,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -95155,7 +95155,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -95166,7 +95166,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             }
@@ -95188,7 +95188,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -95197,7 +95197,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -95221,7 +95221,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3"
               },
@@ -95233,7 +95233,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3",
                 "--enable-expert-parallel": ""
@@ -95259,7 +95259,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3"
               },
@@ -95271,7 +95271,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3",
                 "--enable-expert-parallel": ""
@@ -95298,7 +95298,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3"
               },
@@ -95311,7 +95311,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3",
                 "--enable-expert-parallel": ""
@@ -106384,7 +106384,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -106395,7 +106395,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -106420,7 +106420,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -106431,7 +106431,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -106457,7 +106457,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1"
               },
@@ -106469,7 +106469,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "1",
                 "--enable-expert-parallel": ""
@@ -106495,7 +106495,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -106505,7 +106505,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -106529,7 +106529,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -106539,7 +106539,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -106564,7 +106564,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -106575,7 +106575,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -106604,7 +106604,7 @@
                 "--max-num-seqs": "64",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -106619,7 +106619,7 @@
                 "--max-num-seqs": "64",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -106642,7 +106642,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -106651,7 +106651,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -106674,7 +106674,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -106683,7 +106683,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -106706,7 +106706,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -106715,7 +106715,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -106738,7 +106738,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -106747,7 +106747,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -106769,7 +106769,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -106779,7 +106779,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -106803,7 +106803,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -106813,7 +106813,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -106837,7 +106837,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {
                 "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
@@ -106847,7 +106847,7 @@
               "extra_args": {
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -106872,7 +106872,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -106881,7 +106881,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -106904,7 +106904,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -106913,7 +106913,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -106938,7 +106938,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -106949,7 +106949,7 @@
                 "--trust-remote-code": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             }
@@ -106971,7 +106971,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45"
+                "--reasoning-parser": "glm47"
               },
               "extra_envs": {}
             },
@@ -106980,7 +106980,7 @@
                 "--kv-cache-dtype": "fp8_e4m3",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -107004,7 +107004,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3"
               },
@@ -107016,7 +107016,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3",
                 "--enable-expert-parallel": ""
@@ -107042,7 +107042,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3"
               },
@@ -107054,7 +107054,7 @@
                 "--chat-template-content-format=string": "",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3",
                 "--enable-expert-parallel": ""
@@ -107081,7 +107081,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3"
               },
@@ -107094,7 +107094,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
-                "--reasoning-parser": "glm45",
+                "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3",
                 "--enable-expert-parallel": ""
