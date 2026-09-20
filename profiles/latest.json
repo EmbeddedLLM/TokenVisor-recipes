@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-09-19T06:28:06.588033+00:00",
+  "generated_at": "2026-09-20T06:28:05.759467+00:00",
   "vllm_version": "0.29.0",
-  "vllm_recipes_sha": "1039b26",
+  "vllm_recipes_sha": "af8b36e",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -10907,7 +10907,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -10921,7 +10921,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -10949,7 +10949,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -10963,7 +10963,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -10991,7 +10991,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11005,7 +11005,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11033,7 +11033,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11047,7 +11047,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11075,7 +11075,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11088,7 +11088,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11115,7 +11115,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11128,7 +11128,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11155,7 +11155,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11168,7 +11168,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11195,7 +11195,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -11208,7 +11208,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14034,7 +14034,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14048,7 +14048,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14076,7 +14076,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14090,7 +14090,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14118,7 +14118,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14132,7 +14132,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14160,7 +14160,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14174,7 +14174,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14202,7 +14202,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14215,7 +14215,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14242,7 +14242,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14255,7 +14255,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14282,7 +14282,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14295,7 +14295,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14322,7 +14322,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -14335,7 +14335,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -15928,7 +15928,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -15942,7 +15942,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -15970,7 +15970,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -15984,7 +15984,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -16012,7 +16012,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -16026,7 +16026,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -16054,7 +16054,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -16068,7 +16068,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -16096,7 +16096,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -16109,7 +16109,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -16136,7 +16136,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -16149,7 +16149,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -16176,7 +16176,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -16189,7 +16189,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -16216,7 +16216,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -16229,7 +16229,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -17597,7 +17597,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -17611,7 +17611,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -17639,7 +17639,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -17653,7 +17653,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -17681,7 +17681,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -17695,7 +17695,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -17723,7 +17723,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -17737,7 +17737,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -17765,7 +17765,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -17778,7 +17778,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -17805,7 +17805,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -17818,7 +17818,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -17845,7 +17845,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -17858,7 +17858,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -17885,7 +17885,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -17898,7 +17898,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache=True": "",
+                "--attention_config.indexer_kv_dtype=mxfp4": "",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -18818,6 +18818,46 @@
           "variant_name": "ascend_w8a8_mxfp8"
         }
       ],
+      "Eco-Tech/Qwen3.6-27B-w8a8": [
+        {
+          "name": "Qwen3.6-27B (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/Qwen3.6-27B-w8a8",
+          "accelerators": "dgx_station_gb300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--data-parallel-size": "8",
+                "--quantization": "ascend",
+                "--served-model-name": "qwen3.6",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "16384",
+                "--gpu-memory-utilization": "0.90",
+                "--no-enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_cpu_binding\":true}",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "HCCL_BUFFSIZE": "512",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
+      ],
       "Qwen/Qwen3.6-35B-A3B": [
         {
           "name": "Qwen3.6-35B-A3B",
@@ -19161,7 +19201,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -19175,7 +19215,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -19203,7 +19243,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -19217,7 +19257,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -19245,7 +19285,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -19259,7 +19299,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -19287,7 +19327,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -19301,7 +19341,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -20129,6 +20169,46 @@
           "variant_name": "ascend_w8a8_mxfp8"
         }
       ],
+      "Eco-Tech/Qwen3.6-27B-w8a8": [
+        {
+          "name": "Qwen3.6-27B (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/Qwen3.6-27B-w8a8",
+          "accelerators": "dgx_spark_gb10",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--data-parallel-size": "8",
+                "--quantization": "ascend",
+                "--served-model-name": "qwen3.6",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "16384",
+                "--gpu-memory-utilization": "0.90",
+                "--no-enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_cpu_binding\":true}",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "HCCL_BUFFSIZE": "512",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
+      ],
       "Qwen/Qwen3.6-35B-A3B": [
         {
           "name": "Qwen3.6-35B-A3B",
@@ -20493,7 +20573,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -20507,7 +20587,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -20535,7 +20615,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -20549,7 +20629,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -20577,7 +20657,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -20591,7 +20671,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -20619,7 +20699,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -20633,7 +20713,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -21413,6 +21493,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "ascend_w8a8_mxfp8"
+        }
+      ],
+      "Eco-Tech/Qwen3.6-27B-w8a8": [
+        {
+          "name": "Qwen3.6-27B (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/Qwen3.6-27B-w8a8",
+          "accelerators": "rtx_pro_6000",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--data-parallel-size": "8",
+                "--quantization": "ascend",
+                "--served-model-name": "qwen3.6",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "16384",
+                "--gpu-memory-utilization": "0.90",
+                "--no-enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_cpu_binding\":true}",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "HCCL_BUFFSIZE": "512",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
         }
       ],
       "Qwen/Qwen3.6-35B-A3B": [
@@ -22297,7 +22417,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -22311,7 +22431,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -22339,7 +22459,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -22353,7 +22473,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -22381,7 +22501,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -22395,7 +22515,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -22423,7 +22543,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -22437,7 +22557,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--block-size": "256",
-                "--attention_config.use_fp4_indexer_cache": "True",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
                 "--tokenizer-mode": "deepseek_v4",
                 "--tool-call-parser": "deepseek_v4",
                 "--enable-auto-tool-choice": "",
@@ -22717,6 +22837,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "ascend_w8a8_mxfp8"
+        }
+      ],
+      "Eco-Tech/Qwen3.6-27B-w8a8": [
+        {
+          "name": "Qwen3.6-27B (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/Qwen3.6-27B-w8a8",
+          "accelerators": "rtx_5090",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--data-parallel-size": "8",
+                "--quantization": "ascend",
+                "--served-model-name": "qwen3.6",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "16384",
+                "--gpu-memory-utilization": "0.90",
+                "--no-enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_cpu_binding\":true}",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "HCCL_BUFFSIZE": "512",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
         }
       ],
       "Qwen/Qwen3.6-35B-A3B": [
@@ -30695,6 +30855,220 @@
           "variant_name": "nvfp4"
         }
       ],
+      "Qwen/Qwen3.5-122B-A10B": [
+        {
+          "name": "Qwen3.5-122B-A10B",
+          "huggingface_id": "Qwen/Qwen3.5-122B-A10B",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "Qwen/Qwen3.5-122B-A10B-FP8": [
+        {
+          "name": "Qwen3.5-122B-A10B (fp8)",
+          "huggingface_id": "Qwen/Qwen3.5-122B-A10B-FP8",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "RedHatAI/Qwen3.5-122B-A10B-NVFP4": [
+        {
+          "name": "Qwen3.5-122B-A10B (nvfp4)",
+          "huggingface_id": "RedHatAI/Qwen3.5-122B-A10B-NVFP4",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "Qwen/Qwen3.5-122B-A10B-GPTQ-Int4": [
+        {
+          "name": "Qwen3.5-122B-A10B (gptq_int4)",
+          "huggingface_id": "Qwen/Qwen3.5-122B-A10B-GPTQ-Int4",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "gptq_int4"
+        }
+      ],
+      "RedHatAI/Qwen3.5-122B-A10B-FP8-dynamic": [
+        {
+          "name": "Qwen3.5-122B-A10B (redhat_fp8)",
+          "huggingface_id": "RedHatAI/Qwen3.5-122B-A10B-FP8-dynamic",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_fp8"
+        }
+      ],
       "Qwen/Qwen3.5-397B-A17B": [
         {
           "name": "Qwen3.5-397B",
@@ -36195,6 +36569,220 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "Qwen/Qwen3.5-122B-A10B": [
+        {
+          "name": "Qwen3.5-122B-A10B",
+          "huggingface_id": "Qwen/Qwen3.5-122B-A10B",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "Qwen/Qwen3.5-122B-A10B-FP8": [
+        {
+          "name": "Qwen3.5-122B-A10B (fp8)",
+          "huggingface_id": "Qwen/Qwen3.5-122B-A10B-FP8",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "RedHatAI/Qwen3.5-122B-A10B-NVFP4": [
+        {
+          "name": "Qwen3.5-122B-A10B (nvfp4)",
+          "huggingface_id": "RedHatAI/Qwen3.5-122B-A10B-NVFP4",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "Qwen/Qwen3.5-122B-A10B-GPTQ-Int4": [
+        {
+          "name": "Qwen3.5-122B-A10B (gptq_int4)",
+          "huggingface_id": "Qwen/Qwen3.5-122B-A10B-GPTQ-Int4",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "gptq_int4"
+        }
+      ],
+      "RedHatAI/Qwen3.5-122B-A10B-FP8-dynamic": [
+        {
+          "name": "Qwen3.5-122B-A10B (redhat_fp8)",
+          "huggingface_id": "RedHatAI/Qwen3.5-122B-A10B-FP8-dynamic",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_fp8"
         }
       ],
       "Qwen/Qwen3.5-397B-A17B": [
@@ -44058,6 +44646,47 @@
           "variant_name": "ascend_w8a8_mxfp8"
         }
       ],
+      "Eco-Tech/Qwen3.6-27B-w8a8": [
+        {
+          "name": "Qwen3.6-27B (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/Qwen3.6-27B-w8a8",
+          "accelerators": "arc_pro_b60",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enforce-eager": "",
+                "--data-parallel-size": "8",
+                "--quantization": "ascend",
+                "--served-model-name": "qwen3.6",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "16384",
+                "--gpu-memory-utilization": "0.90",
+                "--no-enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_cpu_binding\":true}",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "HCCL_BUFFSIZE": "512",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
+      ],
       "Qwen/Qwen3.6-35B-A3B": [
         {
           "name": "Qwen3.6-35B-A3B",
@@ -45116,6 +45745,47 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "ascend_w8a8_mxfp8"
+        }
+      ],
+      "Eco-Tech/Qwen3.6-27B-w8a8": [
+        {
+          "name": "Qwen3.6-27B (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/Qwen3.6-27B-w8a8",
+          "accelerators": "arc_pro_b70",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enforce-eager": "",
+                "--data-parallel-size": "8",
+                "--quantization": "ascend",
+                "--served-model-name": "qwen3.6",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "16384",
+                "--gpu-memory-utilization": "0.90",
+                "--no-enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_cpu_binding\":true}",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "HCCL_BUFFSIZE": "512",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
         }
       ],
       "Qwen/Qwen3.6-35B-A3B": [
@@ -46232,9 +46902,222 @@
           "default_strategy": "latency-focus",
           "variant_name": "ascend_w8a8_mxfp8"
         }
+      ],
+      "Eco-Tech/Qwen3.6-27B-w8a8": [
+        {
+          "name": "Qwen3.6-27B (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/Qwen3.6-27B-w8a8",
+          "accelerators": "ascend_950dt",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--data-parallel-size": "8",
+                "--quantization": "ascend",
+                "--served-model-name": "qwen3.6",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "16384",
+                "--gpu-memory-utilization": "0.90",
+                "--no-enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_cpu_binding\":true}",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "HCCL_BUFFSIZE": "512",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
       ]
     },
     "ascend_910c": {
+      "Qwen/Qwen3.6-27B": [
+        {
+          "name": "Qwen3.6-27B",
+          "huggingface_id": "Qwen/Qwen3.6-27B",
+          "accelerators": "ascend_910c",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "Qwen/Qwen3.6-27B-FP8": [
+        {
+          "name": "Qwen3.6-27B (fp8)",
+          "huggingface_id": "Qwen/Qwen3.6-27B-FP8",
+          "accelerators": "ascend_910c",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--max-num-seqs": "512",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "nvidia/Qwen3.6-27B-NVFP4": [
+        {
+          "name": "Qwen3.6-27B (nvfp4)",
+          "huggingface_id": "nvidia/Qwen3.6-27B-NVFP4",
+          "accelerators": "ascend_910c",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/Qwen3.6-27B-FP8": [
+        {
+          "name": "Qwen3.6-27B (redhat_fp8)",
+          "huggingface_id": "RedHatAI/Qwen3.6-27B-FP8",
+          "accelerators": "ascend_910c",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_fp8"
+        }
+      ],
+      "Eco-Tech/Qwen3.6-27B-w8a8-mxfp8": [
+        {
+          "name": "Qwen3.6-27B (ascend_w8a8_mxfp8)",
+          "huggingface_id": "Eco-Tech/Qwen3.6-27B-w8a8-mxfp8",
+          "accelerators": "ascend_910c",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--distributed-executor-backend": "mp",
+                "--data-parallel-size": "8",
+                "--quantization": "ascend",
+                "--served-model-name": "qwen3.6",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "16384",
+                "--gpu-memory-utilization": "0.90",
+                "--no-enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_cpu_binding\":true}",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "HCCL_BUFFSIZE": "512",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8_mxfp8"
+        }
+      ],
+      "Eco-Tech/Qwen3.6-27B-w8a8": [
+        {
+          "name": "Qwen3.6-27B (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/Qwen3.6-27B-w8a8",
+          "accelerators": "ascend_910c",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--data-parallel-size": "8",
+                "--quantization": "ascend",
+                "--served-model-name": "qwen3.6",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "16384",
+                "--gpu-memory-utilization": "0.90",
+                "--no-enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_cpu_binding\":true}",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "HCCL_BUFFSIZE": "512",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
+      ],
       "moonshotai/Kimi-K3": [
         {
           "name": "Kimi-K3",
@@ -50535,17 +51418,21 @@
             "latency-focus": {
               "extra_args": {
                 "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             },
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -50553,7 +51440,9 @@
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             }
           },
           "default_strategy": "latency-focus",
@@ -50571,17 +51460,21 @@
             "latency-focus": {
               "extra_args": {
                 "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             },
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -50589,7 +51482,9 @@
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             }
           },
           "default_strategy": "latency-focus",
@@ -50607,6 +51502,7 @@
             "latency-focus": {
               "extra_args": {
                 "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
@@ -50614,11 +51510,14 @@
                 "--mm-encoder-tp-mode": "data",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             },
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
@@ -50627,7 +51526,9 @@
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             }
           },
           "default_strategy": "latency-focus",
@@ -50645,17 +51546,21 @@
             "latency-focus": {
               "extra_args": {
                 "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             },
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -50663,7 +51568,9 @@
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             }
           },
           "default_strategy": "latency-focus",
@@ -50681,6 +51588,7 @@
             "latency-focus": {
               "extra_args": {
                 "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
@@ -50688,11 +51596,14 @@
                 "--mm-encoder-tp-mode": "data",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             },
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
+                "--attention-backend": "ROCM_AITER_UNIFIED_ATTN",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
@@ -50701,7 +51612,9 @@
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             }
           },
           "default_strategy": "latency-focus",
@@ -51502,6 +52415,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "ascend_w8a8_mxfp8"
+        }
+      ],
+      "Eco-Tech/Qwen3.6-27B-w8a8": [
+        {
+          "name": "Qwen3.6-27B (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/Qwen3.6-27B-w8a8",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--data-parallel-size": "8",
+                "--quantization": "ascend",
+                "--served-model-name": "qwen3.6",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "16384",
+                "--gpu-memory-utilization": "0.90",
+                "--no-enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_cpu_binding\":true}",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "HCCL_BUFFSIZE": "512",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
         }
       ],
       "Qwen/Qwen3.6-35B-A3B": [
@@ -64107,6 +65060,46 @@
           "variant_name": "ascend_w8a8_mxfp8"
         }
       ],
+      "Eco-Tech/Qwen3.6-27B-w8a8": [
+        {
+          "name": "Qwen3.6-27B (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/Qwen3.6-27B-w8a8",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--data-parallel-size": "8",
+                "--quantization": "ascend",
+                "--served-model-name": "qwen3.6",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "16384",
+                "--gpu-memory-utilization": "0.90",
+                "--no-enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_cpu_binding\":true}",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "HCCL_BUFFSIZE": "512",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
+      ],
       "Qwen/Qwen3.6-35B-A3B": [
         {
           "name": "Qwen3.6-35B-A3B",
@@ -75868,6 +76861,46 @@
           "variant_name": "ascend_w8a8_mxfp8"
         }
       ],
+      "Eco-Tech/Qwen3.6-27B-w8a8": [
+        {
+          "name": "Qwen3.6-27B (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/Qwen3.6-27B-w8a8",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--data-parallel-size": "8",
+                "--quantization": "ascend",
+                "--served-model-name": "qwen3.6",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "16384",
+                "--gpu-memory-utilization": "0.90",
+                "--no-enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_cpu_binding\":true}",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "HCCL_BUFFSIZE": "512",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
+      ],
       "Qwen/Qwen3.6-35B-A3B": [
         {
           "name": "Qwen3.6-35B-A3B",
@@ -87627,6 +88660,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "ascend_w8a8_mxfp8"
+        }
+      ],
+      "Eco-Tech/Qwen3.6-27B-w8a8": [
+        {
+          "name": "Qwen3.6-27B (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/Qwen3.6-27B-w8a8",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--data-parallel-size": "8",
+                "--quantization": "ascend",
+                "--served-model-name": "qwen3.6",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "16384",
+                "--gpu-memory-utilization": "0.90",
+                "--no-enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_cpu_binding\":true}",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "HCCL_BUFFSIZE": "512",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
         }
       ],
       "Qwen/Qwen3.6-35B-A3B": [
@@ -99406,6 +100479,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "ascend_w8a8_mxfp8"
+        }
+      ],
+      "Eco-Tech/Qwen3.6-27B-w8a8": [
+        {
+          "name": "Qwen3.6-27B (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/Qwen3.6-27B-w8a8",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--data-parallel-size": "8",
+                "--quantization": "ascend",
+                "--served-model-name": "qwen3.6",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "16384",
+                "--gpu-memory-utilization": "0.90",
+                "--no-enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_cpu_binding\":true}",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "qwen3_coder",
+                "--reasoning-parser": "qwen3",
+                "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "HCCL_BUFFSIZE": "512",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
         }
       ],
       "Qwen/Qwen3.6-35B-A3B": [
