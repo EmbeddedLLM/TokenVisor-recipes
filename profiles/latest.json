@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-09-20T06:28:05.759467+00:00",
+  "generated_at": "2026-09-21T06:41:34.335652+00:00",
   "vllm_version": "0.29.0",
-  "vllm_recipes_sha": "af8b36e",
+  "vllm_recipes_sha": "7918dcd",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -17141,6 +17141,40 @@
       ]
     },
     "gb300": {
+      "Qwen/Qwen-Image-2.1": [
+        {
+          "name": "Qwen-Image-2.1",
+          "huggingface_id": "Qwen/Qwen-Image-2.1",
+          "accelerators": "gb300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {},
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        },
+        {
+          "name": "Qwen-Image-2.1 (fp8)",
+          "huggingface_id": "Qwen/Qwen-Image-2.1",
+          "accelerators": "gb300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--diffusion-quantization-config": "{\"transformer\":{\"method\":\"fp8\",\"ignored_layers\":[\"img_mlp\"]}}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
       "Qwen/Qwen3.8-2.4T-A95B": [
         {
           "name": "Qwen3.8-2.4T-A95B",
@@ -50444,6 +50478,40 @@
           "variant_name": "awq"
         }
       ],
+      "Qwen/Qwen-Image-2.1": [
+        {
+          "name": "Qwen-Image-2.1",
+          "huggingface_id": "Qwen/Qwen-Image-2.1",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {},
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        },
+        {
+          "name": "Qwen-Image-2.1 (fp8)",
+          "huggingface_id": "Qwen/Qwen-Image-2.1",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--diffusion-quantization-config": "{\"transformer\":{\"method\":\"fp8\",\"ignored_layers\":[\"img_mlp\"]}}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
       "Qwen/Qwen-Image": [
         {
           "name": "Qwen-Image",
@@ -63192,6 +63260,40 @@
           "variant_name": "awq"
         }
       ],
+      "Qwen/Qwen-Image-2.1": [
+        {
+          "name": "Qwen-Image-2.1",
+          "huggingface_id": "Qwen/Qwen-Image-2.1",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {},
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        },
+        {
+          "name": "Qwen-Image-2.1 (fp8)",
+          "huggingface_id": "Qwen/Qwen-Image-2.1",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--diffusion-quantization-config": "{\"transformer\":{\"method\":\"fp8\",\"ignored_layers\":[\"img_mlp\"]}}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
       "Qwen/Qwen-Image": [
         {
           "name": "Qwen-Image",
@@ -74993,6 +75095,40 @@
           "variant_name": "awq"
         }
       ],
+      "Qwen/Qwen-Image-2.1": [
+        {
+          "name": "Qwen-Image-2.1",
+          "huggingface_id": "Qwen/Qwen-Image-2.1",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {},
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        },
+        {
+          "name": "Qwen-Image-2.1 (fp8)",
+          "huggingface_id": "Qwen/Qwen-Image-2.1",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--diffusion-quantization-config": "{\"transformer\":{\"method\":\"fp8\",\"ignored_layers\":[\"img_mlp\"]}}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
       "Qwen/Qwen-Image": [
         {
           "name": "Qwen-Image",
@@ -86792,6 +86928,40 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "awq"
+        }
+      ],
+      "Qwen/Qwen-Image-2.1": [
+        {
+          "name": "Qwen-Image-2.1",
+          "huggingface_id": "Qwen/Qwen-Image-2.1",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {},
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        },
+        {
+          "name": "Qwen-Image-2.1 (fp8)",
+          "huggingface_id": "Qwen/Qwen-Image-2.1",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--diffusion-quantization-config": "{\"transformer\":{\"method\":\"fp8\",\"ignored_layers\":[\"img_mlp\"]}}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
         }
       ],
       "Qwen/Qwen-Image": [
@@ -98599,6 +98769,40 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "awq"
+        }
+      ],
+      "Qwen/Qwen-Image-2.1": [
+        {
+          "name": "Qwen-Image-2.1",
+          "huggingface_id": "Qwen/Qwen-Image-2.1",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {},
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        },
+        {
+          "name": "Qwen-Image-2.1 (fp8)",
+          "huggingface_id": "Qwen/Qwen-Image-2.1",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.29.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--diffusion-quantization-config": "{\"transformer\":{\"method\":\"fp8\",\"ignored_layers\":[\"img_mlp\"]}}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
         }
       ],
       "Qwen/Qwen-Image": [
