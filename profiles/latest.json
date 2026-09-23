@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-09-22T06:31:21.327073+00:00",
+  "generated_at": "2026-09-23T06:32:13.081303+00:00",
   "vllm_version": "0.30.0",
-  "vllm_recipes_sha": "9ec69ae",
+  "vllm_recipes_sha": "948917b",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -21,6 +21,7 @@
     "rtx_5090": "nvidia",
     "rtx_4090_2x": "nvidia",
     "rtx_5090_2x": "nvidia",
+    "l40s": "nvidia",
     "mi300x": "amd",
     "mi325x": "amd",
     "mi350x": "amd",
@@ -1733,6 +1734,40 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "bf16"
+        }
+      ],
+      "bharatgenai/Param2-17B-A2.4B-Thinking": [
+        {
+          "name": "Param-2-17B-A2.4B-Thinking",
+          "huggingface_id": "bharatgenai/Param2-17B-A2.4B-Thinking",
+          "accelerators": "h100",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
         }
       ],
       "deepseek-ai/DeepSeek-V3.2": [
@@ -23898,6 +23933,42 @@
         }
       ]
     },
+    "l40s": {
+      "bharatgenai/Param2-17B-A2.4B-Thinking": [
+        {
+          "name": "Param-2-17B-A2.4B-Thinking",
+          "huggingface_id": "bharatgenai/Param2-17B-A2.4B-Thinking",
+          "accelerators": "l40s",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ]
+    },
     "mi300x": {
       "google/gemma-4-26B-A4B-it": [
         {
@@ -37871,6 +37942,52 @@
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "0"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "XiaomiMiMo/MiMo-V2.6-Pro-RL": [
+        {
+          "name": "MiMo-V2.6-Pro-RL",
+          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--kv-cache-dtype": "fp8",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Pro-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--kv-cache-dtype": "fp8",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Pro-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
               }
             }
           },
@@ -53840,25 +53957,33 @@
                 "--trust-remote-code": "",
                 "--generation-config": "vllm",
                 "--gpu-memory-utilization": "0.95",
+                "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
                 "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Pro-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}"
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
             },
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
                 "--generation-config": "vllm",
                 "--gpu-memory-utilization": "0.95",
+                "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
                 "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Pro-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
             }
           },
           "default_strategy": "latency-focus",
@@ -54102,6 +54227,40 @@
                 "--no-enable-prefix-caching": "",
                 "--mm-processor-cache-gb": "0",
                 "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "bharatgenai/Param2-17B-A2.4B-Thinking": [
+        {
+          "name": "Param-2-17B-A2.4B-Thinking",
+          "huggingface_id": "bharatgenai/Param2-17B-A2.4B-Thinking",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--enable-expert-parallel": ""
               },
               "extra_envs": {}
             }
@@ -66817,6 +66976,40 @@
           "variant_name": "default"
         }
       ],
+      "bharatgenai/Param2-17B-A2.4B-Thinking": [
+        {
+          "name": "Param-2-17B-A2.4B-Thinking",
+          "huggingface_id": "bharatgenai/Param2-17B-A2.4B-Thinking",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
       "bosonai/higgs-audio-v3-tts-4b": [
         {
           "name": "Higgs Audio V3 TTS",
@@ -78728,6 +78921,40 @@
           "variant_name": "default"
         }
       ],
+      "bharatgenai/Param2-17B-A2.4B-Thinking": [
+        {
+          "name": "Param-2-17B-A2.4B-Thinking",
+          "huggingface_id": "bharatgenai/Param2-17B-A2.4B-Thinking",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
       "bosonai/higgs-audio-v3-tts-4b": [
         {
           "name": "Higgs Audio V3 TTS",
@@ -90631,6 +90858,40 @@
                 "--no-enable-prefix-caching": "",
                 "--mm-processor-cache-gb": "0",
                 "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "bharatgenai/Param2-17B-A2.4B-Thinking": [
+        {
+          "name": "Param-2-17B-A2.4B-Thinking",
+          "huggingface_id": "bharatgenai/Param2-17B-A2.4B-Thinking",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--enable-expert-parallel": ""
               },
               "extra_envs": {}
             }
@@ -102560,6 +102821,40 @@
                 "--no-enable-prefix-caching": "",
                 "--mm-processor-cache-gb": "0",
                 "--mm-encoder-tp-mode": "data"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "bharatgenai/Param2-17B-A2.4B-Thinking": [
+        {
+          "name": "Param-2-17B-A2.4B-Thinking",
+          "huggingface_id": "bharatgenai/Param2-17B-A2.4B-Thinking",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--async-scheduling": "",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--enable-expert-parallel": ""
               },
               "extra_envs": {}
             }
