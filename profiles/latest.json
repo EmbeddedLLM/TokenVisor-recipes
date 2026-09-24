@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-09-23T06:32:13.081303+00:00",
+  "generated_at": "2026-09-24T06:31:54.763445+00:00",
   "vllm_version": "0.30.0",
-  "vllm_recipes_sha": "948917b",
+  "vllm_recipes_sha": "ccedc81",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -32057,6 +32057,52 @@
           "variant_name": "default"
         }
       ],
+      "XiaomiMiMo/MiMo-V2.6-Flash-RL": [
+        {
+          "name": "MiMo-V2.6-Flash-RL",
+          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--kv-cache-dtype": "fp8",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--kv-cache-dtype": "fp8",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
       "baidu/ERNIE-4.5-VL-28B-A3B-PT": [
         {
           "name": "ERNIE-4.5-VL",
@@ -37942,6 +37988,52 @@
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "0"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "XiaomiMiMo/MiMo-V2.6-Flash-RL": [
+        {
+          "name": "MiMo-V2.6-Flash-RL",
+          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--kv-cache-dtype": "fp8",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--kv-cache-dtype": "fp8",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
               }
             }
           },
@@ -53918,18 +54010,23 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--generation-config": "vllm",
+                "--kv-cache-dtype": "fp8",
                 "--gpu-memory-utilization": "0.95",
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
                 "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}"
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
             },
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
                 "--generation-config": "vllm",
+                "--kv-cache-dtype": "fp8",
                 "--gpu-memory-utilization": "0.95",
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
@@ -53937,7 +54034,10 @@
                 "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
             }
           },
           "default_strategy": "latency-focus",
