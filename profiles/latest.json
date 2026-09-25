@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-09-24T06:31:54.763445+00:00",
+  "generated_at": "2026-09-25T06:32:02.492719+00:00",
   "vllm_version": "0.30.0",
-  "vllm_recipes_sha": "ccedc81",
+  "vllm_recipes_sha": "fda85de",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -6546,6 +6546,86 @@
           "variant_name": "dspark"
         }
       ],
+      "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp": [
+        {
+          "name": "DeepSeek-V4-Flash (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp",
+          "accelerators": "h200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}"
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
+      ],
       "deepseek-ai/DeepSeek-V4-Pro-0813": [
         {
           "name": "DeepSeek-V4-Pro",
@@ -11173,6 +11253,88 @@
           "variant_name": "dspark"
         }
       ],
+      "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp": [
+        {
+          "name": "DeepSeek-V4-Flash (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp",
+          "accelerators": "b200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}"
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
+      ],
       "deepseek-ai/DeepSeek-V4-Pro-0813": [
         {
           "name": "DeepSeek-V4-Pro",
@@ -14300,6 +14462,88 @@
           "variant_name": "dspark"
         }
       ],
+      "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp": [
+        {
+          "name": "DeepSeek-V4-Flash (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp",
+          "accelerators": "gb200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}"
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
+      ],
       "deepseek-ai/DeepSeek-V4-Pro-0813": [
         {
           "name": "DeepSeek-V4-Pro",
@@ -16194,6 +16438,88 @@
           "variant_name": "dspark"
         }
       ],
+      "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp": [
+        {
+          "name": "DeepSeek-V4-Flash (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp",
+          "accelerators": "b300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}"
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
+      ],
       "deepseek-ai/DeepSeek-V4-Pro-0813": [
         {
           "name": "DeepSeek-V4-Pro",
@@ -17973,6 +18299,88 @@
           "variant_name": "dspark"
         }
       ],
+      "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp": [
+        {
+          "name": "DeepSeek-V4-Flash (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp",
+          "accelerators": "gb300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}"
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
+      ],
       "deepseek-ai/DeepSeek-V4-Pro-0813": [
         {
           "name": "DeepSeek-V4-Pro",
@@ -19577,6 +19985,88 @@
           "variant_name": "dspark"
         }
       ],
+      "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp": [
+        {
+          "name": "DeepSeek-V4-Flash (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp",
+          "accelerators": "dgx_station_gb300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}"
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
+      ],
       "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16": [
         {
           "name": "NVIDIA Nemotron-3-Super-120B-A12B",
@@ -21078,6 +21568,88 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "dspark"
+        }
+      ],
+      "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp": [
+        {
+          "name": "DeepSeek-V4-Flash (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp",
+          "accelerators": "dgx_spark_gb10",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}"
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
         }
       ],
       "inclusionAI/Ling-3.0-flash": [
@@ -22922,6 +23494,88 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "dspark"
+        }
+      ],
+      "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp": [
+        {
+          "name": "DeepSeek-V4-Flash (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp",
+          "accelerators": "rtx_pro_6000_8x",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}"
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--attention_config.indexer_kv_dtype": "mxfp4",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
         }
       ]
     },
@@ -26843,6 +27497,90 @@
           "variant_name": "dspark"
         }
       ],
+      "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp": [
+        {
+          "name": "DeepSeek-V4-Flash (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.90",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.90",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
+      ],
       "deepseek-ai/DeepSeek-V4-Pro-0813": [
         {
           "name": "DeepSeek-V4-Pro",
@@ -28981,22 +29719,30 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--gpu-memory-utilization": "0.85",
+                "--max-num-batched-tokens": "8192",
                 "--tool-call-parser": "hy_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v4",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             },
             "balance": {
               "extra_args": {
+                "--gpu-memory-utilization": "0.85",
+                "--max-num-batched-tokens": "8192",
                 "--tool-call-parser": "hy_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v4",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             }
           },
           "default_strategy": "latency-focus",
@@ -29013,22 +29759,30 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--gpu-memory-utilization": "0.85",
+                "--max-num-batched-tokens": "8192",
                 "--tool-call-parser": "hy_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v4",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             },
             "balance": {
               "extra_args": {
+                "--gpu-memory-utilization": "0.85",
+                "--max-num-batched-tokens": "8192",
                 "--tool-call-parser": "hy_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v4",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             }
           },
           "default_strategy": "latency-focus",
@@ -32808,6 +33562,90 @@
           "variant_name": "dspark"
         }
       ],
+      "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp": [
+        {
+          "name": "DeepSeek-V4-Flash (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.90",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.90",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
+      ],
       "deepseek-ai/DeepSeek-V4-Pro-0813": [
         {
           "name": "DeepSeek-V4-Pro",
@@ -34643,22 +35481,30 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--gpu-memory-utilization": "0.85",
+                "--max-num-batched-tokens": "8192",
                 "--tool-call-parser": "hy_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v4",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             },
             "balance": {
               "extra_args": {
+                "--gpu-memory-utilization": "0.85",
+                "--max-num-batched-tokens": "8192",
                 "--tool-call-parser": "hy_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v4",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             }
           },
           "default_strategy": "latency-focus",
@@ -34675,22 +35521,30 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--gpu-memory-utilization": "0.85",
+                "--max-num-batched-tokens": "8192",
                 "--tool-call-parser": "hy_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v4",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             },
             "balance": {
               "extra_args": {
+                "--gpu-memory-utilization": "0.85",
+                "--max-num-batched-tokens": "8192",
                 "--tool-call-parser": "hy_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v4",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             }
           },
           "default_strategy": "latency-focus",
@@ -38792,6 +39646,90 @@
           "variant_name": "dspark"
         }
       ],
+      "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp": [
+        {
+          "name": "DeepSeek-V4-Flash (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.90",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.90",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
+      ],
       "deepseek-ai/DeepSeek-V4-Pro-0813": [
         {
           "name": "DeepSeek-V4-Pro",
@@ -41000,22 +41938,30 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--gpu-memory-utilization": "0.85",
+                "--max-num-batched-tokens": "8192",
                 "--tool-call-parser": "hy_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v4",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             },
             "balance": {
               "extra_args": {
+                "--gpu-memory-utilization": "0.85",
+                "--max-num-batched-tokens": "8192",
                 "--tool-call-parser": "hy_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v4",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             }
           },
           "default_strategy": "latency-focus",
@@ -41032,22 +41978,30 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--gpu-memory-utilization": "0.85",
+                "--max-num-batched-tokens": "8192",
                 "--tool-call-parser": "hy_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v4",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             },
             "balance": {
               "extra_args": {
+                "--gpu-memory-utilization": "0.85",
+                "--max-num-batched-tokens": "8192",
                 "--tool-call-parser": "hy_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v4",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             }
           },
           "default_strategy": "latency-focus",
@@ -44218,6 +45172,75 @@
           "variant_name": "default"
         }
       ],
+      "Eco-Tech/Qwen3-30B-A3B-w8a8": [
+        {
+          "name": "Qwen3-30B-A3B (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/Qwen3-30B-A3B-w8a8",
+          "accelerators": "xeon6",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--max-num-batched-tokens": "16384",
+                "--gpu-memory-utilization": "0.95",
+                "--trust-remote-code": "",
+                "--max-num-seqs": "100",
+                "--enable-expert-parallel": "",
+                "--quantization": "ascend",
+                "--distributed_executor_backend": "mp",
+                "--no-enable-prefix-caching": "",
+                "--async-scheduling": "",
+                "--compilation-config": "{\"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_flashcomm1\": true, \"weight_nz_mode\": 2}",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "1024",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "VLLM_USE_RUST_FRONTEND": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--max-num-batched-tokens": "16384",
+                "--gpu-memory-utilization": "0.95",
+                "--trust-remote-code": "",
+                "--max-num-seqs": "100",
+                "--enable-expert-parallel": "",
+                "--quantization": "ascend",
+                "--distributed_executor_backend": "mp",
+                "--no-enable-prefix-caching": "",
+                "--async-scheduling": "",
+                "--compilation-config": "{\"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_flashcomm1\": true, \"weight_nz_mode\": 2}",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "1024",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "VLLM_USE_RUST_FRONTEND": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
+      ],
       "Qwen/Qwen3-4B": [
         {
           "name": "Qwen3-4B",
@@ -45804,6 +46827,123 @@
       ]
     },
     "arc_pro_b70": {
+      "Qwen/Qwen3-30B-A3B": [
+        {
+          "name": "Qwen3-30B-A3B",
+          "huggingface_id": "Qwen/Qwen3-30B-A3B",
+          "accelerators": "arc_pro_b70",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--block-size": "64",
+                "--enforce-eager": "",
+                "--no-enable-prefix-caching": "",
+                "--disable-sliding-window": "",
+                "--max-num-batched-tokens": "8192",
+                "--gpu-memory-utilization": "0.9",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--block-size": "64",
+                "--enforce-eager": "",
+                "--no-enable-prefix-caching": "",
+                "--disable-sliding-window": "",
+                "--max-num-batched-tokens": "8192",
+                "--gpu-memory-utilization": "0.9",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "Eco-Tech/Qwen3-30B-A3B-w8a8": [
+        {
+          "name": "Qwen3-30B-A3B (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/Qwen3-30B-A3B-w8a8",
+          "accelerators": "arc_pro_b70",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--block-size": "64",
+                "--enforce-eager": "",
+                "--no-enable-prefix-caching": "",
+                "--disable-sliding-window": "",
+                "--max-num-batched-tokens": "16384",
+                "--gpu-memory-utilization": "0.95",
+                "--trust-remote-code": "",
+                "--max-num-seqs": "100",
+                "--enable-expert-parallel": "",
+                "--quantization": "ascend",
+                "--distributed_executor_backend": "mp",
+                "--async-scheduling": "",
+                "--compilation-config": "{\"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_flashcomm1\": true, \"weight_nz_mode\": 2}",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "1024",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "VLLM_USE_RUST_FRONTEND": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--block-size": "64",
+                "--enforce-eager": "",
+                "--no-enable-prefix-caching": "",
+                "--disable-sliding-window": "",
+                "--max-num-batched-tokens": "16384",
+                "--gpu-memory-utilization": "0.95",
+                "--trust-remote-code": "",
+                "--max-num-seqs": "100",
+                "--enable-expert-parallel": "",
+                "--quantization": "ascend",
+                "--distributed_executor_backend": "mp",
+                "--async-scheduling": "",
+                "--compilation-config": "{\"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_flashcomm1\": true, \"weight_nz_mode\": 2}",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "1024",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "VLLM_USE_RUST_FRONTEND": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
+      ],
       "Qwen/Qwen3-32B": [
         {
           "name": "Qwen3-32B",
@@ -46668,6 +47808,95 @@
           "variant_name": "default"
         }
       ],
+      "meta-llama/Llama-3.3-70B-Instruct": [
+        {
+          "name": "Llama-3.3-70B",
+          "huggingface_id": "meta-llama/Llama-3.3-70B-Instruct",
+          "accelerators": "arc_pro_b70",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--block-size": "64",
+                "--enforce-eager": "",
+                "--no-enable-prefix-caching": "",
+                "--disable-sliding-window": "",
+                "--max-num-batched-tokens": "8192",
+                "--gpu-memory-utilization": "0.9"
+              },
+              "extra_envs": {
+                "PYTHONUNBUFFERED": "1",
+                "TORCH_LLM_ALLREDUCE": "1",
+                "VLLM_ALLOW_LONG_MAX_MODEL_LEN": "1",
+                "VLLM_WORKER_MULTIPROC_METHOD": "spawn"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "nvidia/Llama-3.3-70B-Instruct-FP8": [
+        {
+          "name": "Llama-3.3-70B (fp8)",
+          "huggingface_id": "nvidia/Llama-3.3-70B-Instruct-FP8",
+          "accelerators": "arc_pro_b70",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--block-size": "64",
+                "--enforce-eager": "",
+                "--no-enable-prefix-caching": "",
+                "--disable-sliding-window": "",
+                "--max-num-batched-tokens": "8192",
+                "--gpu-memory-utilization": "0.9",
+                "--kv-cache-dtype": "fp8"
+              },
+              "extra_envs": {
+                "PYTHONUNBUFFERED": "1",
+                "TORCH_LLM_ALLREDUCE": "1",
+                "VLLM_ALLOW_LONG_MAX_MODEL_LEN": "1",
+                "VLLM_WORKER_MULTIPROC_METHOD": "spawn"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "nvidia/Llama-3.3-70B-Instruct-NVFP4": [
+        {
+          "name": "Llama-3.3-70B (nvfp4)",
+          "huggingface_id": "nvidia/Llama-3.3-70B-Instruct-NVFP4",
+          "accelerators": "arc_pro_b70",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--block-size": "64",
+                "--enforce-eager": "",
+                "--no-enable-prefix-caching": "",
+                "--disable-sliding-window": "",
+                "--max-num-batched-tokens": "8192",
+                "--gpu-memory-utilization": "0.9",
+                "--kv-cache-dtype": "fp8"
+              },
+              "extra_envs": {
+                "PYTHONUNBUFFERED": "1",
+                "TORCH_LLM_ALLREDUCE": "1",
+                "VLLM_ALLOW_LONG_MAX_MODEL_LEN": "1",
+                "VLLM_WORKER_MULTIPROC_METHOD": "spawn"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
       "meta-models/Muse-Glimmer-30B": [
         {
           "name": "Muse Glimmer 30B",
@@ -46873,6 +48102,106 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "fp8"
+        }
+      ],
+      "openai/gpt-oss-120b": [
+        {
+          "name": "GPT-OSS",
+          "huggingface_id": "openai/gpt-oss-120b",
+          "accelerators": "arc_pro_b70",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--block-size": "64",
+                "--enforce-eager": "",
+                "--disable-sliding-window": "",
+                "--no-enable-prefix-caching": "",
+                "--max-num-batched-tokens": "9216",
+                "--gpu-memory-utilization": "0.9",
+                "--tool-call-parser": "openai",
+                "--enable-auto-tool-choice": "",
+                "--speculative-config": "{\"model\":\"nvidia/gpt-oss-120b-Eagle3-v3\",\"num_speculative_tokens\":7,\"method\":\"eagle3\",\"draft_tensor_parallel_size\":1}"
+              },
+              "extra_envs": {
+                "TORCH_LLM_ALLREDUCE": "1",
+                "VLLM_ALLOW_LONG_MAX_MODEL_LEN": "1",
+                "VLLM_WORKER_MULTIPROC_METHOD": "spawn"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--block-size": "64",
+                "--enforce-eager": "",
+                "--disable-sliding-window": "",
+                "--no-enable-prefix-caching": "",
+                "--max-num-batched-tokens": "9216",
+                "--gpu-memory-utilization": "0.9",
+                "--tool-call-parser": "openai",
+                "--enable-auto-tool-choice": "",
+                "--speculative-config": "{\"model\":\"nvidia/gpt-oss-120b-Eagle3-v3\",\"num_speculative_tokens\":7,\"method\":\"eagle3\",\"draft_tensor_parallel_size\":1}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "TORCH_LLM_ALLREDUCE": "1",
+                "VLLM_ALLOW_LONG_MAX_MODEL_LEN": "1",
+                "VLLM_WORKER_MULTIPROC_METHOD": "spawn"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "amd/gpt-oss-120b-w-mxfp4-a-fp8": [
+        {
+          "name": "GPT-OSS (amd_fp8)",
+          "huggingface_id": "amd/gpt-oss-120b-w-mxfp4-a-fp8",
+          "accelerators": "arc_pro_b70",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--block-size": "64",
+                "--enforce-eager": "",
+                "--disable-sliding-window": "",
+                "--no-enable-prefix-caching": "",
+                "--max-num-batched-tokens": "9216",
+                "--gpu-memory-utilization": "0.9",
+                "--tool-call-parser": "openai",
+                "--enable-auto-tool-choice": "",
+                "--speculative-config": "{\"model\":\"nvidia/gpt-oss-120b-Eagle3-v3\",\"num_speculative_tokens\":7,\"method\":\"eagle3\",\"draft_tensor_parallel_size\":1}"
+              },
+              "extra_envs": {
+                "TORCH_LLM_ALLREDUCE": "1",
+                "VLLM_ALLOW_LONG_MAX_MODEL_LEN": "1",
+                "VLLM_WORKER_MULTIPROC_METHOD": "spawn"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--block-size": "64",
+                "--enforce-eager": "",
+                "--disable-sliding-window": "",
+                "--no-enable-prefix-caching": "",
+                "--max-num-batched-tokens": "9216",
+                "--gpu-memory-utilization": "0.9",
+                "--tool-call-parser": "openai",
+                "--enable-auto-tool-choice": "",
+                "--speculative-config": "{\"model\":\"nvidia/gpt-oss-120b-Eagle3-v3\",\"num_speculative_tokens\":7,\"method\":\"eagle3\",\"draft_tensor_parallel_size\":1}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "TORCH_LLM_ALLREDUCE": "1",
+                "VLLM_ALLOW_LONG_MAX_MODEL_LEN": "1",
+                "VLLM_WORKER_MULTIPROC_METHOD": "spawn"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "amd_fp8"
         }
       ],
       "openai/gpt-oss-20b": [
@@ -47581,6 +48910,105 @@
       ]
     },
     "ascend_910c": {
+      "Qwen/Qwen3-30B-A3B": [
+        {
+          "name": "Qwen3-30B-A3B",
+          "huggingface_id": "Qwen/Qwen3-30B-A3B",
+          "accelerators": "ascend_910c",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "Eco-Tech/Qwen3-30B-A3B-w8a8": [
+        {
+          "name": "Qwen3-30B-A3B (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/Qwen3-30B-A3B-w8a8",
+          "accelerators": "ascend_910c",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--max-num-seqs": "100",
+                "--max-num-batched-tokens": "16384",
+                "--enable-expert-parallel": "",
+                "--quantization": "ascend",
+                "--distributed_executor_backend": "mp",
+                "--no-enable-prefix-caching": "",
+                "--async-scheduling": "",
+                "--compilation-config": "{\"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_flashcomm1\": true, \"weight_nz_mode\": 2}",
+                "--gpu-memory-utilization": "0.95",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "1024",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "VLLM_USE_RUST_FRONTEND": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--max-num-seqs": "100",
+                "--max-num-batched-tokens": "16384",
+                "--enable-expert-parallel": "",
+                "--quantization": "ascend",
+                "--distributed_executor_backend": "mp",
+                "--no-enable-prefix-caching": "",
+                "--async-scheduling": "",
+                "--compilation-config": "{\"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_flashcomm1\": true, \"weight_nz_mode\": 2}",
+                "--gpu-memory-utilization": "0.95",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "1024",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "VLLM_USE_RUST_FRONTEND": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
+      ],
       "Qwen/Qwen3.6-27B": [
         {
           "name": "Qwen3.6-27B",
@@ -47747,6 +49175,294 @@
                 "OMP_PROC_BIND": "false",
                 "OMP_NUM_THREADS": "1",
                 "TASK_QUEUE_ENABLE": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash-0731": [
+        {
+          "name": "DeepSeek-V4-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+          "accelerators": "ascend_910c",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}"
+              },
+              "extra_envs": {
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "HCCL_BUFFSIZE": "1024",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "HCCL_BUFFSIZE": "1024",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash": [
+        {
+          "name": "DeepSeek-V4-Flash (fp8)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash",
+          "accelerators": "ascend_910c",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}"
+              },
+              "extra_envs": {
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "HCCL_BUFFSIZE": "1024",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "HCCL_BUFFSIZE": "1024",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "nvidia/DeepSeek-V4-Flash-NVFP4": [
+        {
+          "name": "DeepSeek-V4-Flash (nvfp4)",
+          "huggingface_id": "nvidia/DeepSeek-V4-Flash-NVFP4",
+          "accelerators": "ascend_910c",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}"
+              },
+              "extra_envs": {
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "HCCL_BUFFSIZE": "1024",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "HCCL_BUFFSIZE": "1024",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4-Flash-DSpark": [
+        {
+          "name": "DeepSeek-V4-Flash (dspark)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4-Flash-DSpark",
+          "accelerators": "ascend_910c",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}"
+              },
+              "extra_envs": {
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "HCCL_BUFFSIZE": "1024",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "256",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "HCCL_BUFFSIZE": "1024",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "dspark"
+        }
+      ],
+      "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp": [
+        {
+          "name": "DeepSeek-V4-Flash (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp",
+          "accelerators": "ascend_910c",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}"
+              },
+              "extra_envs": {
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "HCCL_BUFFSIZE": "2560",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "HCCL_BUFFSIZE": "2560",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "VLLM_USE_MODELSCOPE": "True"
               }
             }
           },
@@ -48180,6 +49896,86 @@
           "default_strategy": "latency-focus",
           "variant_name": "dspark"
         }
+      ],
+      "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp": [
+        {
+          "name": "DeepSeek-V4-Flash (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp",
+          "accelerators": "ascend_950dt_8x",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}"
+              },
+              "extra_envs": {
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "HCCL_BUFFSIZE": "2560",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "HCCL_BUFFSIZE": "2560",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
       ]
     },
     "ascend_950pr_8x": {
@@ -48463,6 +50259,86 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "dspark"
+        }
+      ],
+      "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp": [
+        {
+          "name": "DeepSeek-V4-Flash (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp",
+          "accelerators": "ascend_950pr_8x",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}"
+              },
+              "extra_envs": {
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "HCCL_BUFFSIZE": "2560",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "HCCL_BUFFSIZE": "2560",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
         }
       ],
       "zai-org/GLM-5.3-Flash": [
@@ -51455,6 +53331,75 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "Eco-Tech/Qwen3-30B-A3B-w8a8": [
+        {
+          "name": "Qwen3-30B-A3B (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/Qwen3-30B-A3B-w8a8",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--max-num-seqs": "100",
+                "--max-num-batched-tokens": "16384",
+                "--enable-expert-parallel": "",
+                "--quantization": "ascend",
+                "--distributed_executor_backend": "mp",
+                "--no-enable-prefix-caching": "",
+                "--async-scheduling": "",
+                "--compilation-config": "{\"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_flashcomm1\": true, \"weight_nz_mode\": 2}",
+                "--gpu-memory-utilization": "0.95",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "1024",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "VLLM_USE_RUST_FRONTEND": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--max-num-seqs": "100",
+                "--max-num-batched-tokens": "16384",
+                "--enable-expert-parallel": "",
+                "--quantization": "ascend",
+                "--distributed_executor_backend": "mp",
+                "--no-enable-prefix-caching": "",
+                "--async-scheduling": "",
+                "--compilation-config": "{\"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_flashcomm1\": true, \"weight_nz_mode\": 2}",
+                "--gpu-memory-utilization": "0.95",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "1024",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "VLLM_USE_RUST_FRONTEND": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
         }
       ],
       "Qwen/Qwen3-32B": [
@@ -55155,6 +57100,90 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "dspark"
+        }
+      ],
+      "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp": [
+        {
+          "name": "DeepSeek-V4-Flash (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.90",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--distributed-executor-backend": "mp",
+                "--gpu-memory-utilization": "0.90",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Pro-0813": [
@@ -60288,22 +62317,30 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--gpu-memory-utilization": "0.85",
+                "--max-num-batched-tokens": "8192",
                 "--tool-call-parser": "hy_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v4",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             },
             "balance": {
               "extra_args": {
+                "--gpu-memory-utilization": "0.85",
+                "--max-num-batched-tokens": "8192",
                 "--tool-call-parser": "hy_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v4",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             }
           },
           "default_strategy": "latency-focus",
@@ -60320,22 +62357,30 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--gpu-memory-utilization": "0.85",
+                "--max-num-batched-tokens": "8192",
                 "--tool-call-parser": "hy_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v4",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             },
             "balance": {
               "extra_args": {
+                "--gpu-memory-utilization": "0.85",
+                "--max-num-batched-tokens": "8192",
                 "--tool-call-parser": "hy_v4",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "hy_v4",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1"
+              }
             }
           },
           "default_strategy": "latency-focus",
@@ -64361,6 +66406,75 @@
           "variant_name": "default"
         }
       ],
+      "Eco-Tech/Qwen3-30B-A3B-w8a8": [
+        {
+          "name": "Qwen3-30B-A3B (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/Qwen3-30B-A3B-w8a8",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--max-num-seqs": "100",
+                "--max-num-batched-tokens": "16384",
+                "--enable-expert-parallel": "",
+                "--quantization": "ascend",
+                "--distributed_executor_backend": "mp",
+                "--no-enable-prefix-caching": "",
+                "--async-scheduling": "",
+                "--compilation-config": "{\"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_flashcomm1\": true, \"weight_nz_mode\": 2}",
+                "--gpu-memory-utilization": "0.95",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "1024",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "VLLM_USE_RUST_FRONTEND": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--max-num-seqs": "100",
+                "--max-num-batched-tokens": "16384",
+                "--enable-expert-parallel": "",
+                "--quantization": "ascend",
+                "--distributed_executor_backend": "mp",
+                "--no-enable-prefix-caching": "",
+                "--async-scheduling": "",
+                "--compilation-config": "{\"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_flashcomm1\": true, \"weight_nz_mode\": 2}",
+                "--gpu-memory-utilization": "0.95",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "1024",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "VLLM_USE_RUST_FRONTEND": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
+      ],
       "Qwen/Qwen3-32B": [
         {
           "name": "Qwen3-32B",
@@ -67767,6 +69881,86 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "dspark"
+        }
+      ],
+      "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp": [
+        {
+          "name": "DeepSeek-V4-Flash (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}"
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Pro-0813": [
@@ -76306,6 +78500,75 @@
           "variant_name": "default"
         }
       ],
+      "Eco-Tech/Qwen3-30B-A3B-w8a8": [
+        {
+          "name": "Qwen3-30B-A3B (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/Qwen3-30B-A3B-w8a8",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--max-num-seqs": "100",
+                "--max-num-batched-tokens": "16384",
+                "--enable-expert-parallel": "",
+                "--quantization": "ascend",
+                "--distributed_executor_backend": "mp",
+                "--no-enable-prefix-caching": "",
+                "--async-scheduling": "",
+                "--compilation-config": "{\"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_flashcomm1\": true, \"weight_nz_mode\": 2}",
+                "--gpu-memory-utilization": "0.95",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "1024",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "VLLM_USE_RUST_FRONTEND": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--max-num-seqs": "100",
+                "--max-num-batched-tokens": "16384",
+                "--enable-expert-parallel": "",
+                "--quantization": "ascend",
+                "--distributed_executor_backend": "mp",
+                "--no-enable-prefix-caching": "",
+                "--async-scheduling": "",
+                "--compilation-config": "{\"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_flashcomm1\": true, \"weight_nz_mode\": 2}",
+                "--gpu-memory-utilization": "0.95",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "1024",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "VLLM_USE_RUST_FRONTEND": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
+      ],
       "Qwen/Qwen3-32B": [
         {
           "name": "Qwen3-32B",
@@ -79712,6 +81975,86 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "dspark"
+        }
+      ],
+      "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp": [
+        {
+          "name": "DeepSeek-V4-Flash (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}"
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Pro-0813": [
@@ -88251,6 +90594,75 @@
           "variant_name": "default"
         }
       ],
+      "Eco-Tech/Qwen3-30B-A3B-w8a8": [
+        {
+          "name": "Qwen3-30B-A3B (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/Qwen3-30B-A3B-w8a8",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--max-num-seqs": "100",
+                "--max-num-batched-tokens": "16384",
+                "--enable-expert-parallel": "",
+                "--quantization": "ascend",
+                "--distributed_executor_backend": "mp",
+                "--no-enable-prefix-caching": "",
+                "--async-scheduling": "",
+                "--compilation-config": "{\"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_flashcomm1\": true, \"weight_nz_mode\": 2}",
+                "--gpu-memory-utilization": "0.95",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "1024",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "VLLM_USE_RUST_FRONTEND": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--max-num-seqs": "100",
+                "--max-num-batched-tokens": "16384",
+                "--enable-expert-parallel": "",
+                "--quantization": "ascend",
+                "--distributed_executor_backend": "mp",
+                "--no-enable-prefix-caching": "",
+                "--async-scheduling": "",
+                "--compilation-config": "{\"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_flashcomm1\": true, \"weight_nz_mode\": 2}",
+                "--gpu-memory-utilization": "0.95",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "1024",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "VLLM_USE_RUST_FRONTEND": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
+      ],
       "Qwen/Qwen3-32B": [
         {
           "name": "Qwen3-32B",
@@ -91657,6 +94069,86 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "dspark"
+        }
+      ],
+      "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp": [
+        {
+          "name": "DeepSeek-V4-Flash (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}"
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Pro-0813": [
@@ -100202,6 +102694,75 @@
           "variant_name": "default"
         }
       ],
+      "Eco-Tech/Qwen3-30B-A3B-w8a8": [
+        {
+          "name": "Qwen3-30B-A3B (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/Qwen3-30B-A3B-w8a8",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--max-num-seqs": "100",
+                "--max-num-batched-tokens": "16384",
+                "--enable-expert-parallel": "",
+                "--quantization": "ascend",
+                "--distributed_executor_backend": "mp",
+                "--no-enable-prefix-caching": "",
+                "--async-scheduling": "",
+                "--compilation-config": "{\"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_flashcomm1\": true, \"weight_nz_mode\": 2}",
+                "--gpu-memory-utilization": "0.95",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "1024",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "VLLM_USE_RUST_FRONTEND": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--max-num-seqs": "100",
+                "--max-num-batched-tokens": "16384",
+                "--enable-expert-parallel": "",
+                "--quantization": "ascend",
+                "--distributed_executor_backend": "mp",
+                "--no-enable-prefix-caching": "",
+                "--async-scheduling": "",
+                "--compilation-config": "{\"cudagraph_mode\": \"FULL_DECODE_ONLY\"}",
+                "--additional-config": "{\"enable_flashcomm1\": true, \"weight_nz_mode\": 2}",
+                "--gpu-memory-utilization": "0.95",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "hermes",
+                "--reasoning-parser": "qwen3"
+              },
+              "extra_envs": {
+                "VLLM_USE_MODELSCOPE": "True",
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "1024",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "1",
+                "TASK_QUEUE_ENABLE": "1",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "VLLM_USE_RUST_FRONTEND": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
+        }
+      ],
       "Qwen/Qwen3-32B": [
         {
           "name": "Qwen3-32B",
@@ -103620,6 +106181,86 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "dspark"
+        }
+      ],
+      "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp": [
+        {
+          "name": "DeepSeek-V4-Flash (ascend_w8a8)",
+          "huggingface_id": "Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}"
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--kv-cache-dtype": "fp8",
+                "--block-size": "128",
+                "--data-parallel-size": "2",
+                "--quantization": "ascend",
+                "--max-num-seqs": "32",
+                "--max-num-batched-tokens": "10240",
+                "--gpu-memory-utilization": "0.90",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\"}",
+                "--async-scheduling": "",
+                "--api-server-count": "1",
+                "--safetensors-load-strategy": "prefetch",
+                "--additional-config": "{\"ascend_compilation_config\":{\"enable_npugraph_ex\":true,\"enable_static_kernel\":false},\"enable_cpu_binding\":true,\"multistream_overlap_shared_expert\":true}",
+                "--tokenizer-mode": "deepseek_v4",
+                "--tool-call-parser": "deepseek_v4",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v4",
+                "--reasoning-config": "{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"\",\"reasoning_end_str\":\"\"}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "HCCL_OP_EXPANSION_MODE": "AIV",
+                "HCCL_BUFFSIZE": "2560",
+                "PYTORCH_NPU_ALLOC_CONF": "expandable_segments:True",
+                "OMP_PROC_BIND": "false",
+                "OMP_NUM_THREADS": "10",
+                "TASK_QUEUE_ENABLE": "1",
+                "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2:$LD_PRELOAD",
+                "ASCEND_RT_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                "VLLM_USE_MODELSCOPE": "True"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "ascend_w8a8"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Pro-0813": [
