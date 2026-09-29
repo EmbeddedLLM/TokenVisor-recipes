@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-09-28T06:44:47.868562+00:00",
+  "generated_at": "2026-09-29T06:33:08.403194+00:00",
   "vllm_version": "0.30.0",
-  "vllm_recipes_sha": "f2b2bfb",
+  "vllm_recipes_sha": "e7eeea7",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -1625,6 +1625,8 @@
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
                 "--moe-backend": "triton",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -1639,6 +1641,8 @@
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
                 "--moe-backend": "triton",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -1667,6 +1671,8 @@
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
                 "--moe-backend": "triton",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -1681,6 +1687,8 @@
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
                 "--moe-backend": "triton",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -1709,6 +1717,8 @@
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
                 "--moe-backend": "triton",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -1723,6 +1733,8 @@
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
                 "--moe-backend": "triton",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -5745,6 +5757,8 @@
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
                 "--moe-backend": "triton",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -5759,6 +5773,8 @@
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
                 "--moe-backend": "triton",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -5787,6 +5803,8 @@
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
                 "--moe-backend": "triton",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -5801,6 +5819,8 @@
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
                 "--moe-backend": "triton",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -5829,6 +5849,8 @@
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
                 "--moe-backend": "triton",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -5843,6 +5865,8 @@
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
                 "--moe-backend": "triton",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -14788,6 +14812,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -14801,6 +14827,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -14828,6 +14856,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -14841,6 +14871,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -14868,6 +14900,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -14881,6 +14915,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -19291,6 +19327,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -19304,6 +19342,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -19331,6 +19371,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -19344,6 +19386,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -19371,6 +19415,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -19384,6 +19430,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -21111,6 +21159,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -21124,6 +21174,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -21151,6 +21203,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -21164,6 +21218,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -21191,6 +21247,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -21204,6 +21262,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -24591,6 +24651,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -24604,6 +24666,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -24631,6 +24695,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -24644,6 +24710,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -24671,6 +24739,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -24684,6 +24754,8 @@
                 "--gpu-memory-utilization": "0.90",
                 "--enable-prefix-caching": "",
                 "--no-enable-flashinfer-autotune": "",
+                "--kv-cache-dtype": "fp8",
+                "--attention-config.indexer_kv_dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -38335,6 +38407,300 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "nvfp4"
+        }
+      ],
+      "zai-org/GLM-5.2-FP8": [
+        {
+          "name": "GLM-5.2",
+          "huggingface_id": "zai-org/GLM-5.2-FP8",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "amd/GLM-5.2-MXFP4": [
+        {
+          "name": "GLM-5.2 (mxfp4)",
+          "huggingface_id": "amd/GLM-5.2-MXFP4",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
+        }
+      ],
+      "nvidia/GLM-5.2-NVFP4": [
+        {
+          "name": "GLM-5.2 (nvfp4)",
+          "huggingface_id": "nvidia/GLM-5.2-NVFP4",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/GLM-5.2-NVFP4-FP8": [
+        {
+          "name": "GLM-5.2 (redhat_nvfp4)",
+          "huggingface_id": "RedHatAI/GLM-5.2-NVFP4-FP8",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4"
+        }
+      ],
+      "zai-org/GLM-5.2": [
+        {
+          "name": "GLM-5.2 (bf16)",
+          "huggingface_id": "zai-org/GLM-5.2",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "bf16"
+        }
+      ],
+      "RedHatAI/GLM-5.2-FP8": [
+        {
+          "name": "GLM-5.2 (redhat_fp8)",
+          "huggingface_id": "RedHatAI/GLM-5.2-FP8",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_fp8"
+        }
+      ],
+      "RedHatAI/GLM-5.2-NVFP4": [
+        {
+          "name": "GLM-5.2 (redhat_nvfp4_plain)",
+          "huggingface_id": "RedHatAI/GLM-5.2-NVFP4",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4_plain"
         }
       ],
       "zai-org/Glyph": [
