@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-09-29T06:33:08.403194+00:00",
+  "generated_at": "2026-09-30T06:34:03.214137+00:00",
   "vllm_version": "0.30.0",
-  "vllm_recipes_sha": "e7eeea7",
+  "vllm_recipes_sha": "1343d0f",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -29299,6 +29299,60 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "dspark"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4.1-Flash": [
+        {
+          "name": "DeepSeek-V4.1-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.30.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--gpu-memory-utilization": "0.9",
+                "--moe-backend": "aiter",
+                "--no-swa-bounded-replay": "",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "AITER_TRITON_LOG_LEVEL": "ERROR",
+                "VLLM_USE_BREAKABLE_CUDAGRAPH": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--gpu-memory-utilization": "0.9",
+                "--moe-backend": "aiter",
+                "--no-swa-bounded-replay": "",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "AITER_TRITON_LOG_LEVEL": "ERROR",
+                "VLLM_USE_BREAKABLE_CUDAGRAPH": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
         }
       ],
       "dots-studio/dots3-note-prev-fp8": [
