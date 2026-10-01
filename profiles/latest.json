@@ -1,6 +1,6 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-09-30T06:34:03.214137+00:00",
+  "generated_at": "2026-10-01T06:33:55.991022+00:00",
   "vllm_version": "0.30.0",
   "vllm_recipes_sha": "1343d0f",
   "accelerator_brands": {
