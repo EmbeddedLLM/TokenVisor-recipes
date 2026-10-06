@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-10-05T06:47:25.433305+00:00",
+  "generated_at": "2026-10-06T06:32:59.995624+00:00",
   "vllm_version": "0.31.0",
-  "vllm_recipes_sha": "8faeba9",
+  "vllm_recipes_sha": "8fcf110",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -5830,7 +5830,6 @@
             "latency-focus": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -5844,7 +5843,6 @@
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -5872,7 +5870,6 @@
             "latency-focus": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
@@ -5887,7 +5884,6 @@
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
@@ -5916,7 +5912,6 @@
             "latency-focus": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
@@ -5931,7 +5926,6 @@
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
@@ -5960,7 +5954,6 @@
             "latency-focus": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -5974,7 +5967,6 @@
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -6002,7 +5994,6 @@
             "latency-focus": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--distributed-executor-backend": "mp",
                 "--data-parallel-size": "1",
                 "--quantization": "ascend",
@@ -6037,7 +6028,6 @@
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--distributed-executor-backend": "mp",
                 "--data-parallel-size": "1",
                 "--quantization": "ascend",
@@ -6086,7 +6076,6 @@
             "latency-focus": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--distributed-executor-backend": "mp",
                 "--data-parallel-size": "1",
                 "--quantization": "ascend",
@@ -6121,7 +6110,6 @@
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--distributed-executor-backend": "mp",
                 "--data-parallel-size": "1",
                 "--quantization": "ascend",
@@ -119260,7 +119248,6 @@
             "latency-focus": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -119274,7 +119261,6 @@
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -119302,7 +119288,6 @@
             "latency-focus": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
@@ -119317,7 +119302,6 @@
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
@@ -119346,7 +119330,6 @@
             "latency-focus": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
@@ -119361,7 +119344,6 @@
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
@@ -119390,7 +119372,6 @@
             "latency-focus": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -119404,7 +119385,6 @@
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
@@ -119432,7 +119412,6 @@
             "latency-focus": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--distributed-executor-backend": "mp",
                 "--data-parallel-size": "1",
                 "--quantization": "ascend",
@@ -119467,7 +119446,6 @@
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--distributed-executor-backend": "mp",
                 "--data-parallel-size": "1",
                 "--quantization": "ascend",
@@ -119516,7 +119494,6 @@
             "latency-focus": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--distributed-executor-backend": "mp",
                 "--data-parallel-size": "1",
                 "--quantization": "ascend",
@@ -119551,7 +119528,6 @@
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
-                "--moe-backend": "flashinfer_trtllm",
                 "--distributed-executor-backend": "mp",
                 "--data-parallel-size": "1",
                 "--quantization": "ascend",
