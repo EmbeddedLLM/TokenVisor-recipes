@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-10-07T06:32:16.321720+00:00",
+  "generated_at": "2026-10-08T06:34:25.612850+00:00",
   "vllm_version": "0.31.0",
-  "vllm_recipes_sha": "788f5f3",
+  "vllm_recipes_sha": "ae4ec97",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -6605,9 +6605,47 @@
           "variant_name": "default"
         }
       ],
-      "XiaomiMiMo/MiMo-V2.6-Flash-RL": [
+      "XiaomiMiMo/MiMo-V2.6-Flash-MOPD": [
         {
           "name": "MiMo-V2.6-Flash-RL",
+          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
+          "accelerators": "h200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "XiaomiMiMo/MiMo-V2.6-Flash-RL": [
+        {
+          "name": "MiMo-V2.6-Flash-RL (rl)",
           "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
           "accelerators": "h200",
           "provider": "vllm",
@@ -6621,7 +6659,7 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}"
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
               },
               "extra_envs": {}
             },
@@ -6633,7 +6671,45 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "rl"
+        }
+      ],
+      "XiaomiMiMo/MiMo-V2.6-Pro-MOPD": [
+        {
+          "name": "MiMo-V2.6-Pro-RL",
+          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
+          "accelerators": "h200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -6645,7 +6721,7 @@
       ],
       "XiaomiMiMo/MiMo-V2.6-Pro-RL": [
         {
-          "name": "MiMo-V2.6-Pro-RL",
+          "name": "MiMo-V2.6-Pro-RL (rl)",
           "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
           "accelerators": "h200",
           "provider": "vllm",
@@ -6659,7 +6735,7 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Pro-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}"
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
               },
               "extra_envs": {}
             },
@@ -6671,14 +6747,14 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Pro-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
-          "variant_name": "default"
+          "variant_name": "rl"
         }
       ],
       "deepseek-ai/DeepSeek-R1": [
@@ -21268,9 +21344,47 @@
           "variant_name": "bf16"
         }
       ],
-      "XiaomiMiMo/MiMo-V2.6-Flash-RL": [
+      "XiaomiMiMo/MiMo-V2.6-Flash-MOPD": [
         {
           "name": "MiMo-V2.6-Flash-RL",
+          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
+          "accelerators": "gb300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "XiaomiMiMo/MiMo-V2.6-Flash-RL": [
+        {
+          "name": "MiMo-V2.6-Flash-RL (rl)",
           "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
           "accelerators": "gb300",
           "provider": "vllm",
@@ -21284,7 +21398,7 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}"
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
               },
               "extra_envs": {}
             },
@@ -21296,7 +21410,45 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "rl"
+        }
+      ],
+      "XiaomiMiMo/MiMo-V2.6-Pro-MOPD": [
+        {
+          "name": "MiMo-V2.6-Pro-RL",
+          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
+          "accelerators": "gb300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -21308,7 +21460,7 @@
       ],
       "XiaomiMiMo/MiMo-V2.6-Pro-RL": [
         {
-          "name": "MiMo-V2.6-Pro-RL",
+          "name": "MiMo-V2.6-Pro-RL (rl)",
           "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
           "accelerators": "gb300",
           "provider": "vllm",
@@ -21322,7 +21474,7 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Pro-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}"
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
               },
               "extra_envs": {}
             },
@@ -21334,14 +21486,14 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Pro-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
-          "variant_name": "default"
+          "variant_name": "rl"
         }
       ],
       "deepseek-ai/DeepSeek-V4-Flash-0731": [
@@ -30698,10 +30850,10 @@
           "variant_name": "default"
         }
       ],
-      "XiaomiMiMo/MiMo-V2.6-Flash-RL": [
+      "XiaomiMiMo/MiMo-V2.6-Flash-MOPD": [
         {
           "name": "MiMo-V2.6-Flash-RL",
-          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
+          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
           "accelerators": "mi300x",
           "provider": "vllm_amd",
           "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
@@ -30715,7 +30867,7 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}"
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -30731,7 +30883,7 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -30742,6 +30894,52 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "XiaomiMiMo/MiMo-V2.6-Flash-RL": [
+        {
+          "name": "MiMo-V2.6-Flash-RL (rl)",
+          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--kv-cache-dtype": "fp8",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--kv-cache-dtype": "fp8",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "rl"
         }
       ],
       "baidu/ERNIE-4.5-VL-28B-A3B-PT": [
@@ -38208,10 +38406,10 @@
           "variant_name": "default"
         }
       ],
-      "XiaomiMiMo/MiMo-V2.6-Flash-RL": [
+      "XiaomiMiMo/MiMo-V2.6-Flash-MOPD": [
         {
           "name": "MiMo-V2.6-Flash-RL",
-          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
+          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
           "accelerators": "mi325x",
           "provider": "vllm_amd",
           "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
@@ -38225,7 +38423,7 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}"
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -38241,7 +38439,7 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -38252,6 +38450,52 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "XiaomiMiMo/MiMo-V2.6-Flash-RL": [
+        {
+          "name": "MiMo-V2.6-Flash-RL (rl)",
+          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--kv-cache-dtype": "fp8",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--kv-cache-dtype": "fp8",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "rl"
         }
       ],
       "baidu/ERNIE-4.5-VL-28B-A3B-PT": [
@@ -42114,6 +42358,202 @@
           "variant_name": "nvfp4"
         }
       ],
+      "zai-org/GLM-5.1": [
+        {
+          "name": "GLM-5.1",
+          "huggingface_id": "zai-org/GLM-5.1",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "zai-org/GLM-5.1-FP8": [
+        {
+          "name": "GLM-5.1 (fp8)",
+          "huggingface_id": "zai-org/GLM-5.1-FP8",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "nvidia/GLM-5.1-NVFP4": [
+        {
+          "name": "GLM-5.1 (nvfp4)",
+          "huggingface_id": "nvidia/GLM-5.1-NVFP4",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--kv-cache-dtype": "fp8",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--kv-cache-dtype": "fp8",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "amd/GLM-5.1-MXFP4": [
+        {
+          "name": "GLM-5.1 (mxfp4)",
+          "huggingface_id": "amd/GLM-5.1-MXFP4",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--kv-cache-dtype": "fp8_e4m3",
+                "-cc.pass_config.fuse_allreduce_rms=False": "",
+                "--block-size=1": "",
+                "--enable-prefix-caching": "",
+                "--max-num-seqs": "64",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--kv-cache-dtype": "fp8_e4m3",
+                "-cc.pass_config.fuse_allreduce_rms=False": "",
+                "--block-size=1": "",
+                "--enable-prefix-caching": "",
+                "--max-num-seqs": "64",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
+        }
+      ],
       "zai-org/GLM-5.2-FP8": [
         {
           "name": "GLM-5.2",
@@ -42579,6 +43019,158 @@
           "variant_name": "bf16"
         }
       ],
+      "zai-org/GLM-5": [
+        {
+          "name": "GLM-5",
+          "huggingface_id": "zai-org/GLM-5",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--speculative-config.method": "mtp",
+                "--speculative-config.num_speculative_tokens": "3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--speculative-config.method": "mtp",
+                "--speculative-config.num_speculative_tokens": "3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "zai-org/GLM-5-FP8": [
+        {
+          "name": "GLM-5 (fp8)",
+          "huggingface_id": "zai-org/GLM-5-FP8",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--speculative-config.method": "mtp",
+                "--speculative-config.num_speculative_tokens": "3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--speculative-config.method": "mtp",
+                "--speculative-config.num_speculative_tokens": "3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "nvidia/GLM-5-NVFP4": [
+        {
+          "name": "GLM-5 (nvfp4)",
+          "huggingface_id": "nvidia/GLM-5-NVFP4",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--kv-cache-dtype": "fp8",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--speculative-config.method": "mtp",
+                "--speculative-config.num_speculative_tokens": "3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--kv-cache-dtype": "fp8",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--speculative-config.method": "mtp",
+                "--speculative-config.num_speculative_tokens": "3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
       "zai-org/Glyph": [
         {
           "name": "Glyph",
@@ -43030,6 +43622,819 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "zai-org/GLM-5.1": [
+        {
+          "name": "GLM-5.1",
+          "huggingface_id": "zai-org/GLM-5.1",
+          "accelerators": "mi350x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "zai-org/GLM-5.1-FP8": [
+        {
+          "name": "GLM-5.1 (fp8)",
+          "huggingface_id": "zai-org/GLM-5.1-FP8",
+          "accelerators": "mi350x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "nvidia/GLM-5.1-NVFP4": [
+        {
+          "name": "GLM-5.1 (nvfp4)",
+          "huggingface_id": "nvidia/GLM-5.1-NVFP4",
+          "accelerators": "mi350x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--kv-cache-dtype": "fp8",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--kv-cache-dtype": "fp8",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "amd/GLM-5.1-MXFP4": [
+        {
+          "name": "GLM-5.1 (mxfp4)",
+          "huggingface_id": "amd/GLM-5.1-MXFP4",
+          "accelerators": "mi350x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--kv-cache-dtype": "fp8_e4m3",
+                "-cc.pass_config.fuse_allreduce_rms=False": "",
+                "--block-size=1": "",
+                "--enable-prefix-caching": "",
+                "--max-num-seqs": "64",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--kv-cache-dtype": "fp8_e4m3",
+                "-cc.pass_config.fuse_allreduce_rms=False": "",
+                "--block-size=1": "",
+                "--enable-prefix-caching": "",
+                "--max-num-seqs": "64",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
+        }
+      ],
+      "zai-org/GLM-5.2-FP8": [
+        {
+          "name": "GLM-5.2",
+          "huggingface_id": "zai-org/GLM-5.2-FP8",
+          "accelerators": "mi350x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "amd/GLM-5.2-MXFP4": [
+        {
+          "name": "GLM-5.2 (mxfp4)",
+          "huggingface_id": "amd/GLM-5.2-MXFP4",
+          "accelerators": "mi350x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "mxfp4"
+        }
+      ],
+      "nvidia/GLM-5.2-NVFP4": [
+        {
+          "name": "GLM-5.2 (nvfp4)",
+          "huggingface_id": "nvidia/GLM-5.2-NVFP4",
+          "accelerators": "mi350x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "RedHatAI/GLM-5.2-NVFP4-FP8": [
+        {
+          "name": "GLM-5.2 (redhat_nvfp4)",
+          "huggingface_id": "RedHatAI/GLM-5.2-NVFP4-FP8",
+          "accelerators": "mi350x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4"
+        }
+      ],
+      "zai-org/GLM-5.2": [
+        {
+          "name": "GLM-5.2 (bf16)",
+          "huggingface_id": "zai-org/GLM-5.2",
+          "accelerators": "mi350x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "bf16"
+        }
+      ],
+      "RedHatAI/GLM-5.2-FP8": [
+        {
+          "name": "GLM-5.2 (redhat_fp8)",
+          "huggingface_id": "RedHatAI/GLM-5.2-FP8",
+          "accelerators": "mi350x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_fp8"
+        }
+      ],
+      "RedHatAI/GLM-5.2-NVFP4": [
+        {
+          "name": "GLM-5.2 (redhat_nvfp4_plain)",
+          "huggingface_id": "RedHatAI/GLM-5.2-NVFP4",
+          "accelerators": "mi350x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "redhat_nvfp4_plain"
+        }
+      ],
+      "zai-org/GLM-5.3": [
+        {
+          "name": "GLM-5.3",
+          "huggingface_id": "zai-org/GLM-5.3",
+          "accelerators": "mi350x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "Inferact/GLM-5.3-NVFP4": [
+        {
+          "name": "GLM-5.3 (nvfp4)",
+          "huggingface_id": "Inferact/GLM-5.3-NVFP4",
+          "accelerators": "mi350x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
+        }
+      ],
+      "gpustack/GLM-5.3-W4A8": [
+        {
+          "name": "GLM-5.3 (w4a8)",
+          "huggingface_id": "gpustack/GLM-5.3-W4A8",
+          "accelerators": "mi350x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--enable-expert-parallel": "",
+                "--trust-remote-code": "",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--enable-expert-parallel": "",
+                "--trust-remote-code": "",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "w4a8"
+        }
+      ],
+      "zai-org/GLM-5.3-BF16": [
+        {
+          "name": "GLM-5.3 (bf16)",
+          "huggingface_id": "zai-org/GLM-5.3-BF16",
+          "accelerators": "mi350x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8_e4m3",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "bf16"
+        }
+      ],
+      "zai-org/GLM-5": [
+        {
+          "name": "GLM-5",
+          "huggingface_id": "zai-org/GLM-5",
+          "accelerators": "mi350x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--speculative-config.method": "mtp",
+                "--speculative-config.num_speculative_tokens": "3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--speculative-config.method": "mtp",
+                "--speculative-config.num_speculative_tokens": "3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "zai-org/GLM-5-FP8": [
+        {
+          "name": "GLM-5 (fp8)",
+          "huggingface_id": "zai-org/GLM-5-FP8",
+          "accelerators": "mi350x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--speculative-config.method": "mtp",
+                "--speculative-config.num_speculative_tokens": "3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--speculative-config.method": "mtp",
+                "--speculative-config.num_speculative_tokens": "3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "nvidia/GLM-5-NVFP4": [
+        {
+          "name": "GLM-5 (nvfp4)",
+          "huggingface_id": "nvidia/GLM-5-NVFP4",
+          "accelerators": "mi350x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--kv-cache-dtype": "fp8",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--speculative-config.method": "mtp",
+                "--speculative-config.num_speculative_tokens": "3"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
+                "--kv-cache-dtype": "fp8",
+                "--tool-call-parser": "glm47",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "glm47",
+                "--speculative-config.method": "mtp",
+                "--speculative-config.num_speculative_tokens": "3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "nvfp4"
         }
       ]
     },
@@ -45894,9 +47299,55 @@
           "variant_name": "default"
         }
       ],
-      "XiaomiMiMo/MiMo-V2.6-Flash-RL": [
+      "XiaomiMiMo/MiMo-V2.6-Flash-MOPD": [
         {
           "name": "MiMo-V2.6-Flash-RL",
+          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--kv-cache-dtype": "fp8",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--kv-cache-dtype": "fp8",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "XiaomiMiMo/MiMo-V2.6-Flash-RL": [
+        {
+          "name": "MiMo-V2.6-Flash-RL (rl)",
           "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
           "accelerators": "mi355x",
           "provider": "vllm_amd",
@@ -45911,7 +47362,7 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}"
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -45927,7 +47378,53 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "rl"
+        }
+      ],
+      "XiaomiMiMo/MiMo-V2.6-Pro-MOPD": [
+        {
+          "name": "MiMo-V2.6-Pro-RL",
+          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--kv-cache-dtype": "fp8",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--kv-cache-dtype": "fp8",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -45942,7 +47439,7 @@
       ],
       "XiaomiMiMo/MiMo-V2.6-Pro-RL": [
         {
-          "name": "MiMo-V2.6-Pro-RL",
+          "name": "MiMo-V2.6-Pro-RL (rl)",
           "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
           "accelerators": "mi355x",
           "provider": "vllm_amd",
@@ -45957,7 +47454,7 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Pro-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}"
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -45973,7 +47470,7 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Pro-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -45983,7 +47480,7 @@
             }
           },
           "default_strategy": "latency-focus",
-          "variant_name": "default"
+          "variant_name": "rl"
         }
       ],
       "baidu/ERNIE-4.5-VL-28B-A3B-PT": [
@@ -50713,7 +52210,8 @@
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
-                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
               }
             },
             "balance": {
@@ -50729,7 +52227,8 @@
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
-                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
               }
             }
           },
@@ -50757,7 +52256,8 @@
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
-                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
               }
             },
             "balance": {
@@ -50773,7 +52273,8 @@
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
-                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
               }
             }
           },
@@ -50802,7 +52303,8 @@
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
-                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
               }
             },
             "balance": {
@@ -50819,7 +52321,8 @@
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
-                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
               }
             }
           },
@@ -50852,7 +52355,8 @@
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
-                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
               }
             },
             "balance": {
@@ -50873,7 +52377,8 @@
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
-                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
               }
             }
           },
@@ -65570,9 +67075,55 @@
           "variant_name": "default"
         }
       ],
-      "XiaomiMiMo/MiMo-V2.6-Flash-RL": [
+      "XiaomiMiMo/MiMo-V2.6-Flash-MOPD": [
         {
           "name": "MiMo-V2.6-Flash-RL",
+          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--kv-cache-dtype": "fp8",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--kv-cache-dtype": "fp8",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "XiaomiMiMo/MiMo-V2.6-Flash-RL": [
+        {
+          "name": "MiMo-V2.6-Flash-RL (rl)",
           "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
           "accelerators": "amd",
           "provider": "vllm_amd",
@@ -65587,7 +67138,7 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}"
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -65603,7 +67154,53 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "rl"
+        }
+      ],
+      "XiaomiMiMo/MiMo-V2.6-Pro-MOPD": [
+        {
+          "name": "MiMo-V2.6-Pro-RL",
+          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--kv-cache-dtype": "fp8",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
+              },
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_QUICK_REDUCE_QUANTIZATION": "INT4"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--kv-cache-dtype": "fp8",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -65618,7 +67215,7 @@
       ],
       "XiaomiMiMo/MiMo-V2.6-Pro-RL": [
         {
-          "name": "MiMo-V2.6-Pro-RL",
+          "name": "MiMo-V2.6-Pro-RL (rl)",
           "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
           "accelerators": "amd",
           "provider": "vllm_amd",
@@ -65633,7 +67230,7 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Pro-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}"
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
@@ -65649,7 +67246,7 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Pro-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {
@@ -65659,7 +67256,7 @@
             }
           },
           "default_strategy": "latency-focus",
-          "variant_name": "default"
+          "variant_name": "rl"
         }
       ],
       "arcee-ai/Trinity-Large-Thinking": [
@@ -73865,7 +75462,8 @@
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
-                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
               }
             },
             "balance": {
@@ -73881,7 +75479,8 @@
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
-                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
               }
             }
           },
@@ -73909,7 +75508,8 @@
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
-                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
               }
             },
             "balance": {
@@ -73925,7 +75525,8 @@
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
-                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
               }
             }
           },
@@ -73954,7 +75555,8 @@
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
-                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
               }
             },
             "balance": {
@@ -73971,7 +75573,8 @@
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
-                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
               }
             }
           },
@@ -74004,7 +75607,8 @@
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
-                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
               }
             },
             "balance": {
@@ -74025,7 +75629,8 @@
               },
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1",
-                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1"
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
               }
             }
           },
@@ -74630,18 +76235,26 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3"
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
             },
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
                 "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm47",
@@ -74649,7 +76262,11 @@
                 "--speculative-config.num_speculative_tokens": "3",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
             }
           },
           "default_strategy": "latency-focus",
@@ -74668,18 +76285,26 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm47",
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3"
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
             },
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
                 "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "glm47",
@@ -74687,7 +76312,11 @@
                 "--speculative-config.num_speculative_tokens": "3",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
             }
           },
           "default_strategy": "latency-focus",
@@ -74706,6 +76335,8 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
@@ -74713,12 +76344,18 @@
                 "--speculative-config.method": "mtp",
                 "--speculative-config.num_speculative_tokens": "3"
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
             },
             "balance": {
               "extra_args": {
                 "--trust-remote-code": "",
                 "--chat-template-content-format=string": "",
+                "--linear-backend": "aiter",
+                "--moe-backend": "aiter",
                 "--kv-cache-dtype": "fp8",
                 "--tool-call-parser": "glm47",
                 "--enable-auto-tool-choice": "",
@@ -74727,7 +76364,11 @@
                 "--speculative-config.num_speculative_tokens": "3",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS": "1",
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
             }
           },
           "default_strategy": "latency-focus",
@@ -80227,9 +81868,47 @@
           "variant_name": "default"
         }
       ],
-      "XiaomiMiMo/MiMo-V2.6-Flash-RL": [
+      "XiaomiMiMo/MiMo-V2.6-Flash-MOPD": [
         {
           "name": "MiMo-V2.6-Flash-RL",
+          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "XiaomiMiMo/MiMo-V2.6-Flash-RL": [
+        {
+          "name": "MiMo-V2.6-Flash-RL (rl)",
           "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
           "accelerators": "google",
           "provider": "vllm",
@@ -80243,7 +81922,7 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}"
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
               },
               "extra_envs": {}
             },
@@ -80255,7 +81934,45 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "rl"
+        }
+      ],
+      "XiaomiMiMo/MiMo-V2.6-Pro-MOPD": [
+        {
+          "name": "MiMo-V2.6-Pro-RL",
+          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -80267,7 +81984,7 @@
       ],
       "XiaomiMiMo/MiMo-V2.6-Pro-RL": [
         {
-          "name": "MiMo-V2.6-Pro-RL",
+          "name": "MiMo-V2.6-Pro-RL (rl)",
           "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
           "accelerators": "google",
           "provider": "vllm",
@@ -80281,7 +81998,7 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Pro-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}"
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
               },
               "extra_envs": {}
             },
@@ -80293,14 +82010,14 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Pro-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
-          "variant_name": "default"
+          "variant_name": "rl"
         }
       ],
       "arcee-ai/Trinity-Large-Thinking": [
@@ -93882,9 +95599,47 @@
           "variant_name": "default"
         }
       ],
-      "XiaomiMiMo/MiMo-V2.6-Flash-RL": [
+      "XiaomiMiMo/MiMo-V2.6-Flash-MOPD": [
         {
           "name": "MiMo-V2.6-Flash-RL",
+          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "XiaomiMiMo/MiMo-V2.6-Flash-RL": [
+        {
+          "name": "MiMo-V2.6-Flash-RL (rl)",
           "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
           "accelerators": "huawei",
           "provider": "vllm",
@@ -93898,7 +95653,7 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}"
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
               },
               "extra_envs": {}
             },
@@ -93910,7 +95665,45 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "rl"
+        }
+      ],
+      "XiaomiMiMo/MiMo-V2.6-Pro-MOPD": [
+        {
+          "name": "MiMo-V2.6-Pro-RL",
+          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -93922,7 +95715,7 @@
       ],
       "XiaomiMiMo/MiMo-V2.6-Pro-RL": [
         {
-          "name": "MiMo-V2.6-Pro-RL",
+          "name": "MiMo-V2.6-Pro-RL (rl)",
           "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
           "accelerators": "huawei",
           "provider": "vllm",
@@ -93936,7 +95729,7 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Pro-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}"
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
               },
               "extra_envs": {}
             },
@@ -93948,14 +95741,14 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Pro-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
-          "variant_name": "default"
+          "variant_name": "rl"
         }
       ],
       "arcee-ai/Trinity-Large-Thinking": [
@@ -107537,9 +109330,47 @@
           "variant_name": "default"
         }
       ],
-      "XiaomiMiMo/MiMo-V2.6-Flash-RL": [
+      "XiaomiMiMo/MiMo-V2.6-Flash-MOPD": [
         {
           "name": "MiMo-V2.6-Flash-RL",
+          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "XiaomiMiMo/MiMo-V2.6-Flash-RL": [
+        {
+          "name": "MiMo-V2.6-Flash-RL (rl)",
           "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
           "accelerators": "intel",
           "provider": "vllm",
@@ -107553,7 +109384,7 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}"
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
               },
               "extra_envs": {}
             },
@@ -107565,7 +109396,45 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "rl"
+        }
+      ],
+      "XiaomiMiMo/MiMo-V2.6-Pro-MOPD": [
+        {
+          "name": "MiMo-V2.6-Pro-RL",
+          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -107577,7 +109446,7 @@
       ],
       "XiaomiMiMo/MiMo-V2.6-Pro-RL": [
         {
-          "name": "MiMo-V2.6-Pro-RL",
+          "name": "MiMo-V2.6-Pro-RL (rl)",
           "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
           "accelerators": "intel",
           "provider": "vllm",
@@ -107591,7 +109460,7 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Pro-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}"
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
               },
               "extra_envs": {}
             },
@@ -107603,14 +109472,14 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Pro-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
-          "variant_name": "default"
+          "variant_name": "rl"
         }
       ],
       "arcee-ai/Trinity-Large-Thinking": [
@@ -121198,9 +123067,47 @@
           "variant_name": "default"
         }
       ],
-      "XiaomiMiMo/MiMo-V2.6-Flash-RL": [
+      "XiaomiMiMo/MiMo-V2.6-Flash-MOPD": [
         {
           "name": "MiMo-V2.6-Flash-RL",
+          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "XiaomiMiMo/MiMo-V2.6-Flash-RL": [
+        {
+          "name": "MiMo-V2.6-Flash-RL (rl)",
           "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
           "accelerators": "nvidia",
           "provider": "vllm",
@@ -121214,7 +123121,7 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}"
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
               },
               "extra_envs": {}
             },
@@ -121226,7 +123133,45 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Flash-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "rl"
+        }
+      ],
+      "XiaomiMiMo/MiMo-V2.6-Pro-MOPD": [
+        {
+          "name": "MiMo-V2.6-Pro-RL",
+          "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--generation-config": "vllm",
+                "--gpu-memory-utilization": "0.95",
+                "--tool-call-parser": "mimo",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "mimo",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
@@ -121238,7 +123183,7 @@
       ],
       "XiaomiMiMo/MiMo-V2.6-Pro-RL": [
         {
-          "name": "MiMo-V2.6-Pro-RL",
+          "name": "MiMo-V2.6-Pro-RL (rl)",
           "huggingface_id": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
           "accelerators": "nvidia",
           "provider": "vllm",
@@ -121252,7 +123197,7 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Pro-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}"
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}"
               },
               "extra_envs": {}
             },
@@ -121264,14 +123209,14 @@
                 "--tool-call-parser": "mimo",
                 "--enable-auto-tool-choice": "",
                 "--reasoning-parser": "mimo",
-                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"/root/.cache/huggingface/hub/models--XiaomiMiMo--MiMo-V2.6-Pro-RL/snapshots/<hash>/dflash\",\"num_speculative_tokens\":7}",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"$DFLASH_DIR\",\"num_speculative_tokens\":7}",
                 "--enable-expert-parallel": ""
               },
               "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
-          "variant_name": "default"
+          "variant_name": "rl"
         }
       ],
       "arcee-ai/Trinity-Large-Thinking": [
