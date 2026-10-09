@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-10-08T06:34:25.612850+00:00",
+  "generated_at": "2026-10-09T06:33:23.066528+00:00",
   "vllm_version": "0.31.0",
-  "vllm_recipes_sha": "ae4ec97",
+  "vllm_recipes_sha": "e1e3fe9",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -2918,7 +2918,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -2929,7 +2929,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -2954,7 +2954,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -2965,7 +2965,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -2989,7 +2989,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -2999,7 +2999,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -3023,7 +3023,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -3033,7 +3033,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -3062,7 +3062,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--moe-backend": "marlin",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3"
               },
               "extra_envs": {}
@@ -3076,7 +3076,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--moe-backend": "marlin",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--enable-expert-parallel": ""
               },
@@ -3103,7 +3103,7 @@
                 "--max-num-batched-tokens": "16384",
                 "--moe-backend": "flashinfer_cutlass",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3"
               },
               "extra_envs": {
@@ -3118,7 +3118,7 @@
                 "--max-num-batched-tokens": "16384",
                 "--moe-backend": "flashinfer_cutlass",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--enable-expert-parallel": ""
               },
@@ -6508,7 +6508,7 @@
                 "--trust-remote-code": "",
                 "--generation-config": "vllm",
                 "--gpu-memory-utilization": "0.9",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "mimo",
                 "--reasoning-parser": "qwen3"
               },
               "extra_envs": {}
@@ -6518,7 +6518,7 @@
                 "--trust-remote-code": "",
                 "--generation-config": "vllm",
                 "--gpu-memory-utilization": "0.9",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "mimo",
                 "--reasoning-parser": "qwen3",
                 "--enable-expert-parallel": ""
               },
@@ -9542,7 +9542,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -9553,7 +9553,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -9578,7 +9578,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -9589,7 +9589,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -9613,7 +9613,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -9623,7 +9623,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -9647,7 +9647,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -9657,7 +9657,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -14269,7 +14269,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -14280,7 +14280,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -14305,7 +14305,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -14316,7 +14316,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -14340,7 +14340,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -14350,7 +14350,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -14374,7 +14374,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -14384,7 +14384,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -21082,7 +21082,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -21104,7 +21104,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -21126,7 +21126,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -21148,7 +21148,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -21170,7 +21170,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -21196,7 +21196,7 @@
                 "--additional-config": "{\"enable_cpu_binding\":true}",
                 "--max-num-batched-tokens": "16384",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -23679,7 +23679,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -23690,7 +23690,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -23715,7 +23715,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -23726,7 +23726,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -23750,7 +23750,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -23760,7 +23760,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -23784,7 +23784,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -23794,7 +23794,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -23823,7 +23823,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--moe-backend": "marlin",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3"
               },
               "extra_envs": {}
@@ -23837,7 +23837,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--moe-backend": "marlin",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--enable-expert-parallel": ""
               },
@@ -23864,7 +23864,7 @@
                 "--max-num-batched-tokens": "16384",
                 "--moe-backend": "flashinfer_cutlass",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3"
               },
               "extra_envs": {
@@ -23879,7 +23879,7 @@
                 "--max-num-batched-tokens": "16384",
                 "--moe-backend": "flashinfer_cutlass",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--enable-expert-parallel": ""
               },
@@ -24871,7 +24871,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -24893,7 +24893,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -24915,7 +24915,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -24937,7 +24937,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -24959,7 +24959,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -24985,7 +24985,7 @@
                 "--additional-config": "{\"enable_cpu_binding\":true}",
                 "--max-num-batched-tokens": "16384",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -25546,7 +25546,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -25557,7 +25557,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -25582,7 +25582,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -25593,7 +25593,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -25617,7 +25617,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -25627,7 +25627,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -25651,7 +25651,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -25661,7 +25661,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -25690,7 +25690,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--moe-backend": "marlin",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3"
               },
               "extra_envs": {}
@@ -25704,7 +25704,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--moe-backend": "marlin",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--enable-expert-parallel": ""
               },
@@ -25731,7 +25731,7 @@
                 "--max-num-batched-tokens": "16384",
                 "--moe-backend": "flashinfer_cutlass",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3"
               },
               "extra_envs": {
@@ -25746,7 +25746,7 @@
                 "--max-num-batched-tokens": "16384",
                 "--moe-backend": "flashinfer_cutlass",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--enable-expert-parallel": ""
               },
@@ -26321,7 +26321,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -26343,7 +26343,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -26365,7 +26365,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -26387,7 +26387,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -26409,7 +26409,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -26435,7 +26435,7 @@
                 "--additional-config": "{\"enable_cpu_binding\":true}",
                 "--max-num-batched-tokens": "16384",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -26464,7 +26464,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -26475,7 +26475,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -26500,7 +26500,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -26511,7 +26511,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -26535,7 +26535,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -26545,7 +26545,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -26569,7 +26569,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -26579,7 +26579,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -26608,7 +26608,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--moe-backend": "marlin",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3"
               },
               "extra_envs": {}
@@ -26622,7 +26622,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--moe-backend": "marlin",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--enable-expert-parallel": ""
               },
@@ -26649,7 +26649,7 @@
                 "--max-num-batched-tokens": "16384",
                 "--moe-backend": "flashinfer_cutlass",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3"
               },
               "extra_envs": {
@@ -26664,7 +26664,7 @@
                 "--max-num-batched-tokens": "16384",
                 "--moe-backend": "flashinfer_cutlass",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--enable-expert-parallel": ""
               },
@@ -27801,7 +27801,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -27823,7 +27823,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -27845,7 +27845,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -27867,7 +27867,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -27889,7 +27889,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -27915,7 +27915,7 @@
                 "--additional-config": "{\"enable_cpu_binding\":true}",
                 "--max-num-batched-tokens": "16384",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -28079,7 +28079,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -28101,7 +28101,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -28123,7 +28123,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -28145,7 +28145,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -28167,7 +28167,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -28193,7 +28193,7 @@
                 "--additional-config": "{\"enable_cpu_binding\":true}",
                 "--max-num-batched-tokens": "16384",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -30825,7 +30825,7 @@
                 "--trust-remote-code": "",
                 "--generation-config": "vllm",
                 "--gpu-memory-utilization": "0.9",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "mimo",
                 "--reasoning-parser": "qwen3"
               },
               "extra_envs": {
@@ -30837,7 +30837,7 @@
                 "--trust-remote-code": "",
                 "--generation-config": "vllm",
                 "--gpu-memory-utilization": "0.9",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "mimo",
                 "--reasoning-parser": "qwen3",
                 "--enable-expert-parallel": ""
               },
@@ -38381,7 +38381,7 @@
                 "--trust-remote-code": "",
                 "--generation-config": "vllm",
                 "--gpu-memory-utilization": "0.9",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "mimo",
                 "--reasoning-parser": "qwen3"
               },
               "extra_envs": {
@@ -38393,7 +38393,7 @@
                 "--trust-remote-code": "",
                 "--generation-config": "vllm",
                 "--gpu-memory-utilization": "0.9",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "mimo",
                 "--reasoning-parser": "qwen3",
                 "--enable-expert-parallel": ""
               },
@@ -47274,7 +47274,7 @@
                 "--trust-remote-code": "",
                 "--generation-config": "vllm",
                 "--gpu-memory-utilization": "0.9",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "mimo",
                 "--reasoning-parser": "qwen3"
               },
               "extra_envs": {
@@ -47286,7 +47286,7 @@
                 "--trust-remote-code": "",
                 "--generation-config": "vllm",
                 "--gpu-memory-utilization": "0.9",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "mimo",
                 "--reasoning-parser": "qwen3",
                 "--enable-expert-parallel": ""
               },
@@ -58708,7 +58708,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -58730,7 +58730,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -58752,7 +58752,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -58774,7 +58774,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -58796,7 +58796,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -58822,7 +58822,7 @@
                 "--additional-config": "{\"enable_cpu_binding\":true}",
                 "--max-num-batched-tokens": "16384",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -66631,7 +66631,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -66653,7 +66653,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -66675,7 +66675,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -66697,7 +66697,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -66719,7 +66719,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -66745,7 +66745,7 @@
                 "--additional-config": "{\"enable_cpu_binding\":true}",
                 "--max-num-batched-tokens": "16384",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -66974,7 +66974,7 @@
                 "--trust-remote-code": "",
                 "--generation-config": "vllm",
                 "--gpu-memory-utilization": "0.9",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "mimo",
                 "--reasoning-parser": "qwen3"
               },
               "extra_envs": {
@@ -66986,7 +66986,7 @@
                 "--trust-remote-code": "",
                 "--generation-config": "vllm",
                 "--gpu-memory-utilization": "0.9",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "mimo",
                 "--reasoning-parser": "qwen3",
                 "--enable-expert-parallel": ""
               },
@@ -72256,7 +72256,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -72267,7 +72267,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -72292,7 +72292,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -72303,7 +72303,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -72327,7 +72327,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -72337,7 +72337,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -72361,7 +72361,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -72371,7 +72371,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -72512,7 +72512,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--moe-backend": "marlin",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3"
               },
               "extra_envs": {}
@@ -72526,7 +72526,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--moe-backend": "marlin",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--enable-expert-parallel": ""
               },
@@ -72553,7 +72553,7 @@
                 "--max-num-batched-tokens": "16384",
                 "--moe-backend": "flashinfer_cutlass",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3"
               },
               "extra_envs": {
@@ -72568,7 +72568,7 @@
                 "--max-num-batched-tokens": "16384",
                 "--moe-backend": "flashinfer_cutlass",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--enable-expert-parallel": ""
               },
@@ -81434,7 +81434,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -81456,7 +81456,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -81478,7 +81478,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -81500,7 +81500,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -81522,7 +81522,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -81548,7 +81548,7 @@
                 "--additional-config": "{\"enable_cpu_binding\":true}",
                 "--max-num-batched-tokens": "16384",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -81771,7 +81771,7 @@
                 "--trust-remote-code": "",
                 "--generation-config": "vllm",
                 "--gpu-memory-utilization": "0.9",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "mimo",
                 "--reasoning-parser": "qwen3"
               },
               "extra_envs": {}
@@ -81781,7 +81781,7 @@
                 "--trust-remote-code": "",
                 "--generation-config": "vllm",
                 "--gpu-memory-utilization": "0.9",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "mimo",
                 "--reasoning-parser": "qwen3",
                 "--enable-expert-parallel": ""
               },
@@ -86397,7 +86397,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -86408,7 +86408,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -86433,7 +86433,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -86444,7 +86444,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -86468,7 +86468,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -86478,7 +86478,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -86502,7 +86502,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -86512,7 +86512,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -86653,7 +86653,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--moe-backend": "marlin",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3"
               },
               "extra_envs": {}
@@ -86667,7 +86667,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--moe-backend": "marlin",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--enable-expert-parallel": ""
               },
@@ -86694,7 +86694,7 @@
                 "--max-num-batched-tokens": "16384",
                 "--moe-backend": "flashinfer_cutlass",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3"
               },
               "extra_envs": {
@@ -86709,7 +86709,7 @@
                 "--max-num-batched-tokens": "16384",
                 "--moe-backend": "flashinfer_cutlass",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--enable-expert-parallel": ""
               },
@@ -95165,7 +95165,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -95187,7 +95187,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -95209,7 +95209,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -95231,7 +95231,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -95253,7 +95253,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -95279,7 +95279,7 @@
                 "--additional-config": "{\"enable_cpu_binding\":true}",
                 "--max-num-batched-tokens": "16384",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -95502,7 +95502,7 @@
                 "--trust-remote-code": "",
                 "--generation-config": "vllm",
                 "--gpu-memory-utilization": "0.9",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "mimo",
                 "--reasoning-parser": "qwen3"
               },
               "extra_envs": {}
@@ -95512,7 +95512,7 @@
                 "--trust-remote-code": "",
                 "--generation-config": "vllm",
                 "--gpu-memory-utilization": "0.9",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "mimo",
                 "--reasoning-parser": "qwen3",
                 "--enable-expert-parallel": ""
               },
@@ -100128,7 +100128,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -100139,7 +100139,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -100164,7 +100164,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -100175,7 +100175,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -100199,7 +100199,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -100209,7 +100209,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -100233,7 +100233,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -100243,7 +100243,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -100384,7 +100384,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--moe-backend": "marlin",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3"
               },
               "extra_envs": {}
@@ -100398,7 +100398,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--moe-backend": "marlin",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--enable-expert-parallel": ""
               },
@@ -100425,7 +100425,7 @@
                 "--max-num-batched-tokens": "16384",
                 "--moe-backend": "flashinfer_cutlass",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3"
               },
               "extra_envs": {
@@ -100440,7 +100440,7 @@
                 "--max-num-batched-tokens": "16384",
                 "--moe-backend": "flashinfer_cutlass",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--enable-expert-parallel": ""
               },
@@ -108896,7 +108896,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -108918,7 +108918,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -108940,7 +108940,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -108962,7 +108962,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -108984,7 +108984,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -109010,7 +109010,7 @@
                 "--additional-config": "{\"enable_cpu_binding\":true}",
                 "--max-num-batched-tokens": "16384",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -109233,7 +109233,7 @@
                 "--trust-remote-code": "",
                 "--generation-config": "vllm",
                 "--gpu-memory-utilization": "0.9",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "mimo",
                 "--reasoning-parser": "qwen3"
               },
               "extra_envs": {}
@@ -109243,7 +109243,7 @@
                 "--trust-remote-code": "",
                 "--generation-config": "vllm",
                 "--gpu-memory-utilization": "0.9",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "mimo",
                 "--reasoning-parser": "qwen3",
                 "--enable-expert-parallel": ""
               },
@@ -113859,7 +113859,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -113870,7 +113870,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -113895,7 +113895,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -113906,7 +113906,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -113930,7 +113930,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -113940,7 +113940,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -113964,7 +113964,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -113974,7 +113974,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -114115,7 +114115,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--moe-backend": "marlin",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3"
               },
               "extra_envs": {}
@@ -114129,7 +114129,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--moe-backend": "marlin",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--enable-expert-parallel": ""
               },
@@ -114156,7 +114156,7 @@
                 "--max-num-batched-tokens": "16384",
                 "--moe-backend": "flashinfer_cutlass",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3"
               },
               "extra_envs": {
@@ -114171,7 +114171,7 @@
                 "--max-num-batched-tokens": "16384",
                 "--moe-backend": "flashinfer_cutlass",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--enable-expert-parallel": ""
               },
@@ -122633,7 +122633,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -122655,7 +122655,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -122677,7 +122677,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -122699,7 +122699,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -122721,7 +122721,7 @@
             "latency-focus": {
               "extra_args": {
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -122747,7 +122747,7 @@
                 "--additional-config": "{\"enable_cpu_binding\":true}",
                 "--max-num-batched-tokens": "16384",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "qwen3",
                 "--mm-encoder-tp-mode": "data"
               },
@@ -122970,7 +122970,7 @@
                 "--trust-remote-code": "",
                 "--generation-config": "vllm",
                 "--gpu-memory-utilization": "0.9",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "mimo",
                 "--reasoning-parser": "qwen3"
               },
               "extra_envs": {}
@@ -122980,7 +122980,7 @@
                 "--trust-remote-code": "",
                 "--generation-config": "vllm",
                 "--gpu-memory-utilization": "0.9",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "mimo",
                 "--reasoning-parser": "qwen3",
                 "--enable-expert-parallel": ""
               },
@@ -127600,7 +127600,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -127611,7 +127611,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -127636,7 +127636,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -127647,7 +127647,7 @@
                 "--trust-remote-code": "",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -127671,7 +127671,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -127681,7 +127681,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -127705,7 +127705,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
               },
@@ -127715,7 +127715,7 @@
               "extra_args": {
                 "--trust-remote-code": "",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}",
                 "--enable-expert-parallel": ""
@@ -127856,7 +127856,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--moe-backend": "marlin",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3"
               },
               "extra_envs": {}
@@ -127870,7 +127870,7 @@
                 "--kv-cache-dtype": "fp8",
                 "--moe-backend": "marlin",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--enable-expert-parallel": ""
               },
@@ -127897,7 +127897,7 @@
                 "--max-num-batched-tokens": "16384",
                 "--moe-backend": "flashinfer_cutlass",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3"
               },
               "extra_envs": {
@@ -127912,7 +127912,7 @@
                 "--max-num-batched-tokens": "16384",
                 "--moe-backend": "flashinfer_cutlass",
                 "--enable-auto-tool-choice": "",
-                "--tool-call-parser": "qwen3_xml",
+                "--tool-call-parser": "qwen3_coder",
                 "--reasoning-parser": "nemotron_v3",
                 "--enable-expert-parallel": ""
               },
