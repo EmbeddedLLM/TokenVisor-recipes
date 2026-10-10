@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-10-09T06:33:23.066528+00:00",
+  "generated_at": "2026-10-10T06:30:26.006792+00:00",
   "vllm_version": "0.31.0",
-  "vllm_recipes_sha": "e1e3fe9",
+  "vllm_recipes_sha": "8ed3d03",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -55342,7 +55342,9 @@
                 "--mm-encoder-tp-mode": "data",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "1800"
+              }
             },
             "balance": {
               "extra_args": {
@@ -55354,7 +55356,9 @@
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "1800"
+              }
             }
           },
           "default_strategy": "latency-focus",
@@ -55378,7 +55382,9 @@
                 "--mm-encoder-tp-mode": "data",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "1800"
+              }
             },
             "balance": {
               "extra_args": {
@@ -55390,7 +55396,9 @@
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "1800"
+              }
             }
           },
           "default_strategy": "latency-focus",
@@ -55414,7 +55422,9 @@
                 "--mm-encoder-tp-mode": "data",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "1800"
+              }
             },
             "balance": {
               "extra_args": {
@@ -55426,7 +55436,9 @@
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "1800"
+              }
             }
           },
           "default_strategy": "latency-focus",
@@ -55451,7 +55463,9 @@
                 "--mm-encoder-tp-mode": "data",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}"
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "1800"
+              }
             },
             "balance": {
               "extra_args": {
@@ -55464,7 +55478,9 @@
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
                 "--enable-expert-parallel": ""
               },
-              "extra_envs": {}
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "1800"
+              }
             }
           },
           "default_strategy": "latency-focus",
