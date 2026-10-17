@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-10-16T06:30:13.596701+00:00",
+  "generated_at": "2026-10-17T06:27:07.948232+00:00",
   "vllm_version": "0.31.0",
-  "vllm_recipes_sha": "b3d2676",
+  "vllm_recipes_sha": "d94b323",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -11300,6 +11300,122 @@
           "variant_name": "redhat_nvfp4"
         }
       ],
+      "reflection/Beam-1.0-501B-A23B-NVFP4": [
+        {
+          "name": "Beam-1.0-501B-A23B",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B-NVFP4",
+          "accelerators": "h200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B-FP8": [
+        {
+          "name": "Beam-1.0-501B-A23B (fp8)",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B-FP8",
+          "accelerators": "h200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B": [
+        {
+          "name": "Beam-1.0-501B-A23B (bf16)",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B",
+          "accelerators": "h200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "bf16"
+        }
+      ],
       "stepfun-ai/Step-3.5-Flash": [
         {
           "name": "Step-3.5-Flash",
@@ -21837,6 +21953,122 @@
           "variant_name": "fp8"
         }
       ],
+      "reflection/Beam-1.0-501B-A23B-NVFP4": [
+        {
+          "name": "Beam-1.0-501B-A23B",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B-NVFP4",
+          "accelerators": "b300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B-FP8": [
+        {
+          "name": "Beam-1.0-501B-A23B (fp8)",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B-FP8",
+          "accelerators": "b300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B": [
+        {
+          "name": "Beam-1.0-501B-A23B (bf16)",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B",
+          "accelerators": "b300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "bf16"
+        }
+      ],
       "stepfun-ai/Step-5-Preview": [
         {
           "name": "Step-5-Preview",
@@ -28001,6 +28233,44 @@
           "variant_name": "fp8"
         }
       ],
+      "OpenMOSS-Team/MOSS-Image-Base": [
+        {
+          "name": "MOSS-Image",
+          "huggingface_id": "OpenMOSS-Team/MOSS-Image-Base",
+          "accelerators": "rtx_pro_6000",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enforce-eager": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "OpenMOSS-Team/MOSS-Image-SFT": [
+        {
+          "name": "MOSS-Image (sft)",
+          "huggingface_id": "OpenMOSS-Team/MOSS-Image-SFT",
+          "accelerators": "rtx_pro_6000",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enforce-eager": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "sft"
+        }
+      ],
       "Qwen/Qwen3.6-27B": [
         {
           "name": "Qwen3.6-27B",
@@ -29292,6 +29562,44 @@
       ]
     },
     "rtx_pro_6000_8x": {
+      "OpenMOSS-Team/MOSS-Image-Base": [
+        {
+          "name": "MOSS-Image",
+          "huggingface_id": "OpenMOSS-Team/MOSS-Image-Base",
+          "accelerators": "rtx_pro_6000_8x",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enforce-eager": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "OpenMOSS-Team/MOSS-Image-SFT": [
+        {
+          "name": "MOSS-Image (sft)",
+          "huggingface_id": "OpenMOSS-Team/MOSS-Image-SFT",
+          "accelerators": "rtx_pro_6000_8x",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enforce-eager": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "sft"
+        }
+      ],
       "deepseek-ai/DeepSeek-V4-Flash-0731": [
         {
           "name": "DeepSeek-V4-Flash",
@@ -36809,6 +37117,122 @@
           "variant_name": "redhat_nvfp4"
         }
       ],
+      "reflection/Beam-1.0-501B-A23B-NVFP4": [
+        {
+          "name": "Beam-1.0-501B-A23B",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B-NVFP4",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B-FP8": [
+        {
+          "name": "Beam-1.0-501B-A23B (fp8)",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B-FP8",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B": [
+        {
+          "name": "Beam-1.0-501B-A23B (bf16)",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "bf16"
+        }
+      ],
       "stabilityai/stable-diffusion-3.5-medium": [
         {
           "name": "Stable Diffusion 3.5",
@@ -44211,6 +44635,122 @@
           "variant_name": "redhat_nvfp4"
         }
       ],
+      "reflection/Beam-1.0-501B-A23B-NVFP4": [
+        {
+          "name": "Beam-1.0-501B-A23B",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B-NVFP4",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B-FP8": [
+        {
+          "name": "Beam-1.0-501B-A23B (fp8)",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B-FP8",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B": [
+        {
+          "name": "Beam-1.0-501B-A23B (bf16)",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "bf16"
+        }
+      ],
       "stabilityai/stable-diffusion-3.5-medium": [
         {
           "name": "Stable Diffusion 3.5",
@@ -46831,6 +47371,122 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B-NVFP4": [
+        {
+          "name": "Beam-1.0-501B-A23B",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B-NVFP4",
+          "accelerators": "mi350x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B-FP8": [
+        {
+          "name": "Beam-1.0-501B-A23B (fp8)",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B-FP8",
+          "accelerators": "mi350x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B": [
+        {
+          "name": "Beam-1.0-501B-A23B (bf16)",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B",
+          "accelerators": "mi350x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "bf16"
         }
       ],
       "zai-org/GLM-5.1": [
@@ -54368,6 +55024,122 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "redhat_nvfp4"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B-NVFP4": [
+        {
+          "name": "Beam-1.0-501B-A23B",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B-NVFP4",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B-FP8": [
+        {
+          "name": "Beam-1.0-501B-A23B (fp8)",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B-FP8",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B": [
+        {
+          "name": "Beam-1.0-501B-A23B (bf16)",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "bf16"
         }
       ],
       "stabilityai/stable-diffusion-3.5-medium": [
@@ -68712,6 +69484,44 @@
           "variant_name": "default"
         }
       ],
+      "OpenMOSS-Team/MOSS-Image-Base": [
+        {
+          "name": "MOSS-Image",
+          "huggingface_id": "OpenMOSS-Team/MOSS-Image-Base",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enforce-eager": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "OpenMOSS-Team/MOSS-Image-SFT": [
+        {
+          "name": "MOSS-Image (sft)",
+          "huggingface_id": "OpenMOSS-Team/MOSS-Image-SFT",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enforce-eager": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "sft"
+        }
+      ],
       "OpenMOSS-Team/MOSS-SoundEffect": [
         {
           "name": "MOSS-SoundEffect",
@@ -79751,6 +80561,122 @@
           "variant_name": "redhat_nvfp4"
         }
       ],
+      "reflection/Beam-1.0-501B-A23B-NVFP4": [
+        {
+          "name": "Beam-1.0-501B-A23B",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B-NVFP4",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B-FP8": [
+        {
+          "name": "Beam-1.0-501B-A23B (fp8)",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B-FP8",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B": [
+        {
+          "name": "Beam-1.0-501B-A23B (bf16)",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "bf16"
+        }
+      ],
       "stabilityai/stable-audio-open-1.0": [
         {
           "name": "Stable Audio Open",
@@ -84689,6 +85615,44 @@
           "variant_name": "default"
         }
       ],
+      "OpenMOSS-Team/MOSS-Image-Base": [
+        {
+          "name": "MOSS-Image",
+          "huggingface_id": "OpenMOSS-Team/MOSS-Image-Base",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enforce-eager": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "OpenMOSS-Team/MOSS-Image-SFT": [
+        {
+          "name": "MOSS-Image (sft)",
+          "huggingface_id": "OpenMOSS-Team/MOSS-Image-SFT",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enforce-eager": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "sft"
+        }
+      ],
       "OpenMOSS-Team/MOSS-SoundEffect": [
         {
           "name": "MOSS-SoundEffect",
@@ -94714,6 +95678,122 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "redhat_nvfp4"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B-NVFP4": [
+        {
+          "name": "Beam-1.0-501B-A23B",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B-NVFP4",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B-FP8": [
+        {
+          "name": "Beam-1.0-501B-A23B (fp8)",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B-FP8",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B": [
+        {
+          "name": "Beam-1.0-501B-A23B (bf16)",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "bf16"
         }
       ],
       "stabilityai/stable-audio-open-1.0": [
@@ -99304,6 +100384,44 @@
           "variant_name": "default"
         }
       ],
+      "OpenMOSS-Team/MOSS-Image-Base": [
+        {
+          "name": "MOSS-Image",
+          "huggingface_id": "OpenMOSS-Team/MOSS-Image-Base",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enforce-eager": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "OpenMOSS-Team/MOSS-Image-SFT": [
+        {
+          "name": "MOSS-Image (sft)",
+          "huggingface_id": "OpenMOSS-Team/MOSS-Image-SFT",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enforce-eager": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "sft"
+        }
+      ],
       "OpenMOSS-Team/MOSS-SoundEffect": [
         {
           "name": "MOSS-SoundEffect",
@@ -109329,6 +110447,122 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "redhat_nvfp4"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B-NVFP4": [
+        {
+          "name": "Beam-1.0-501B-A23B",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B-NVFP4",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B-FP8": [
+        {
+          "name": "Beam-1.0-501B-A23B (fp8)",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B-FP8",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B": [
+        {
+          "name": "Beam-1.0-501B-A23B (bf16)",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "bf16"
         }
       ],
       "stabilityai/stable-audio-open-1.0": [
@@ -113919,6 +115153,44 @@
           "variant_name": "default"
         }
       ],
+      "OpenMOSS-Team/MOSS-Image-Base": [
+        {
+          "name": "MOSS-Image",
+          "huggingface_id": "OpenMOSS-Team/MOSS-Image-Base",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enforce-eager": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "OpenMOSS-Team/MOSS-Image-SFT": [
+        {
+          "name": "MOSS-Image (sft)",
+          "huggingface_id": "OpenMOSS-Team/MOSS-Image-SFT",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enforce-eager": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "sft"
+        }
+      ],
       "OpenMOSS-Team/MOSS-SoundEffect": [
         {
           "name": "MOSS-SoundEffect",
@@ -123944,6 +125216,122 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "redhat_nvfp4"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B-NVFP4": [
+        {
+          "name": "Beam-1.0-501B-A23B",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B-NVFP4",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B-FP8": [
+        {
+          "name": "Beam-1.0-501B-A23B (fp8)",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B-FP8",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B": [
+        {
+          "name": "Beam-1.0-501B-A23B (bf16)",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "bf16"
         }
       ],
       "stabilityai/stable-audio-open-1.0": [
@@ -128540,6 +129928,44 @@
           "variant_name": "default"
         }
       ],
+      "OpenMOSS-Team/MOSS-Image-Base": [
+        {
+          "name": "MOSS-Image",
+          "huggingface_id": "OpenMOSS-Team/MOSS-Image-Base",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enforce-eager": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "OpenMOSS-Team/MOSS-Image-SFT": [
+        {
+          "name": "MOSS-Image (sft)",
+          "huggingface_id": "OpenMOSS-Team/MOSS-Image-SFT",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--enforce-eager": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "sft"
+        }
+      ],
       "OpenMOSS-Team/MOSS-SoundEffect": [
         {
           "name": "MOSS-SoundEffect",
@@ -138574,6 +140000,122 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "redhat_nvfp4"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B-NVFP4": [
+        {
+          "name": "Beam-1.0-501B-A23B",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B-NVFP4",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B-FP8": [
+        {
+          "name": "Beam-1.0-501B-A23B (fp8)",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B-FP8",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "fp8",
+                "--moe-backend": "triton",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
+        }
+      ],
+      "reflection/Beam-1.0-501B-A23B": [
+        {
+          "name": "Beam-1.0-501B-A23B (bf16)",
+          "huggingface_id": "reflection/Beam-1.0-501B-A23B",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--kv-cache-dtype": "auto",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "beam",
+                "--reasoning-parser": "beam",
+                "--speculative-config": "{\"method\":\"dflash\",\"model\":\"reflection/Beam-1.0-501B-A23B-DFlash2\",\"num_speculative_tokens\":7,\"attention_backend\":\"FLASH_ATTN\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "bf16"
         }
       ],
       "stabilityai/stable-audio-open-1.0": [
