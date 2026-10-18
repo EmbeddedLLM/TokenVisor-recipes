@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-10-17T06:27:07.948232+00:00",
+  "generated_at": "2026-10-18T06:27:35.179886+00:00",
   "vllm_version": "0.31.0",
-  "vllm_recipes_sha": "d94b323",
+  "vllm_recipes_sha": "b8bec4f",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -1980,10 +1980,10 @@
           "variant_name": "redhat_nvfp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4.1-Flash": [
+      "deepseek-ai/DeepSeek-V4.1-Flash-1017": [
         {
           "name": "DeepSeek-V4.1-Flash",
-          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
           "accelerators": "h100",
           "provider": "vllm",
           "custom_image": "vllm/vllm-openai:v0.31.0",
@@ -2018,6 +2018,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4.1-Flash": [
+        {
+          "name": "DeepSeek-V4.1-Flash (fp8)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "accelerators": "h100",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
         }
       ],
       "dots-studio/dots3-note-prev-fp8": [
@@ -8230,10 +8270,10 @@
           "variant_name": "redhat_nvfp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4.1-Flash": [
+      "deepseek-ai/DeepSeek-V4.1-Flash-1017": [
         {
           "name": "DeepSeek-V4.1-Flash",
-          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
           "accelerators": "h200",
           "provider": "vllm",
           "custom_image": "vllm/vllm-openai:v0.31.0",
@@ -8268,6 +8308,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4.1-Flash": [
+        {
+          "name": "DeepSeek-V4.1-Flash (fp8)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "accelerators": "h200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
         }
       ],
       "inclusionAI/Ling-2.6-flash": [
@@ -14492,10 +14572,10 @@
           "variant_name": "redhat_nvfp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4.1-Flash": [
+      "deepseek-ai/DeepSeek-V4.1-Flash-1017": [
         {
           "name": "DeepSeek-V4.1-Flash",
-          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
           "accelerators": "b200",
           "provider": "vllm",
           "custom_image": "vllm/vllm-openai:v0.31.0",
@@ -14530,6 +14610,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4.1-Flash": [
+        {
+          "name": "DeepSeek-V4.1-Flash (fp8)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "accelerators": "b200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
         }
       ],
       "dots-studio/dots3-note-prev-fp8": [
@@ -18485,10 +18605,10 @@
           "variant_name": "redhat_nvfp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4.1-Flash": [
+      "deepseek-ai/DeepSeek-V4.1-Flash-1017": [
         {
           "name": "DeepSeek-V4.1-Flash",
-          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
           "accelerators": "gb200",
           "provider": "vllm",
           "custom_image": "vllm/vllm-openai:v0.31.0",
@@ -18523,6 +18643,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4.1-Flash": [
+        {
+          "name": "DeepSeek-V4.1-Flash (fp8)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "accelerators": "gb200",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
         }
       ],
       "dots-studio/dots3-note-prev-fp8": [
@@ -21322,10 +21482,10 @@
           "variant_name": "redhat_nvfp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4.1-Flash": [
+      "deepseek-ai/DeepSeek-V4.1-Flash-1017": [
         {
           "name": "DeepSeek-V4.1-Flash",
-          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
           "accelerators": "b300",
           "provider": "vllm",
           "custom_image": "vllm/vllm-openai:v0.31.0",
@@ -21360,6 +21520,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4.1-Flash": [
+        {
+          "name": "DeepSeek-V4.1-Flash (fp8)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "accelerators": "b300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
         }
       ],
       "dots-studio/dots3-note-prev-fp8": [
@@ -23817,10 +24017,10 @@
           "variant_name": "redhat_nvfp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4.1-Flash": [
+      "deepseek-ai/DeepSeek-V4.1-Flash-1017": [
         {
           "name": "DeepSeek-V4.1-Flash",
-          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
           "accelerators": "gb300",
           "provider": "vllm",
           "custom_image": "vllm/vllm-openai:v0.31.0",
@@ -23855,6 +24055,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4.1-Flash": [
+        {
+          "name": "DeepSeek-V4.1-Flash (fp8)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "accelerators": "gb300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
         }
       ],
       "dots-studio/dots3-note-prev-fp8": [
@@ -25667,10 +25907,10 @@
           "variant_name": "ascend_w8a8"
         }
       ],
-      "deepseek-ai/DeepSeek-V4.1-Flash": [
+      "deepseek-ai/DeepSeek-V4.1-Flash-1017": [
         {
           "name": "DeepSeek-V4.1-Flash",
-          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
           "accelerators": "dgx_station_gb300",
           "provider": "vllm",
           "custom_image": "vllm/vllm-openai:v0.31.0",
@@ -25705,6 +25945,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4.1-Flash": [
+        {
+          "name": "DeepSeek-V4.1-Flash (fp8)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "accelerators": "dgx_station_gb300",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
         }
       ],
       "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16": [
@@ -32238,6 +32518,8 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder"
               },
@@ -32247,6 +32529,8 @@
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--enable-expert-parallel": ""
@@ -32270,6 +32554,8 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder"
               },
@@ -32279,6 +32565,8 @@
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--enable-expert-parallel": ""
@@ -32302,6 +32590,8 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder"
@@ -32312,6 +32602,8 @@
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
@@ -32336,6 +32628,8 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder"
@@ -32346,6 +32640,8 @@
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
@@ -35024,10 +35320,10 @@
           "variant_name": "redhat_nvfp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4.1-Flash": [
+      "deepseek-ai/DeepSeek-V4.1-Flash-1017": [
         {
           "name": "DeepSeek-V4.1-Flash",
-          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
           "accelerators": "mi300x",
           "provider": "vllm_amd",
           "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
@@ -35074,6 +35370,58 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4.1-Flash": [
+        {
+          "name": "DeepSeek-V4.1-Flash (fp8)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "accelerators": "mi300x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--gpu-memory-utilization": "0.9",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "AITER_TRITON_LOG_LEVEL": "ERROR",
+                "VLLM_USE_BREAKABLE_CUDAGRAPH": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--gpu-memory-utilization": "0.9",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "AITER_TRITON_LOG_LEVEL": "ERROR",
+                "VLLM_USE_BREAKABLE_CUDAGRAPH": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
         }
       ],
       "dots-studio/dots3-note-prev-fp8": [
@@ -39997,6 +40345,8 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder"
               },
@@ -40006,6 +40356,8 @@
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--enable-expert-parallel": ""
@@ -40029,6 +40381,8 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder"
               },
@@ -40038,6 +40392,8 @@
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--enable-expert-parallel": ""
@@ -40061,6 +40417,8 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder"
@@ -40071,6 +40429,8 @@
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
@@ -40095,6 +40455,8 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder"
@@ -40105,6 +40467,8 @@
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
@@ -42755,10 +43119,10 @@
           "variant_name": "redhat_nvfp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4.1-Flash": [
+      "deepseek-ai/DeepSeek-V4.1-Flash-1017": [
         {
           "name": "DeepSeek-V4.1-Flash",
-          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
           "accelerators": "mi325x",
           "provider": "vllm_amd",
           "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
@@ -42805,6 +43169,58 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4.1-Flash": [
+        {
+          "name": "DeepSeek-V4.1-Flash (fp8)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "accelerators": "mi325x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--gpu-memory-utilization": "0.9",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "AITER_TRITON_LOG_LEVEL": "ERROR",
+                "VLLM_USE_BREAKABLE_CUDAGRAPH": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--gpu-memory-utilization": "0.9",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "AITER_TRITON_LOG_LEVEL": "ERROR",
+                "VLLM_USE_BREAKABLE_CUDAGRAPH": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
         }
       ],
       "dots-studio/dots3-note-prev-fp8": [
@@ -47123,10 +47539,10 @@
           "variant_name": "default"
         }
       ],
-      "deepseek-ai/DeepSeek-V4.1-Flash": [
+      "deepseek-ai/DeepSeek-V4.1-Flash-1017": [
         {
           "name": "DeepSeek-V4.1-Flash",
-          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
           "accelerators": "mi350x",
           "provider": "vllm_amd",
           "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
@@ -47173,6 +47589,58 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4.1-Flash": [
+        {
+          "name": "DeepSeek-V4.1-Flash (fp8)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "accelerators": "mi350x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--gpu-memory-utilization": "0.9",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "AITER_TRITON_LOG_LEVEL": "ERROR",
+                "VLLM_USE_BREAKABLE_CUDAGRAPH": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--gpu-memory-utilization": "0.9",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "AITER_TRITON_LOG_LEVEL": "ERROR",
+                "VLLM_USE_BREAKABLE_CUDAGRAPH": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
         }
       ],
       "meta-models/Muse-Spark-Open-816B-A42B": [
@@ -49652,6 +50120,8 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder"
               },
@@ -49661,6 +50131,8 @@
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--enable-expert-parallel": ""
@@ -49684,6 +50156,8 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder"
               },
@@ -49693,6 +50167,8 @@
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--enable-expert-parallel": ""
@@ -49716,6 +50192,8 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder"
@@ -49726,6 +50204,8 @@
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
@@ -49750,6 +50230,8 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder"
@@ -49760,6 +50242,8 @@
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
@@ -52616,10 +53100,10 @@
           "variant_name": "redhat_nvfp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4.1-Flash": [
+      "deepseek-ai/DeepSeek-V4.1-Flash-1017": [
         {
           "name": "DeepSeek-V4.1-Flash",
-          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
           "accelerators": "mi355x",
           "provider": "vllm_amd",
           "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
@@ -52666,6 +53150,58 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4.1-Flash": [
+        {
+          "name": "DeepSeek-V4.1-Flash (fp8)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "accelerators": "mi355x",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--gpu-memory-utilization": "0.9",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "AITER_TRITON_LOG_LEVEL": "ERROR",
+                "VLLM_USE_BREAKABLE_CUDAGRAPH": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--gpu-memory-utilization": "0.9",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "AITER_TRITON_LOG_LEVEL": "ERROR",
+                "VLLM_USE_BREAKABLE_CUDAGRAPH": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
         }
       ],
       "dots-studio/dots3-note-prev-fp8": [
@@ -70578,6 +71114,8 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder"
               },
@@ -70587,6 +71125,8 @@
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--enable-expert-parallel": ""
@@ -70610,6 +71150,8 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder"
               },
@@ -70619,6 +71161,8 @@
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
                 "--enable-expert-parallel": ""
@@ -70642,6 +71186,8 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder"
@@ -70652,6 +71198,8 @@
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
@@ -70676,6 +71224,8 @@
           "strategies": {
             "latency-focus": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder"
@@ -70686,6 +71236,8 @@
             },
             "balance": {
               "extra_args": {
+                "--attention-backend": "rocm_aiter_fa",
+                "--moe-backend": "aiter",
                 "--kv-cache-dtype": "fp8",
                 "--enable-auto-tool-choice": "",
                 "--tool-call-parser": "qwen3_coder",
@@ -75193,10 +75745,10 @@
           "variant_name": "redhat_nvfp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4.1-Flash": [
+      "deepseek-ai/DeepSeek-V4.1-Flash-1017": [
         {
           "name": "DeepSeek-V4.1-Flash",
-          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
           "accelerators": "amd",
           "provider": "vllm_amd",
           "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
@@ -75243,6 +75795,58 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4.1-Flash": [
+        {
+          "name": "DeepSeek-V4.1-Flash (fp8)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--gpu-memory-utilization": "0.9",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "AITER_TRITON_LOG_LEVEL": "ERROR",
+                "VLLM_USE_BREAKABLE_CUDAGRAPH": "1"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--gpu-memory-utilization": "0.9",
+                "--moe-backend": "aiter",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600",
+                "VLLM_ROCM_USE_AITER": "1",
+                "VLLM_ROCM_USE_AITER_MOE": "1",
+                "AITER_TRITON_LOG_LEVEL": "ERROR",
+                "VLLM_USE_BREAKABLE_CUDAGRAPH": "1"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
         }
       ],
       "dots-studio/dots3-note-prev-fp8": [
@@ -90833,10 +91437,10 @@
           "variant_name": "redhat_nvfp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4.1-Flash": [
+      "deepseek-ai/DeepSeek-V4.1-Flash-1017": [
         {
           "name": "DeepSeek-V4.1-Flash",
-          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
           "accelerators": "google",
           "provider": "vllm",
           "custom_image": "vllm/vllm-openai:v0.31.0",
@@ -90871,6 +91475,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4.1-Flash": [
+        {
+          "name": "DeepSeek-V4.1-Flash (fp8)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
         }
       ],
       "dots-studio/dots3-note-prev-fp8": [
@@ -105602,10 +106246,10 @@
           "variant_name": "redhat_nvfp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4.1-Flash": [
+      "deepseek-ai/DeepSeek-V4.1-Flash-1017": [
         {
           "name": "DeepSeek-V4.1-Flash",
-          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
           "accelerators": "huawei",
           "provider": "vllm",
           "custom_image": "vllm/vllm-openai:v0.31.0",
@@ -105640,6 +106284,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4.1-Flash": [
+        {
+          "name": "DeepSeek-V4.1-Flash (fp8)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
         }
       ],
       "dots-studio/dots3-note-prev-fp8": [
@@ -120371,10 +121055,10 @@
           "variant_name": "redhat_nvfp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4.1-Flash": [
+      "deepseek-ai/DeepSeek-V4.1-Flash-1017": [
         {
           "name": "DeepSeek-V4.1-Flash",
-          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
           "accelerators": "intel",
           "provider": "vllm",
           "custom_image": "vllm/vllm-openai:v0.31.0",
@@ -120409,6 +121093,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4.1-Flash": [
+        {
+          "name": "DeepSeek-V4.1-Flash (fp8)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
         }
       ],
       "dots-studio/dots3-note-prev-fp8": [
@@ -135151,10 +135875,10 @@
           "variant_name": "redhat_nvfp4"
         }
       ],
-      "deepseek-ai/DeepSeek-V4.1-Flash": [
+      "deepseek-ai/DeepSeek-V4.1-Flash-1017": [
         {
           "name": "DeepSeek-V4.1-Flash",
-          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
           "accelerators": "nvidia",
           "provider": "vllm",
           "custom_image": "vllm/vllm-openai:v0.31.0",
@@ -135189,6 +135913,46 @@
           },
           "default_strategy": "latency-focus",
           "variant_name": "default"
+        }
+      ],
+      "deepseek-ai/DeepSeek-V4.1-Flash": [
+        {
+          "name": "DeepSeek-V4.1-Flash (fp8)",
+          "huggingface_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.31.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}"
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            },
+            "balance": {
+              "extra_args": {
+                "--tokenizer-mode": "deepseek_v41",
+                "--tool-call-parser": "deepseek_v41",
+                "--enable-auto-tool-choice": "",
+                "--reasoning-parser": "deepseek_v41",
+                "--mm-encoder-tp-mode": "data",
+                "--speculative-config": "{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\",\"rejection_sample_method\":\"block\",\"enable_adaptive_verification\":true}",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {
+                "VLLM_ENGINE_READY_TIMEOUT_S": "3600"
+              }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "fp8"
         }
       ],
       "dots-studio/dots3-note-prev-fp8": [
