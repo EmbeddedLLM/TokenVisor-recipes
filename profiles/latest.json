@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-11-03T06:19:50.606984+00:00",
+  "generated_at": "2026-11-04T06:19:55.883872+00:00",
   "vllm_version": "0.25.1",
-  "vllm_recipes_sha": "7db9278",
+  "vllm_recipes_sha": "8ccb4c0",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -10,6 +10,7 @@
     "gb200": "nvidia",
     "b300": "nvidia",
     "gb300": "nvidia",
+    "vr200": "nvidia",
     "dgx_station_gb300": "nvidia",
     "dgx_spark_gb10": "nvidia",
     "rtx_pro_6000": "nvidia",
@@ -24907,6 +24908,7 @@
         }
       ]
     },
+    "vr200": {},
     "dgx_station_gb300": {
       "google/gemma-4-26B-A4B-it": [
         {
