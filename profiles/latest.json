@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-11-12T06:20:25.495242+00:00",
+  "generated_at": "2026-11-13T06:19:58.783061+00:00",
   "vllm_version": "0.25.1",
-  "vllm_recipes_sha": "2025c2f",
+  "vllm_recipes_sha": "afa74b7",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -19,6 +19,7 @@
     "rtx_pro_5000": "nvidia",
     "rtx_pro_5000_4x": "nvidia",
     "rtx_pro_6000_8x": "nvidia",
+    "rtx_4090": "nvidia",
     "rtx_5090": "nvidia",
     "rtx_4090_2x": "nvidia",
     "rtx_5090_2x": "nvidia",
@@ -39,6 +40,7 @@
     "ascend_950pr": "huawei",
     "ascend_950dt": "huawei",
     "ascend_910c": "huawei",
+    "ascend_910b": "huawei",
     "ascend_950dt_8x": "huawei",
     "ascend_950pr_8x": "huawei",
     "810e": "zhenwu",
@@ -30180,6 +30182,7 @@
         }
       ]
     },
+    "rtx_4090": {},
     "rtx_5090": {
       "google/gemma-4-26B-A4B-it": [
         {
@@ -66654,6 +66657,7 @@
         }
       ]
     },
+    "ascend_910b": {},
     "ascend_950dt_8x": {
       "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp": [
         {
