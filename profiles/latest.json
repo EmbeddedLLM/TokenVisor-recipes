@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-11-14T06:17:38.616577+00:00",
+  "generated_at": "2026-11-15T06:17:54.803144+00:00",
   "vllm_version": "0.25.1",
-  "vllm_recipes_sha": "e5279d7",
+  "vllm_recipes_sha": "bf7ff78",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
