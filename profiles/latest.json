@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-11-17T06:20:40.997296+00:00",
+  "generated_at": "2026-11-18T06:20:16.470356+00:00",
   "vllm_version": "0.25.1",
-  "vllm_recipes_sha": "e5b0c80",
+  "vllm_recipes_sha": "2828389",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -21,6 +21,7 @@
     "rtx_pro_6000_8x": "nvidia",
     "rtx_4090": "nvidia",
     "rtx_5090": "nvidia",
+    "rtx_3090_2x": "nvidia",
     "rtx_4090_2x": "nvidia",
     "rtx_5090_2x": "nvidia",
     "l40s": "nvidia",
@@ -30935,6 +30936,7 @@
         }
       ]
     },
+    "rtx_3090_2x": {},
     "rtx_4090_2x": {
       "MiniMaxAI/MiniMax-H3": [
         {
