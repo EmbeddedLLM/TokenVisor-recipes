@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-11-24T06:20:19.372271+00:00",
+  "generated_at": "2026-11-25T06:20:46.404744+00:00",
   "vllm_version": "0.34.0",
-  "vllm_recipes_sha": "46e1415",
+  "vllm_recipes_sha": "169a162",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -42,6 +42,7 @@
     "ascend_950dt": "huawei",
     "ascend_910c": "huawei",
     "ascend_910b": "huawei",
+    "ascend_910b4_1_4x": "huawei",
     "ascend_950dt_8x": "huawei",
     "ascend_950pr_8x": "huawei",
     "810e": "zhenwu",
@@ -66660,6 +66661,7 @@
       ]
     },
     "ascend_910b": {},
+    "ascend_910b4_1_4x": {},
     "ascend_950dt_8x": {
       "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp": [
         {
@@ -76563,6 +76565,48 @@
               "extra_envs": {
                 "VLLM_ROCM_USE_AITER": "1"
               }
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "inclusionAI/Ling-3.2-air": [
+        {
+          "name": "Ling-3.2-air",
+          "huggingface_id": "inclusionAI/Ling-3.2-air",
+          "accelerators": "amd",
+          "provider": "vllm_amd",
+          "custom_image": "vllm/vllm-openai-rocm:v0.34.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--gpu-memory-utilization": "0.9",
+                "--enable-chunked-prefill": "",
+                "--enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_AND_PIECEWISE\"}",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "ling3",
+                "--reasoning-parser": "ling3"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--gpu-memory-utilization": "0.9",
+                "--enable-chunked-prefill": "",
+                "--enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_AND_PIECEWISE\"}",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "ling3",
+                "--reasoning-parser": "ling3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
             }
           },
           "default_strategy": "latency-focus",
@@ -92209,6 +92253,48 @@
           "variant_name": "default"
         }
       ],
+      "inclusionAI/Ling-3.2-air": [
+        {
+          "name": "Ling-3.2-air",
+          "huggingface_id": "inclusionAI/Ling-3.2-air",
+          "accelerators": "apple",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.34.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--gpu-memory-utilization": "0.9",
+                "--enable-chunked-prefill": "",
+                "--enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_AND_PIECEWISE\"}",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "ling3",
+                "--reasoning-parser": "ling3"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--gpu-memory-utilization": "0.9",
+                "--enable-chunked-prefill": "",
+                "--enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_AND_PIECEWISE\"}",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "ling3",
+                "--reasoning-parser": "ling3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
       "inclusionAI/Ming-omni-tts-0.5B": [
         {
           "name": "Ming-omni-tts-0.5B",
@@ -107010,6 +107096,48 @@
                 "--tool-call-parser": "ling3",
                 "--reasoning-parser": "ling3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "inclusionAI/Ling-3.2-air": [
+        {
+          "name": "Ling-3.2-air",
+          "huggingface_id": "inclusionAI/Ling-3.2-air",
+          "accelerators": "google",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.34.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--gpu-memory-utilization": "0.9",
+                "--enable-chunked-prefill": "",
+                "--enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_AND_PIECEWISE\"}",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "ling3",
+                "--reasoning-parser": "ling3"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--gpu-memory-utilization": "0.9",
+                "--enable-chunked-prefill": "",
+                "--enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_AND_PIECEWISE\"}",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "ling3",
+                "--reasoning-parser": "ling3",
+                "--enable-expert-parallel": ""
               },
               "extra_envs": {}
             }
@@ -121827,6 +121955,48 @@
           "variant_name": "default"
         }
       ],
+      "inclusionAI/Ling-3.2-air": [
+        {
+          "name": "Ling-3.2-air",
+          "huggingface_id": "inclusionAI/Ling-3.2-air",
+          "accelerators": "huawei",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.34.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--gpu-memory-utilization": "0.9",
+                "--enable-chunked-prefill": "",
+                "--enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_AND_PIECEWISE\"}",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "ling3",
+                "--reasoning-parser": "ling3"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--gpu-memory-utilization": "0.9",
+                "--enable-chunked-prefill": "",
+                "--enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_AND_PIECEWISE\"}",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "ling3",
+                "--reasoning-parser": "ling3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
       "inclusionAI/Ming-omni-tts-0.5B": [
         {
           "name": "Ming-omni-tts-0.5B",
@@ -136628,6 +136798,48 @@
                 "--tool-call-parser": "ling3",
                 "--reasoning-parser": "ling3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "inclusionAI/Ling-3.2-air": [
+        {
+          "name": "Ling-3.2-air",
+          "huggingface_id": "inclusionAI/Ling-3.2-air",
+          "accelerators": "intel",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.34.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--gpu-memory-utilization": "0.9",
+                "--enable-chunked-prefill": "",
+                "--enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_AND_PIECEWISE\"}",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "ling3",
+                "--reasoning-parser": "ling3"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--gpu-memory-utilization": "0.9",
+                "--enable-chunked-prefill": "",
+                "--enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_AND_PIECEWISE\"}",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "ling3",
+                "--reasoning-parser": "ling3",
+                "--enable-expert-parallel": ""
               },
               "extra_envs": {}
             }
@@ -151456,6 +151668,48 @@
           "variant_name": "default"
         }
       ],
+      "inclusionAI/Ling-3.2-air": [
+        {
+          "name": "Ling-3.2-air",
+          "huggingface_id": "inclusionAI/Ling-3.2-air",
+          "accelerators": "nvidia",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.34.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--gpu-memory-utilization": "0.9",
+                "--enable-chunked-prefill": "",
+                "--enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_AND_PIECEWISE\"}",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "ling3",
+                "--reasoning-parser": "ling3"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--gpu-memory-utilization": "0.9",
+                "--enable-chunked-prefill": "",
+                "--enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_AND_PIECEWISE\"}",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "ling3",
+                "--reasoning-parser": "ling3",
+                "--enable-expert-parallel": ""
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
       "inclusionAI/Ming-omni-tts-0.5B": [
         {
           "name": "Ming-omni-tts-0.5B",
@@ -166261,6 +166515,48 @@
                 "--tool-call-parser": "ling3",
                 "--reasoning-parser": "ling3",
                 "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
+              },
+              "extra_envs": {}
+            }
+          },
+          "default_strategy": "latency-focus",
+          "variant_name": "default"
+        }
+      ],
+      "inclusionAI/Ling-3.2-air": [
+        {
+          "name": "Ling-3.2-air",
+          "huggingface_id": "inclusionAI/Ling-3.2-air",
+          "accelerators": "zhenwu",
+          "provider": "vllm",
+          "custom_image": "vllm/vllm-openai:v0.34.0",
+          "strategies": {
+            "latency-focus": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--gpu-memory-utilization": "0.9",
+                "--enable-chunked-prefill": "",
+                "--enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_AND_PIECEWISE\"}",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "ling3",
+                "--reasoning-parser": "ling3"
+              },
+              "extra_envs": {}
+            },
+            "balance": {
+              "extra_args": {
+                "--trust-remote-code": "",
+                "--dtype": "bfloat16",
+                "--gpu-memory-utilization": "0.9",
+                "--enable-chunked-prefill": "",
+                "--enable-prefix-caching": "",
+                "--compilation-config": "{\"cudagraph_mode\":\"FULL_AND_PIECEWISE\"}",
+                "--enable-auto-tool-choice": "",
+                "--tool-call-parser": "ling3",
+                "--reasoning-parser": "ling3",
+                "--enable-expert-parallel": ""
               },
               "extra_envs": {}
             }
