@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-11-26T06:20:32.403568+00:00",
+  "generated_at": "2026-11-27T06:20:35.797778+00:00",
   "vllm_version": "0.34.0",
-  "vllm_recipes_sha": "92c1925",
+  "vllm_recipes_sha": "c6a7ff9",
   "accelerator_brands": {
     "h100": "nvidia",
     "h200": "nvidia",
@@ -38,11 +38,14 @@
     "apple_16gb": "apple",
     "apple_32gb": "apple",
     "apple_64gb": "apple",
+    "ascend_310p3": "huawei",
     "ascend_950pr": "huawei",
     "ascend_950dt": "huawei",
     "ascend_910c": "huawei",
     "ascend_910b": "huawei",
     "ascend_910b4_1_4x": "huawei",
+    "ascend_910b3": "huawei",
+    "ascend_910b4": "huawei",
     "ascend_950dt_8x": "huawei",
     "ascend_950pr_8x": "huawei",
     "810e": "zhenwu",
@@ -65123,6 +65126,7 @@
     "apple_16gb": {},
     "apple_32gb": {},
     "apple_64gb": {},
+    "ascend_310p3": {},
     "ascend_950pr": {
       "MiniMaxAI/MiniMax-H3": [
         {
@@ -66662,6 +66666,8 @@
     },
     "ascend_910b": {},
     "ascend_910b4_1_4x": {},
+    "ascend_910b3": {},
+    "ascend_910b4": {},
     "ascend_950dt_8x": {
       "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp": [
         {
